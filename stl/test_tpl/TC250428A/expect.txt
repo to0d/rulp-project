@@ -1,0 +1,14 @@
+RV test start:
+
+000: FixedContainer<int>
+  intContainer.at(3)=6
+Container of integral type (size=10)
+
+001: (FixedContainer<float, 4>)
+  floatContainer.at(0)=1.100000
+Container of floating-point type (size=4)
+
+002: (FixedContainer<bool, 20>)
+  boolContainer.at(0)=1
+
+RV test finish.

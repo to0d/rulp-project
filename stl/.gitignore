@@ -1,0 +1,7 @@
+build/*
+stl/build/*
+result.txt
+docs/html
+docs/stl_html
+*.a
+*.out

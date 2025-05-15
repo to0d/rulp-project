@@ -1,0 +1,123 @@
+RV test start:
+
+000: lfc::abs
+  lfc::abs(0.0)=0.000000
+  lfc::abs(3.0)=3.000000
+  lfc::abs(123.456)=123.456000
+  lfc::abs(-123.456)=123.456000
+
+001: lfc::ceil
+  lfc::ceil(3.0)=3.000000
+  lfc::ceil(3.5)=4.000000
+  lfc::ceil(3.9)=4.000000
+  lfc::ceil(123456.789)=123457.000000
+
+002: lfc::floor
+  lfc::floor(3.0)=3.000000
+  lfc::floor(3.5)=3.000000
+  lfc::floor(3.9)=3.000000
+  lfc::floor(123456.789)=123456.000000
+
+003: lfc::max
+  lfc::max(3.0, 2.0)=3.000000
+  lfc::max(5, 3)=5
+
+004: lfc::min
+  lfc::min(3.0, 2.0)=2.000000
+  lfc::min(5, 3)=3
+
+005: lfc::isnan
+  lfc::isnan(0.0)=0
+  lfc::isnan(3.14159)=0
+  lfc::isnan(0.0 / 0.0)=1
+
+006: lfc::numeric_limits
+  lfc::numeric_limits<int>::max()=2147483647
+  lfc::numeric_limits<int>::min()=-2147483648
+  lfc::numeric_limits<int>::epsilon()=0
+  lfc::numeric_limits<float>::max()=340282346638528859811704183484516925440.000000
+  lfc::numeric_limits<float>::min()=0.000000
+  lfc::numeric_limits<float>::epsilon()=0.000000
+
+007: lfc::decay
+  (lfc::is_same_v<lfc::decay<int&>::type, int>)=1
+  (lfc::is_same_v<lfc::decay<const int[3]>::type, const int*>)=1
+  (lfc::is_same_v<lfc::decay<int(double)>::type, int(*)(double)>)=1
+
+008: lfc::is_same
+  (lfc::is_same<float, float>::value)=1
+  (lfc::is_same<float, int>::value)=0
+
+009: lfc::is_same_v
+  (lfc::is_same_v<float, float>)=1
+  (lfc::is_same_v<float, int>)=0
+
+010: lfc::is_float_v
+  (lfc::is_float_v<float>)=1
+  (lfc::is_float_v<int>)=0
+
+011: lfc::is_floating_point
+  (lfc::is_floating_point<float>::value)=1
+  (lfc::is_floating_point<int>::value)=0
+
+012: lfc::is_integral_v
+  (lfc::is_integral_v<float>)=0
+  (lfc::is_integral_v<int>)=1
+
+013: lfc::is_member_function_pointer
+  (lfc::is_member_function_pointer<decltype(&Foo::func)>::value)=1
+  (lfc::is_member_function_pointer<decltype(&Foo::static_func)>::value)=0
+  (lfc::is_member_function_pointer<int(Foo::*)>::value)=0
+
+014: lfc::remove_pointer
+  (lfc::is_same_v<lfc::remove_pointer<int*>::type, int>)=1
+  (lfc::is_same_v<lfc::remove_pointer<int* const>::type, int>)=1
+  (lfc::is_same_v<lfc::remove_pointer<int>::type, int>)=1
+
+015: lfc::decay_t
+  (lfc::is_same_v<lfc::decay_t<int&>, int>)=1
+  (lfc::is_same_v<lfc::decay_t<const int[3]>, const int*>)=1
+  (lfc::is_same_v<lfc::decay_t<int(double)>, int(*)(double)>)=1
+
+016: lfc::move::MoveConstructor
+  o1.data=1
+  o1.data=0
+  o2.data=1
+  Foo_construct_count=1
+  Foo_copy_construct_count=0
+  Foo_move_construct_count=1
+  Foo_move_operator_count=0
+
+017: lfc::move::MoveAssignment
+  o1.data=1
+  o2.data=0
+  o1.data=0
+  o2.data=1
+  Foo_construct_count=2
+  Foo_copy_construct_count=0
+  Foo_move_construct_count=0
+  Foo_move_operator_count=1
+
+018: lfc::forward
+  _forward_lvalue_count=1
+  _forward_rvalue_count=0
+  _forward_lvalue_count=1
+  _forward_rvalue_count=1
+  _forward_lvalue_count=1
+  _forward_rvalue_count=2
+
+019: lfc::memcpy
+  reinterpret_cast<char*>(dst1)=Hello, world!
+
+020: lfc::memset
+  reinterpret_cast<char*>(buf1)=xxxxx, world!
+
+021: lfc::strcpy
+  reinterpret_cast<char*>(dest1)=Hello, world!
+
+022: lfc::strcpy
+  lfc::strcmp("Hello", "Hello")=0
+  lfc::strcmp("Apple", "Banana")=-1
+  lfc::strcmp("Banana", "Apple")=1
+
+RV test finish.
