@@ -38,9 +38,9 @@ namespace lfc {
  *     double d1 = 3.14, d2 = 2.71;
  *     unsigned u1 = 10, u2 = 20;
  *     
- *     std::cout << lfc::max(i1, i2);  // 10
- *     std::cout << lfc::max(d1, d2);  // 3.14
- *     std::cout << lfc::max(u1, u2);  // 20
+ *     lfc::cout << lfc::max(i1, i2);  // 10
+ *     lfc::cout << lfc::max(d1, d2);  // 3.14
+ *     lfc::cout << lfc::max(u1, u2);  // 20
  * }
  * @endcode
  */
@@ -88,9 +88,9 @@ T max(const T& a, const T& b) noexcept {
  *     double d1 = 3.14, d2 = 2.71;
  *     unsigned u1 = 10, u2 = 20;
  *     
- *     std::cout << lfc::min(i1, i2);  // 5
- *     std::cout << lfc::min(d1, d2);  // 2.71
- *     std::cout << lfc::min(u1, u2);  // 10
+ *     lfc::cout << lfc::min(i1, i2);  // 5
+ *     lfc::cout << lfc::min(d1, d2);  // 2.71
+ *     lfc::cout << lfc::min(u1, u2);  // 10
  * }
  * @endcode
  */

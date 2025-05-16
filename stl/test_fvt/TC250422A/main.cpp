@@ -13,7 +13,7 @@ int main()
       v.push_back(i);
     }
 
-    RUT_RUN(v[999]);
+    RUT_PRINT(v[999]);
   }
 
   RUT_FINISH;

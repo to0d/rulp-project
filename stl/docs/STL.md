@@ -45,7 +45,19 @@
     | [lfc::isnan](@ref lfc::isnan)                 | Function Template  | Floating-Point NaN Check. |
     | [lfc::isinf](@ref lfc::isinf)                 | Function Template  | Floating-Point Infinite Check. |
 
-### 1.4 string
+### 1.4 ostream
+
+- Header file: [#include <lfc/stl/ostream.h>](#)
+
+- Support List
+
+    | Item | Type | Description |
+    |---|---|---|
+    | [lfc::ostream](@ref lfc::ostream)             | Class Template  | Basic output stream class. |
+    | [lfc::cout](@ref lfc::cout)                   | Global object   | Global ostream instance for standard output. |
+    | [lfc::endl](@ref lfc::endl)                   | Global Function | stream manipulator function. |
+
+### 1.5 string
 
 - Header file: [#include <lfc/stl/string.h>](#)
 
@@ -60,7 +72,7 @@
     | [lfc::strlen](@ref lfc::strlen)                       | Function Template    | Computes the length of the given null-terminated character string. |
 
 
-### 1.5 type_traits
+### 1.6 type_traits
 
 - Header file: [#include <lfc/stl/type_traits.h>](#)
 
@@ -79,7 +91,7 @@
     | [lfc::remove_pointer](@ref lfc::remove_pointer)       | Class Template    | Removes pointer qualification from a type. |
     | [lfc::remove_pointer_t](@ref lfc::remove_pointer_t)   | Alias Template    | Removes pointer qualification from a type. |
   
-### 1.6 utility
+### 1.7 utility
 
 - Header file: [#include <lfc/stl/utility.h>](#)
 

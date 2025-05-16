@@ -141,13 +141,13 @@ struct mpl_int : public mpl_constant<int, I>{};
  *
  * @code
  * #include <lfc/stl/type_traits.h>
- * #include <iostream>
+ * #include <lfc/stl/ostream.h>
  *
  * int main() {
- *     std::cout << lfc::is_same<int, int>::value << '\n';    // true
- *     std::cout << lfc::is_same<int, long>::value << '\n';   // false
- *     std::cout << lfc::is_same<int, int const>::value << '\n';  // false
- *     std::cout << lfc::is_same<int[4], int*>::value << '\n';    // false
+ *     lfc::cout << lfc::is_same<int, int>::value << '\n';    // true
+ *     lfc::cout << lfc::is_same<int, long>::value << '\n';   // false
+ *     lfc::cout << lfc::is_same<int, int const>::value << '\n';  // false
+ *     lfc::cout << lfc::is_same<int[4], int*>::value << '\n';    // false
  * }
  * @endcode
  */

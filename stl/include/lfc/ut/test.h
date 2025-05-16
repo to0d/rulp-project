@@ -28,8 +28,8 @@ inline void rut_print(T arg) {
 
 #define RUT_START     printf("RV test start:\n"); int rut_index = 0;
 #define RUT_FINISH    printf("\nRV test finish.\n");
-
-#define RUT_RUN(x)    printf("  %s=", #x); rut_print(x); printf("\n");
+#define RUT_RUN(x)    printf("  %s: ", #x); x; printf("\n");
+#define RUT_PRINT(x)  printf("  %s=", #x); rut_print(x); printf("\n");
 #define RUT_TEST(x)   printf("\n%03d: %s\n", rut_index++, #x);
 
 #endif // SIMPLE_UT_H

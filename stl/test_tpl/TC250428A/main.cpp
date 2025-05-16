@@ -127,7 +127,7 @@ int main() {
     for (int i = 0; i < 10; ++i) {
       intContainer.push_back(i * 2);
     }
-    RUT_RUN(intContainer.at(3));
+    RUT_PRINT(intContainer.at(3));
     intContainer.print_type_info(); 
   }
 
@@ -137,7 +137,7 @@ int main() {
     double arr[] = {1.1, 2.2, 3.3};
     FixedContainer<float, 4> floatContainer;
     floatContainer.fill_from(arr, arr + 3);   // 自动转换double->float
-    RUT_RUN(floatContainer.at(0));
+    RUT_PRINT(floatContainer.at(0));
     floatContainer.print_type_info();    
   }
 
@@ -148,7 +148,7 @@ int main() {
     boolContainer.push_back(true);
     boolContainer.push_back(false);    
     boolContainer.flip_all();  // 反转所有bit
-    RUT_RUN(boolContainer.at(0));
+    RUT_PRINT(boolContainer.at(0));
     // boolContainer.print_type_info();
   }
 

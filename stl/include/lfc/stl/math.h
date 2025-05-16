@@ -57,9 +57,9 @@ T abs_impl(T x) noexcept {
  *     double d = -3.14;
  *     unsigned u = 10;
  *     
- *     std::cout << lfc::abs(i);  // 5
- *     std::cout << lfc::abs(d);  // 3.14
- *     std::cout << lfc::abs(u);  // 10
+ *     lfc::cout << lfc::abs(i);  // 5
+ *     lfc::cout << lfc::abs(d);  // 3.14
+ *     lfc::cout << lfc::abs(u);  // 10
  * }
  * @endcode
  */
@@ -147,15 +147,15 @@ T ceil_impl(T x) {
  * 
  * @code
  * #include <lfc/stl/math.h>
- * #include <iostream>
+ * #include <lfc/stl/ostream.h>
  * 
  * int main() {
  *     double x = 3.2;
  *     double y = -2.7;
  *     
- *     std::cout << "ceil(" << x << ") = " << lfc::ceil(x) << '\n';  // 4.0
- *     std::cout << "ceil(" << y << ") = " << lfc::ceil(y) << '\n';  // -2.0
- *     std::cout << "ceil(-0.0) = " << lfc::ceil(-0.0) << '\n';      // -0.0
+ *     lfc::cout << "ceil(" << x << ") = " << lfc::ceil(x) << '\n';  // 4.0
+ *     lfc::cout << "ceil(" << y << ") = " << lfc::ceil(y) << '\n';  // -2.0
+ *     lfc::cout << "ceil(-0.0) = " << lfc::ceil(-0.0) << '\n';      // -0.0
  * }
  * @endcode
  */
@@ -269,15 +269,15 @@ T floor_impl(T x) {
  * 
  * @code
  * #include <lfc/stl/math.h>
- * #include <iostream>
+ * #include <lfc/stl/ostream.h>
  * 
  * int main() {
  *     double x = 3.7;
  *     double y = -2.3;
  *     
- *     std::cout << "floor(" << x << ") = " << lfc::floor(x) << '\n';  // 3.0
- *     std::cout << "floor(" << y << ") = " << lfc::floor(y) << '\n';  // -3.0
- *     std::cout << "floor(-0.0) = " << lfc::floor(-0.0) << '\n';      // -0.0
+ *     lfc::cout << "floor(" << x << ") = " << lfc::floor(x) << '\n';  // 3.0
+ *     lfc::cout << "floor(" << y << ") = " << lfc::floor(y) << '\n';  // -3.0
+ *     lfc::cout << "floor(-0.0) = " << lfc::floor(-0.0) << '\n';      // -0.0
  * }
  * @endcode
  */

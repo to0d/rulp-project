@@ -1,0 +1,10 @@
+RV test start:
+
+000: lfc::cout
+  (lfc::cout << 123): 123
+  (lfc::cout << 123 << lfc::endl ): 123
+
+  (lfc::cout << 1.1f): 1.100000
+  (lfc::cout << "abc"): abc
+
+RV test finish.
