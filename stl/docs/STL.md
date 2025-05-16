@@ -80,14 +80,21 @@
 
     | Item | Type | Description |
     |---|---|---|
+    | [lfc::conditional](@ref lfc::conditional)             | Class Template    | Compile-time conditional type selection. |
+    | [lfc::conditional_t](@ref lfc::conditional_t)         | Alias Template    | Convenience alias for conditional::type. |
     | [lfc::decay](@ref lfc::decay)                         | Class Template    | Performs type decay transformation. |
     | [lfc::decay_t](@ref lfc::decay_t)                     | Alias Template    | Performs type decay transformation. |
+    | [lfc::enable_if](@ref lfc::enable_if)                 | Class Template    | Template helper for SFINAE. |
+    | [lfc::enable_if_t](@ref lfc::enable_if_t)             | Alias Template    | Convenience alias template for enable_if::type. |
+    | [lfc::is_arithmetic_v](@ref lfc::is_arithmetic_v)     | Variable Template | Indicating whether a type is a arithmetic type. |
+    | [lfc::is_bool_v](@ref lfc::is_bool_v)                 | Variable Template | Indicating whether a type is exactly `bool` . |
+    | [lfc::is_floating_point](@ref lfc::is_floating_point) | Class Template    | Determines if the type is a floating point type. |
+    | [lfc::is_float_v](@ref lfc::is_float_v)               | Variable Template | Indicating whether a type is a floating-point type. |
+    | [lfc::is_integral_v](@ref lfc::is_integral_v)         | Variable Template | Determines if the type is an integer type. |
     | [lfc::is_same](@ref lfc::is_same)                     | Function Template | Determines if two types are the same. |
     | [lfc::is_same_v](@ref lfc::is_same_v)                 | Variable Template | Determines if two types are the same. |
-    | [lfc::is_float_v](@ref lfc::is_float_v)               | Variable Template | Determines if the type is a floating point type. |
-    | [lfc::is_floating_point](@ref lfc::is_floating_point) | Class Template    | Determines if the type is a floating point type. |
     | [lfc::is_member_function_pointer](@ref lfc::is_member_function_pointer)   | Class Template | Determines if the type is a pointer to non-static member function. |
-    | [lfc::is_integral_v](@ref lfc::is_integral_v)         | Variable Template | Determines if the type is an integer type. |
+    | [lfc::is_unsigned_v](@ref lfc::is_unsigned_v)         | Variable Template | Indicating whether a type is a unsigned type. |
     | [lfc::remove_pointer](@ref lfc::remove_pointer)       | Class Template    | Removes pointer qualification from a type. |
     | [lfc::remove_pointer_t](@ref lfc::remove_pointer_t)   | Alias Template    | Removes pointer qualification from a type. |
   

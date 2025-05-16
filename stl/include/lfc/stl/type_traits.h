@@ -17,31 +17,82 @@
 
 namespace lfc {
 
-/// \cond
-
+/**
+ * @struct enable_if
+ * @brief Template helper for SFINAE (Substitution Failure Is Not An Error)
+ * 
+ * Provides a way to conditionally enable or disable function templates
+ * or class template specializations based on compile-time boolean checks.
+ * 
+ * @tparam C Boolean condition that determines whether the type is defined
+ * @tparam T Type to enable if condition is true (defaults to void)
+ * 
+ * @note When C is true, contains a nested typedef 'type' equal to T.
+ *       When C is false, contains no nested typedef.
+ */
 template<bool, typename T = void>
   struct enable_if
   {};
 
+/**
+ * @struct enable_if<true, T>
+ * @brief Partial specialization for true conditions
+ * 
+ * Provides the nested typedef 'type' only when the condition is true.
+ */
 template<typename T>
   struct enable_if<true, T>
   { using type = T; };
 
+/**
+ * @brief Convenience alias template for enable_if::type
+ * 
+ * Provides a shorter syntax for accessing the enabled type.
+ * Equivalent to typename enable_if<C, T>::type.
+ * 
+ * @tparam C Boolean condition
+ * @tparam T Type to enable (defaults to void)
+ */
 template<bool C, typename T = void>
   using enable_if_t = typename lfc::enable_if<C, T>::type;
 
+/**
+ * @struct conditional
+ * @brief Compile-time conditional type selection (similar to ternary operator)
+ *
+ * Selects between two types based on a boolean condition at compile time.
+ * When C is true, the nested typedef 'type' is T. When C is false, 'type' is F.
+ *
+ * @tparam C Boolean condition determining which type to select
+ * @tparam T Type selected when C is true
+ * @tparam F Type selected when C is false
+ */
 template<bool C, typename T, typename F>
   struct conditional
   { typedef T type; };
 
+/**
+ * @struct conditional<false, T, F>
+ * @brief Specialization for false conditions
+ *
+ * Provides the alternative type when the condition is false.
+ */
 template<typename T, typename F>
   struct conditional<false, T, F>
   { typedef F type; };
-  
+
+/**
+ * @brief Convenience alias for conditional::type
+ *
+ * Provides direct access to the selected type without requiring typename/::type.
+ * Equivalent to typename conditional<C, T, F>::type.
+ *
+ * @tparam C Boolean condition
+ * @tparam T Type selected when true
+ * @tparam F Type selected when false
+ */
 template<bool C, typename T, typename F>
   using conditional_t = typename lfc::conditional<C, T, F>::type;
-
-/// \endcond
 
 /// \cond
 namespace impl {
@@ -135,7 +186,6 @@ struct mpl_int : public mpl_constant<int, I>{};
  * - Part of the <lfc/stl/type_traits.h> header
  * - Inherits from std::integral_constant (either std::mpl_true_type or std::mpl_false_type)
  * - Can be used in static_assert expressions and SFINAE contexts
- * - Available since C++11
  *
  * @see lfc::decay
  *
@@ -215,6 +265,26 @@ template <typename T, typename U>
   MPL_VAR
   bool is_same_v = lfc::is_same<T, U>::value;
 
+/**
+ * @brief Compile-time boolean indicating whether a type is a floating-point type
+ * 
+ * Evaluates to `true` if `T` is one of the standard floating-point types:
+ * - `float`
+ * - `double` 
+ * - `long double`
+ *
+ * @tparam T Type to check
+ * @value `true` if `T` is a floating-point type, `false` otherwise
+ *
+ * @note This is a variable template providing convenient compile-time checking.
+ * @see is_same_v
+ *
+ * @example Usage:
+ * @code
+ * static_assert(is_float_v<double>, "Must be floating point");
+ * static_assert(!is_float_v<int>, "Should not be floating point");
+ * @endcode
+ */
 template<typename T>
   MPL_VAR
   bool is_float_v =
@@ -223,6 +293,25 @@ template<typename T>
       || lfc::is_same_v<T, long double>
       ;
 
+/**
+ * @var is_bool_v
+ * @brief Compile-time boolean indicating whether a type is exactly `bool`
+ *
+ * Evaluates to `true` if and only if `T` is the boolean type `bool`,
+ * `false` for all other types.
+ *
+ * @tparam T Type to check
+ * @value `true` if `T` is `bool`, `false` otherwise
+ *
+ * @note This variable template provides convenient compile-time boolean checking
+ * @see is_same_v
+ *
+ * @example Usage:
+ * @code
+ * static_assert(is_bool_v<bool>, "Must be boolean type");
+ * static_assert(!is_bool_v<int>, "Should not be boolean type");
+ * @endcode
+ */
 template<typename T>
   MPL_VAR
   bool is_bool_v = lfc::is_same_v<T, bool>;
@@ -281,6 +370,30 @@ template<typename T>
   : public impl::mpl_is_integer<typename impl::remove_cv<T>::type>::type 
   {};
 
+/**
+ * @var is_integral_v
+ * @brief Compile-time boolean indicating whether a type is an integral type
+ * 
+ * Evaluates to `true` if `T` is one of the standard integral types:
+ * - `bool`
+ * - `char`, `signed char`, `unsigned char`
+ * - `short`, `unsigned short` 
+ * - `int`, `unsigned int`
+ * - `long`, `unsigned long`
+ * - `long long`, `unsigned long long`
+ *
+ * @tparam T Type to check
+ * @value `true` if `T` is an integral type, `false` otherwise
+ *
+ * @note This variable template provides convenient compile-time checking
+ * @see is_same_v, is_float_v, is_bool_v
+ *
+ * @example Usage:
+ * @code
+ * static_assert(is_integral_v<int>, "Must be integral type");
+ * static_assert(!is_integral_v<float>, "Should not be integral type");
+ * @endcode
+ */
 MPL_TYPE_VAR(is_integral)
 
 /// \endcond
@@ -362,17 +475,58 @@ template<typename T>
 } // namespace impl
 /// \endcond
 
-/// \cond
-
+/**
+ * @var is_unsigned_v
+ * @brief Compile-time boolean indicating whether a type is an unsigned arithmetic type
+ *
+ * Evaluates to `true` if `T` is one of:
+ * - `unsigned char`
+ * - `unsigned short`
+ * - `unsigned int`
+ * - `unsigned long`
+ * - `unsigned long long`
+ * - `bool` (treated specially as unsigned)
+ *
+ * @tparam T Type to check
+ * @value `true` if `T` is an unsigned type, `false` otherwise
+ *
+ * @note Returns `false` for floating-point types and non-arithmetic types
+ * @see is_arithmetic_v, is_integral_v, is_signed_v
+ *
+ * @example Usage:
+ * @code
+ * static_assert(is_unsigned_v<unsigned int>, "Must be unsigned");
+ * static_assert(!is_unsigned_v<int>, "Should not be unsigned"); 
+ * static_assert(is_unsigned_v<bool>, "bool is treated as unsigned");
+ * @endcode
+ */
 template <typename T>
   MPL_VAR
   bool is_unsigned_v = impl::mpl_is_unsigned<T>::value;
 
+/**
+ * @brief Compile-time boolean indicating whether a type is an arithmetic type
+ *
+ * Evaluates to `true` if `T` is either:
+ * - An integral type (`bool`, `char`, `int`, etc.), or
+ * - A floating-point type (`float`, `double`, `long double`)
+ *
+ * @tparam T Type to check
+ * @value `true` if `T` is an arithmetic type, `false` otherwise
+ *
+ * @note This variable template combines both `is_integral_v` and `is_float_v` checks
+ * @see is_integral_v, is_float_v, is_bool_v
+ *
+ * @example Usage:
+ * @code
+ * static_assert(is_arithmetic_v<int>, "int is arithmetic");
+ * static_assert(is_arithmetic_v<double>, "double is arithmetic");
+ * static_assert(!is_arithmetic_v<std::string>, "string is not arithmetic");
+ * @endcode
+ */
 template <typename T>
   MPL_VAR
   bool is_arithmetic_v = is_arithmetic<T>::value;
-
-/// \endcond
 
 /// \cond
 namespace impl {
