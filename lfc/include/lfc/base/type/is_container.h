@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2025 Todd <to0d@outlook.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef __LFC_IS_CONTAINER_H__
 #define __LFC_IS_CONTAINER_H__
 

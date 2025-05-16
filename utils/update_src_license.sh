@@ -44,7 +44,7 @@ process_directory() {
     export add_script
 
     echo "Processing files in $target_dir..."
-    find "$target_dir" -type f \( -name "*.h" -o -name "*.hpp" \) \
+    find "$target_dir" -type f \( -name "*.h" -o -name "*.hpp" -o -name "*.cpp" \) \
         -exec bash -c 'update_file "$0"' {} \;
     
     return $?
@@ -52,5 +52,9 @@ process_directory() {
 
 # Execute processing
 process_directory "$prj_dir/stl/include"
+process_directory "$prj_dir/lfc/include"
+process_directory "$prj_dir/lfc/src"
+process_directory "$prj_dir/lfm/include"
+process_directory "$prj_dir/lfm/src"
 
 exit $?

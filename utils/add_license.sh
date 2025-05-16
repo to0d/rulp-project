@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the license header (exactly 2 lines)
-LICENSE_HEADER="// SPDX-FileCopyrightText: 2023 Todd <to0d@outlook.com>
+LICENSE_HEADER="// SPDX-FileCopyrightText: 2025 Todd <to0d@outlook.com>
 // SPDX-License-Identifier: GPL-3.0-or-later"
 
 # Check if file exists

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2025 Todd <to0d@outlook.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef __LFC_FUNCTION_IMPL_F_H_08_27_12__
 #define __LFC_FUNCTION_IMPL_F_H_08_27_12__
 

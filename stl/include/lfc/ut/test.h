@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Todd <to0d@outlook.com>
+// SPDX-FileCopyrightText: 2025 Todd <to0d@outlook.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef SIMPLE_UT_H
 #define SIMPLE_UT_H

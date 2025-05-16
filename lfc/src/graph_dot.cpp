@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2025 Todd <to0d@outlook.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "lfc/base/graph/graph_dot.h"
 #include "lfc/base/to_string.h"
 #include "lfc/base/container.h"

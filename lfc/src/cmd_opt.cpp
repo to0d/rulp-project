@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2025 Todd <to0d@outlook.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "lfc/base/trace_macro.h"
 #include "lfc/base/cmd/opt.h"
 #include "lfc/base/static/static_holder.h"

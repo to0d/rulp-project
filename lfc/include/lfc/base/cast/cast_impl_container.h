@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2025 Todd <to0d@outlook.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef __LFC_CAST_IMPL_CONTAINER_H__
 #define __LFC_CAST_IMPL_CONTAINER_H__
 #include "lfc/base/cast/cast_base.h"
