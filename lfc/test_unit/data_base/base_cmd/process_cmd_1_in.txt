@@ -1,0 +1,51 @@
+# scc compile
+-c -o hello.o test.c
+-c hello.c
+-c hello.c -V
+-c hello.c -o hello.o
+-c hello.c -t
+-c hello.c -v
+test.c
+test.c -I ../include
+test.c -L ../
+test.c -O 0
+test.c -c
+test.c -o hello.out
+test.c -x c
+test.c -x c++
+
+# scc codegen
+test.c -lstdc++ -lscc 
+test.c -I../include 
+test.c -L../ 
+test.c -DMACRO1 
+test.c -DMACRO1 -L../ 
+test.c -O1 
+-c main.c -o main.o -O 3 -I/mnt/include -t
+
+# scc version
+--version 
+test.c --version 
+test.c --version 
+
+# scc link
+-o x.out a.o b.o c.o 
+a.o b.o c.o -o x.out
+
+# scc invalid
+test.c -x cc 
+test.c -O 4 
+test.c -O abc
+
+# scc transfer
+-trans input.c -o output.c 
+
+# ssp
+-c profile.cubex -funlist hpl_func_list.txt 
+-funlist hpl_func_list.txt 
+-c input.c -o output.c -type xxx 
+
+# scc help
+--help 
+test.c --help 
+

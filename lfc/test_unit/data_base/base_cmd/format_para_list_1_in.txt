@@ -1,0 +1,43 @@
+# scc
+-c hello.c 
+hello.c -c 
+-c hello.c -o hello.o 
+-c -o hello.o test.c 
+test.c -o hello.out 
+test.c 
+test.c -I ../include 
+test.c -x c 
+test.c -x c++ 
+test.c -L ../ 
+test.c -O 0 
+test.c -lstdc++ -lscc 
+test.c -I../include 
+test.c -L../ 
+test.c -DMACRO1 
+test.c -DMACRO1 -L../ 
+--version 
+test.c --version 
+test.c --version 
+-o x.out a.o b.o c.o 
+a.o b.o c.o -o x.out 
+test.c -x cc 
+test.c -O 4 
+test.c -O abc 
+-c main.c -o main.o -O 3 -I/mnt/include -t 
+-c hello.c -t 
+-c hello.c --keep-tmp-files 
+-c hello.c -ktf 
+test.c -o test.elf -N0
+
+# transfer
+-trans input.c -o output.c 
+-trans input.c -o output.c -c 
+-trans input.c -o output.c --clean-all-barrier 
+-trans input.c -o output.c --simple-task-reorder
+
+# ssp
+-c input.c -o output.c -type xxx 
+-c profile.cubex -funlist hpl_func_list.txt 
+
+# opt
+-c test_1.ll -t -dump-dfg-simd --simplify-dfg-dot

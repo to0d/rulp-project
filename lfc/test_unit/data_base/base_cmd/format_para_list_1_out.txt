@@ -1,0 +1,108 @@
+in : -c hello.c
+out: --compile -para hello.c
+
+in : hello.c -c
+out: --compile -para hello.c
+
+in : -c hello.c -o hello.o
+out: --compile -para hello.c -o hello.o
+
+in : -c -o hello.o test.c
+out: --compile -para test.c -o hello.o
+
+in : test.c -o hello.out
+out: --codegen -para test.c -o hello.out
+
+in : test.c
+out: --codegen -para test.c
+
+in : test.c -I ../include
+out: --codegen -para test.c -I ../include
+
+in : test.c -x c
+out: --codegen -para test.c -x c
+
+in : test.c -x c++
+out: --codegen -para test.c -x c++
+
+in : test.c -L ../
+out: --codegen -para test.c -L ../
+
+in : test.c -O 0
+out: --codegen -para test.c -O 0
+
+in : test.c -lstdc++ -lscc
+out: --codegen -para test.c -l stdc++ -l scc
+
+in : test.c -I../include
+out: --codegen -para test.c -I ../include
+
+in : test.c -L../
+out: --codegen -para test.c -L ../
+
+in : test.c -DMACRO1
+out: --codegen -para test.c -D MACRO1
+
+in : test.c -DMACRO1 -L../
+out: --codegen -para test.c -L ../ -D MACRO1
+
+in : --version
+out: --version
+
+in : test.c --version
+out: --version -para test.c
+
+in : test.c --version
+out: --version -para test.c
+
+in : -o x.out a.o b.o c.o
+out: --codegen -para a.o -para b.o -para c.o -o x.out
+
+in : a.o b.o c.o -o x.out
+out: --codegen -para a.o -para b.o -para c.o -o x.out
+
+in : test.c -x cc
+out: --invalid -para test.c
+
+in : test.c -O 4
+out: --invalid -para test.c
+
+in : test.c -O abc
+out: --invalid -para test.c
+
+in : -c main.c -o main.o -O 3 -I/mnt/include -t
+out: --compile -para main.c -o main.o -I /mnt/include -O 3 -t
+
+in : -c hello.c -t
+out: --compile -para hello.c -t
+
+in : -c hello.c --keep-tmp-files
+out: --compile -para hello.c -ktf
+
+in : -c hello.c -ktf
+out: --compile -para hello.c -ktf
+
+in : test.c -o test.elf -N0
+out: --codegen -para test.c -o test.elf -N 0
+
+in : -trans input.c -o output.c
+out: --sctrans -para input.c -o output.c
+
+in : -trans input.c -o output.c -c
+out: --sctrans -para input.c -o output.c
+
+in : -trans input.c -o output.c --clean-all-barrier
+out: --sctrans -para input.c -o output.c -cab
+
+in : -trans input.c -o output.c --simple-task-reorder
+out: --sctrans -para input.c -o output.c -str
+
+in : -c input.c -o output.c -type xxx
+out: --compile -para input.c -o output.c -type xxx
+
+in : -c profile.cubex -funlist hpl_func_list.txt
+out: --compile -para profile.cubex -funlist hpl_func_list.txt
+
+in : -c test_1.ll -t -dump-dfg-simd --simplify-dfg-dot
+out: --compile -para test_1.ll -t -dump-dfg-simd --simplify-dfg-dot
+

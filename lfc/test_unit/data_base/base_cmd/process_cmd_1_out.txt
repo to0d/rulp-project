@@ -1,0 +1,105 @@
+in : -c -o hello.o test.c
+out: CMD(name=scc, type=COMPILE, option_list={CO(type=OBJECT, key=o, value=hello.o)}, para_list={test.c})
+
+in : -c hello.c
+out: CMD(name=scc, type=COMPILE, option_list={}, para_list={hello.c})
+
+in : -c hello.c -V
+out: CMD(name=scc, type=COMPILE, option_list={CO(type=CMDVIEW, key=V, value=)}, para_list={hello.c})
+
+in : -c hello.c -o hello.o
+out: CMD(name=scc, type=COMPILE, option_list={CO(type=OBJECT, key=o, value=hello.o)}, para_list={hello.c})
+
+in : -c hello.c -t
+out: CMD(name=scc, type=COMPILE, option_list={CO(type=SCCTRACE, key=t, value=)}, para_list={hello.c})
+
+in : -c hello.c -v
+out: CMD(name=scc, type=COMPILE, option_list={CO(type=SCCVIEW, key=v, value=)}, para_list={hello.c})
+
+in : test.c
+out: CMD(name=scc, type=CODEGEN, option_list={}, para_list={test.c})
+
+in : test.c -I ../include
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=INCLDUE, key=I, value=../include)}, para_list={test.c})
+
+in : test.c -L ../
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=LIBPATH, key=L, value=../)}, para_list={test.c})
+
+in : test.c -O 0
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=OPTLVL, key=O, value=0)}, para_list={test.c})
+
+in : test.c -c
+out: CMD(name=scc, type=COMPILE, option_list={}, para_list={test.c})
+
+in : test.c -o hello.out
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=OBJECT, key=o, value=hello.out)}, para_list={test.c})
+
+in : test.c -x c
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=SRCTYPE, key=x, value=c)}, para_list={test.c})
+
+in : test.c -x c++
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=SRCTYPE, key=x, value=c++)}, para_list={test.c})
+
+in : test.c -lstdc++ -lscc
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=LIBNAME, key=l, value=stdc++),CO(type=LIBNAME, key=l, value=scc)}, para_list={test.c})
+
+in : test.c -I../include
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=INCLDUE, key=I, value=../include)}, para_list={test.c})
+
+in : test.c -L../
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=LIBPATH, key=L, value=../)}, para_list={test.c})
+
+in : test.c -DMACRO1
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=DEFMACRO, key=D, value=MACRO1)}, para_list={test.c})
+
+in : test.c -DMACRO1 -L../
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=LIBPATH, key=L, value=../),CO(type=DEFMACRO, key=D, value=MACRO1)}, para_list={test.c})
+
+in : test.c -O1
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=OPTLVL, key=O, value=1)}, para_list={test.c})
+
+in : -c main.c -o main.o -O 3 -I/mnt/include -t
+out: CMD(name=scc, type=COMPILE, option_list={CO(type=OBJECT, key=o, value=main.o),CO(type=INCLDUE, key=I, value=/mnt/include),CO(type=OPTLVL, key=O, value=3),CO(type=SCCTRACE, key=t, value=)}, para_list={main.c})
+
+in : --version
+out: CMD(name=scc, type=VERSION, option_list={}, para_list={})
+
+in : test.c --version
+out: CMD(name=scc, type=VERSION, option_list={}, para_list={test.c})
+
+in : test.c --version
+out: CMD(name=scc, type=VERSION, option_list={}, para_list={test.c})
+
+in : -o x.out a.o b.o c.o
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=OBJECT, key=o, value=x.out)}, para_list={a.o,b.o,c.o})
+
+in : a.o b.o c.o -o x.out
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=OBJECT, key=o, value=x.out)}, para_list={a.o,b.o,c.o})
+
+in : test.c -x cc
+out: CMD(name=scc, type=INVALID, option_list={}, para_list={test.c})
+
+in : test.c -O 4
+out: CMD(name=scc, type=INVALID, option_list={}, para_list={test.c})
+
+in : test.c -O abc
+out: CMD(name=scc, type=INVALID, option_list={}, para_list={test.c})
+
+in : -trans input.c -o output.c
+out: CMD(name=scc, type=SCTRANS, option_list={CO(type=OBJECT, key=o, value=output.c)}, para_list={input.c})
+
+in : -c profile.cubex -funlist hpl_func_list.txt
+out: CMD(name=scc, type=COMPILE, option_list={CO(type=UNKNOWN, key=funlist, value=hpl_func_list.txt)}, para_list={profile.cubex})
+
+in : -funlist hpl_func_list.txt
+out: CMD(name=scc, type=CODEGEN, option_list={CO(type=UNKNOWN, key=funlist, value=hpl_func_list.txt)}, para_list={})
+
+in : -c input.c -o output.c -type xxx
+out: CMD(name=scc, type=COMPILE, option_list={CO(type=OBJECT, key=o, value=output.c),CO(type=UNKNOWN, key=type, value=xxx)}, para_list={input.c})
+
+in : --help
+out: CMD(name=scc, type=CMDHELP, option_list={}, para_list={})
+
+in : test.c --help
+out: CMD(name=scc, type=CMDHELP, option_list={}, para_list={test.c})
+

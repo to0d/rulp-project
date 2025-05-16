@@ -1,0 +1,20 @@
+digraph "SG" {
+	N0[shape=ellipse, label="0"]
+	N1[shape=ellipse, label="1"]
+	N2[shape=ellipse, label="2"]
+	N3[shape=ellipse, label="3"]
+	N4[shape=ellipse, label="4"]
+	N5[shape=ellipse, label="5"]
+	N6[shape=ellipse, label="6"]
+	N0 -> N1 
+	N0 -> N5 
+	N0 -> N6 
+	N1 -> N2 
+	N1 -> N6 
+	N2 -> N3 
+	N2 -> N6 
+	N3 -> N4 
+	N3 -> N5 
+	N4 -> N5 
+	N5 -> N6 
+}

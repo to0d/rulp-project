@@ -1,0 +1,19 @@
+LCF --cxxflags: 
+-Irulp/lfc/include -Irulp/stl/include 
+
+LCF --includedir: 
+-Irulp/lfc/include -Irulp/stl/include 
+
+LCF --libs: 
+-llfc 
+
+LCF --ldflags: 
+-Lrulp/build 
+
+LCF --x: 
+unknown option: --x rcf --cxxflags 
+
+LCF --libs --includedir: 
+-llfc -Irulp/lfc/include -Irulp/stl/include 
+
+output: done!
