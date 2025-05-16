@@ -1,0 +1,7 @@
+(loop x from 1 to 8 do 
+    (print x) (print 1) (print 2))
+;err:
+Invalid loop expr: (loop x from 1 to 8 do (print x) (print 1) (print 2))
+at (loop x from 1 to 8 do (print x) (print 1) (print 2)) ; main-2
+;eof
+

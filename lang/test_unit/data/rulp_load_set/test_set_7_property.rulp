@@ -1,0 +1,6 @@
+(load "set")
+;=>nil
+
+(property-of set)
+;=>'(final)
+

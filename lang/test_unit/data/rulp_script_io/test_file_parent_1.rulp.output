@@ -1,0 +1,6 @@
+(file-parent "data/rulp_script_io")
+;=>"/home/liuyan/data/project/rulp-project/lang/test_unit/data/"
+
+(file-parent "data/rulp_script_io/test_file_parent_1.rulp")
+;=>"/home/liuyan/data/project/rulp-project/lang/test_unit/data/rulp_script_io/"
+

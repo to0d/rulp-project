@@ -1,0 +1,4 @@
+INP: "\n"
+INP: "\r"
+INP: "\"
+INP: "a\"b"

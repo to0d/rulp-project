@@ -1,0 +1,204 @@
+************ Interpreter Info: ************
+
+Total runtime info:
+==========================================================================================================================
+                          Name:     info
+--------------------------------------------------------------------------------------------------------------------------
+           Interpreter call id:      248
+    Interpreter call level/max:        0        9
+               Frame max level:        4
+                  Frame max id:        9
+           Frame free id count:        2
+==========================================================================================================================
+
+Optimize info:
+==========================================================================================================================
+      Name: Status
+--------------------------------------------------------------------------------------------------------------------------
+       LCO: rebuild=0, arg=0, pass=0, hit=0
+==========================================================================================================================
+
+Callable stats info: callId=248, row=24, column=63(4), value-max=18, value-unit=2^x
+==========================================================================================================================
+   Frame    RType  Count  Ref Object                         333333333333333333333333333333333333333333333333334433333336665 max=24, unit=2^x
+--------------------------------------------------------------------------------------------------------------------------
+    root   factor    178    0 add-attribute                    333333333333333333333333333333333333333333332                
+    root   factor     59    0 defun                                                                        23331 23333336   
+    root   factor     11    0 defvar                                                                           32        222
+    root   factor      7    0 alias                          33                                                             
+    root   factor      5    0 return                                                                                     131
+    root   factor      5    0 make-list                                                                        32           
+    root   factor      5    0 defmacro                                                                          22      1   
+    root   factor      5    0 +                                                                                          131
+    root   factor      3    0 str-substr                                                                                 111
+    root   factor      3    0 str-last-index-of                                                                          111
+    root   factor      3    0 setq                                                                                       111
+    main    macro      3    1 script_out                                                                                 111
+    root   factor      3    0 print-subject                                                                              111
+    root   factor      3    0 out-to-file                                                                                111
+    root   factor      3    0 if                                                                                         111
+    main     func      3    1 file-prename                                                                               111
+    root   factor      3    0 do                                                                                         111
+    root   factor      3    0 deftemplate                                                                               3   
+    root   factor      3    0 !=                                                                                         111
+    root   factor      2    0 new                                                                                        11 
+    root   factor      2    0 load                                                                                      2   
+    root   factor      2    0 defclass                                                                                   2  
+    main     func      1    1 fun1                                                                                        1 
+    main     func      1    1 fun1                                                                                        1 
+==========================================================================================================================
+
+Global frame list: total=4
+
+id=2, name=main, lvl=2, ref=3/4, entry=25, pid=1(system), subject=main
+==========================================================================================================================
+Name(alias)          : EntryId  FrameId  Ref  Type       Value               
+--------------------------------------------------------------------------------------------------------------------------
+root                 : 1        2        0    frame      root                
+system               : 2        2        0    frame      system              
+main                 : 3        2        3    frame      main                
+?script-path         : 4        2        1    var        string, "data/rulp_script_class/test_class_7_overload_3_static_fun.rulp"
+?path                : 5        2        1    var        list, '("load")     
+is-empty             : 6        2        1    funcList   {} : frame=null, type=list
+                                         2    func       (is-empty list) : frame=system
+                                         2    func       (is-empty array) : frame=system
+                                         1    func       (is-empty string) : frame=main
+is-blank             : 7        2        1    func       (is-blank string) : frame=main
+file-prename         : 8        2        1    func       (file-prename string) : frame=main
+file-subffix         : 9        2        1    func       (file-subffix string) : frame=main
+str-split-line       : 10       2        1    func       (str-split-line string) : frame=main
+to-one-line          : 11       2        1    func       (to-one-line list) : frame=main
+sort                 : 12       2        1    funcList   {} : frame=null, type=list
+                                         1    func       (sort list) : frame=main
+                                         1    func       (sort list func) : frame=main
+                                         1    func       (sort array) : frame=main
+                                         1    func       (sort array func) : frame=main
+print-list           : 13       2        1    funcList   {} : frame=null, type=list
+                                         1    func       (print-list list) : frame=main
+                                         1    func       (print-list nil nil) : frame=main
+                                         1    func       (print-list nil) : frame=main
+to-valid-path        : 14       2        1    func       (to-valid-path string) : frame=main
+day-is-bigger-than   : 15       2        1    func       (day-is-bigger-than string string) : frame=main
+day-is-smaller-than  : 16       2        1    func       (day-is-smaller-than string string) : frame=main
+script_out           : 17       2        1    macro      script_out          
+_ginfo               : 18       2        1    funcList   {} : frame=null, type=list
+                                         1    func       (_ginfo) : frame=main
+                                         1    func       (_ginfo string) : frame=main
+class1               : 19       2        3    class      class1              
+type#class1          : 20       2        2    atom       type#class1         
+class2               : 21       2        2    class      class2              
+type#class2          : 22       2        2    atom       type#class2         
+?rv                  : 26       2        1    var        string, "data/rulp_script_class/test_class_7_overload_3_static_fun"
+o1                   : 27       2        1    instance   class1@o1           
+o2                   : 32       2        1    instance   class2@o2           
+==========================================================================================================================
+
+
+id=3, name=SF-class1-0, lvl=3, ref=3/4, entry=0, pid=2(main), subject=class1
+
+id=4, name=SF-class2-1, lvl=3, ref=3/4, entry=0, pid=2(main), subject=class2
+
+id=5, name=SF-o1-2, lvl=4, ref=2/2, entry=0, pid=3(SF-class1-0), subject=o1
+
+id=6, name=SF-o2-3, lvl=4, ref=2/2, entry=0, pid=4(SF-class2-1), subject=o2
+
+System var list: total=14
+==========================================================================================================================
+Var                  : Value
+--------------------------------------------------------------------------------------------------------------------------
+?file.separator      : "/"
+?load-class          : '()
+?load-jar            : '()
+?load-script         : '("lang/load/tool.rulp" "load/itest.rulp")
+?load-system         : '()
+?loader-list         : '()
+?os.name             : ""
+?os.version          : ""
+?path                : '()
+?path.separator      : ":"
+?trace               : false
+?user.dir            : ""
+?user.home           : ""
+?user.name           : ""
+==========================================================================================================================
+
+Global frame tree:
+
+->FRAME(root): id=0, lvl=0, subject=root
+    ->FRAME(system): id=1, lvl=1, subject=system
+        ->FRAME(main): id=2, lvl=2, subject=main
+            ->FRAME(SF-class1-0): id=3, lvl=3, subject=class1
+                ->FRAME(SF-o1-2): id=5, lvl=4, subject=o1
+            ->FRAME(SF-class2-1): id=4, lvl=3, subject=class2
+                ->FRAME(SF-o2-3): id=6, lvl=4, subject=o2
+
+Global Subject list:
+
+name=class1, string=class1, lvl=0, ref=3/3, parent=null, final=false, mbrs=2, frame=3(SF-class1-0)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?rv                            : default                      0    1    var        int, 2
+fun1                           : default                      0    2    func       (fun1 nil) : frame=SF-class1-0, type=lambda
+==========================================================================================================================
+
+name=class2, string=class2, lvl=1, ref=2/3, parent=class1, final=false, mbrs=3, frame=4(SF-class2-1)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?rv                            : default                      0    1    var        int, 3
+extends                        : default                      0    3    class      class1
+fun1                           : default                      0    2    func       (fun1 nil) : frame=SF-class2-1, type=lambda
+==========================================================================================================================
+
+name=o1, string=class1@o1, lvl=1, ref=1/3, parent=class1, final=false, mbrs=2, frame=5(SF-o1-2)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+fun1                           : default              Y       4    1    func       (fun1 nil) : frame=SF-o1-2, type=lambda
+this                           : default                      0    1    instance   class1@o1
+==========================================================================================================================
+
+name=o2, string=class2@o2, lvl=2, ref=1/3, parent=class2, final=false, mbrs=2, frame=6(SF-o2-3)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+fun1                           : default              Y       4    1    func       (fun1 nil) : frame=SF-o2-3, type=lambda
+this                           : default                      0    1    instance   class2@o2
+==========================================================================================================================
+
+
+
+************** Global Info: **************
+
+Expression compute count:
+==========================================================================================================================
+     RType:    Count
+--------------------------------------------------------------------------------------------------------------------------
+    factor:      308
+      func:        5
+     macro:        3
+==========================================================================================================================
+
+Object create count:
+==========================================================================================================================
+       RType:       Create       Delete        Exist
+--------------------------------------------------------------------------------------------------------------------------
+        atom:          512          512            0
+      string:           39           39            0
+        list:           16           16            0
+        expr:          775          775            0
+         var:          165          165            0
+        func:           82           82            0
+    template:            1            1            0
+       macro:            5            5            0
+    instance:            2            2            0
+       class:            4            4            0
+      member:          289          289            0
+       frame:           15           15            0
+ interpreter:            1            0
+  frameEntry:          275            0
+      lambda:            4            0
+==========================================================================================================================
+
+

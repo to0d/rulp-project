@@ -1,0 +1,11 @@
+(load "itest")
+
+(do
+    (defvar x 1)
+    (do-when-obj-deleted x (lambda (?obj) (print "obj'" (name-of ?obj) "' was deleted")))
+    (script_out (print-subject local) "_a.txt")
+)
+;=>
+
+(script_out (print-subject local) "_b.txt")
+;=>

@@ -1,0 +1,57 @@
+(str-format "%b" true)
+;=>"true"
+
+(str-format "%1.2f" 1.1111)
+;=>"1.11"
+
+(str-format "%d" 1L)
+;=>"1"
+
+(str-format "%1.2f" 1.123D)
+;=>"1.12"
+
+(str-format "%d" 1)
+;=>"1"
+
+(str-format "%d %d" 1 2)
+;=>"1 2"
+
+(str-format "%d %d %d" 1 2 3 4)
+;=>"1 2 3"
+
+(str-format "%d %d %d %d" 1 2 3 4)
+;=>"1 2 3 4"
+
+(str-format "%d %d %d %d %d" 1 2 3 4 5)
+;=>"1 2 3 4 5"
+
+(str-format "%d %d %d %d %d %d" 1 2 3 4 5 6)
+;=>"1 2 3 4 5 6"
+
+(str-format "%d %d %d %d %d %d %d" 1 2 3 4 5 6 7)
+;=>"1 2 3 4 5 6 7"
+
+(str-format "%d %d %d %d %d %d %d %d" 1 2 3 4 5 6 7 8)
+;=>"1 2 3 4 5 6 7 8"
+
+(str-format "%d %d %d %d %d %d %d %d %d" 1 2 3 4 5 6 7 8 9)
+;=>"1 2 3 4 5 6 7 8 9"
+
+(str-format "%d %d %d %d %d %d %d %d %d %d" 1 2 3 4 5 6 7 8 9 10)
+;err:
+Too many parameters: (str-format "%d %d %d %d %d %d %d %d %d %d" 1 2 3 4 5 6 7 8 9 10), max arg count: 11
+at (str-format "%d %d %d %d %d %d %d %d %d %d" 1 2 3 4 5 6 7 8 9 10) ; main-2
+;eof
+
+(str-format "%d")
+;err:
+Too few parameters: (str-format "%d"), min arg count: 3
+at (str-format "%d") ; main-2
+;eof
+
+(str-format "%s" abc)
+;err:
+not string type: abc
+at (str-format "%s" abc) ; main-2
+;eof
+

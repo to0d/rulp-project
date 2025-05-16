@@ -1,0 +1,92 @@
+(load "itest")
+;=>nil
+
+(defclass class1
+    (defvar ?value)
+    (defun init () (setq ?value 0))
+    (defun init (?x) (setq ?value ?x))
+    (defun init (?x ?y) (setq ?value (+ ?x ?y)))
+    (defun get () (return ?value))
+)
+;=>class1
+
+(rulp-object-count frame)
+;=>3
+
+(rulp-object-count instance)
+;=>0
+
+(new class1 o1)
+;=>class1@o1
+
+(o1::get)
+;=>0
+
+(new class1 o2 '(1))
+;=>class1@o2
+
+(o2::get)
+;=>1
+
+(new class1 o3 '(1 2))
+;=>class1@o3
+
+(o3::get)
+;=>3
+
+(defvar o4 (new class1))
+;=>&o4
+
+(o4::get)
+;=>0
+
+(defvar o5 (new class1 '(4)))
+;=>&o5
+
+(o5::get)
+;=>4
+
+(defvar o6 (new class1 '(2 3)))
+;=>&o6
+
+(o6::get)
+;=>5
+
+(script_out (print-subject o1 -1) "_1.txt")
+;=>nil
+
+(script_out (print-subject o2 -1) "_2.txt")
+;=>nil
+
+(script_out (print-subject o3 -1) "_3.txt")
+;=>nil
+
+(script_out (print-subject o4 -1) "_4.txt")
+;=>nil
+
+(script_out (print-subject o5 -1) "_5.txt")
+;=>nil
+
+(script_out (print-subject o6 -1) "_6.txt")
+;=>nil
+
+(rulp-object-count frame)
+;=>10
+
+(rulp-object-count instance)
+;=>6
+
+(delete o1)
+(delete o2)
+(delete o3)
+(delete o4)
+(delete o5)
+(delete o6)
+;=>nil nil nil nil nil nil
+
+(rulp-object-count frame)
+;=>5
+
+(rulp-object-count instance)
+;=>1
+

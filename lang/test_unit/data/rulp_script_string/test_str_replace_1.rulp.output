@@ -1,0 +1,12 @@
+(str-replace "XX/YY/ZZ" "/" "_")
+;=>"XX_YY_ZZ"
+
+(str-replace "2,238,984" "," "")
+;=>"2238984"
+
+(str-replace "abc'x'y" "'" "''")
+;=>"abc''x''y"
+
+(str-replace "abc\ndef\nxyz" "\n" " ")
+;=>"abc def xyz"
+

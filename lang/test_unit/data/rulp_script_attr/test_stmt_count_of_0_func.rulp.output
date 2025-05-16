@@ -1,0 +1,64 @@
+(load "tool")
+;=>nil
+
+(defun list-stmt-count (?subject) 
+    (if (equal ?subject local)
+    
+        (list-stmt-count (value-of (:: (value-of local::parent) parent)))
+
+        (loop for ?mbr in (list-of ?subject) do
+            (defvar ?type (type-of $(value-of (value-of ?mbr))))            
+            (if (= ?type func)
+                (print (str-format "obj=%-20s, type=%-8s, stmt-count=%d\n" 
+                            (name-of $(value-of ?mbr))
+                            (to-string ?type)
+                            (stmt-count-of $(value-of (value-of ?mbr)))))
+            )
+        )
+    )
+)
+;=>list-stmt-count
+
+(list-stmt-count root)
+;=>nil
+
+(list-stmt-count system)
+;=>nil
+;out:
+obj=add                 , type=func    , stmt-count=4
+obj=add-all             , type=func    , stmt-count=4
+obj=cmp                 , type=func    , stmt-count=4
+obj=equal               , type=func    , stmt-count=4
+obj=get                 , type=func    , stmt-count=4
+obj=index-of            , type=func    , stmt-count=42
+obj=is-empty            , type=func    , stmt-count=9
+obj=length-of           , type=func    , stmt-count=4
+obj=max                 , type=func    , stmt-count=33
+obj=min                 , type=func    , stmt-count=33
+obj=println             , type=func    , stmt-count=2
+obj=remove              , type=func    , stmt-count=4
+obj=remove-all          , type=func    , stmt-count=4
+obj=size-of             , type=func    , stmt-count=4
+obj=to-array            , type=func    , stmt-count=6
+obj=to-list             , type=func    , stmt-count=-1
+
+;eof
+
+(list-stmt-count main)
+;=>nil
+;out:
+obj=day-is-bigger-than  , type=func    , stmt-count=8
+obj=day-is-smaller-than , type=func    , stmt-count=8
+obj=file-prename        , type=func    , stmt-count=18
+obj=file-subffix        , type=func    , stmt-count=20
+obj=is-blank            , type=func    , stmt-count=8
+obj=is-empty            , type=func    , stmt-count=9
+obj=list-stmt-count     , type=func    , stmt-count=-1
+obj=print-list          , type=func    , stmt-count=-1
+obj=sort                , type=func    , stmt-count=52
+obj=str-split-line      , type=func    , stmt-count=56
+obj=to-one-line         , type=func    , stmt-count=15
+obj=to-valid-path       , type=func    , stmt-count=18
+
+;eof
+

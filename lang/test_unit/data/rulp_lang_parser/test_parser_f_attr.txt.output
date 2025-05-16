@@ -1,0 +1,8 @@
+OUT: a
+OUT: '(a b c)
+OUT: (a b)
+OUT: {a,b,c}
+OUT: a
+OUT: (attribute-of a)
+ERR: Bad Syntax at line (a b) [m], index=0, pos=7
+ERR: Bad Syntax at line [m], index=0, pos=1

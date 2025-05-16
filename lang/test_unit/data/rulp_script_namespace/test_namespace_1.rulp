@@ -1,0 +1,172 @@
+(new namespace ns1)
+;=>namespace@ns1
+
+(defvar var1 1)
+;=>
+
+(defun f1 () (return 1))
+;=>
+
+(search-frame-of)
+;=>'()
+
+;;;;; define variable in name space
+(defvar ns1::var1 2)
+;=>
+
+(defvar ns1::var2 3)
+;=>
+
+(value-of var1)
+;=>1
+
+(value-of (value-of main::var1))
+;=>1
+
+(value-of (value-of ns1::var1))
+;=>2
+
+(value-of (value-of ns1::var2))
+;=>3
+
+(list-of)
+;=>
+
+(list-of ns1)
+;=>'(namespace@ns1::this namespace@ns1::var1 namespace@ns1::var2)
+
+(has-member ns1 var1)
+;=>true
+
+;;;;; define function in name space
+(defun ns1::f1 () (return 2))
+;=>namespace@ns1::f1
+
+(defun ns1::f2 () (return 3))
+;=>namespace@ns1::f2
+
+(f1)
+;=>1
+
+(main::f1)
+;=>1
+
+(ns1::f1)
+;=>2
+
+(ns1::f2)
+;=>3
+
+(list-of)
+;=>
+
+(list-of ns1)
+;=>'(namespace@ns1::f1 namespace@ns1::f2 namespace@ns1::this namespace@ns1::var1 namespace@ns1::var2)
+
+;;;;; Can't define same name item
+(defvar ns1::var1 1)
+;err
+
+(defun ns1::f1 () (return 2))
+;err
+
+(list-of)
+;=>
+
+(list-of ns1)
+;=>
+
+;;;;; Can't find item if the using the name space is not specified
+(value-of var2)
+;err
+
+(f2)
+;err
+
+(list-of)
+;=>
+
+(list-of ns1)
+;=>'(namespace@ns1::f1 namespace@ns1::f2 namespace@ns1::this namespace@ns1::var1 namespace@ns1::var2)
+
+;;;;  Search item in a name space
+(use namespace ns1)
+;=>
+
+(search-frame-of)
+;=>'(SF-ns1-0 main)
+
+(value-of (value-of main::var1))
+;=>1
+
+(value-of (value-of ns1::var1))
+;=>2
+
+(value-of (value-of ns1::var2))
+;=>3
+
+(main::f1)
+;=>1
+
+(ns1::f1)
+;=>2
+
+(ns1::f2)
+;=>3
+
+;;;;; Item will be only define in the current frame if the using the name space is not specified
+(defvar var3 4)
+;=>
+
+(defun f3 () (return 4))
+;=>
+
+;;;;; the latest name space higher priority
+(value-of var1)
+;=>2
+
+(f1)
+;=>2
+
+;;;;; change back, everything should work fine
+(value-of var2)
+;=>3
+
+(f2)
+;=>3
+
+(use namespace main)
+;=>
+
+(search-frame-of)
+;=>'(main SF-ns1-0)
+
+(value-of var1)
+;=>1
+
+(value-of (value-of main::var1))
+;=>1
+
+(value-of (value-of ns1::var1))
+;=>2
+
+(value-of (value-of ns1::var2))
+;=>3
+
+(value-of var3)
+;=>4
+
+(f1)
+;=>1
+
+(main::f1)
+;=>1
+
+(ns1::f1)
+;=>2
+
+(ns1::f2)
+;=>3
+
+(f3)
+;=>4

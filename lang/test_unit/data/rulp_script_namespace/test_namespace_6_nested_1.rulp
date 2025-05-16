@@ -1,0 +1,39 @@
+(new namespace ns1)
+;;;
+
+(new namespace ns1::ns2)
+;;;
+
+(use namespace ns1)
+;;;
+
+(use namespace ns2)
+;;;
+
+(new namespace ns2::ns3)
+;;;
+
+(use namespace ns3)
+;;;
+
+(defvar ns3::var3 1)
+;;;
+
+(search-frame-of)
+;=>'(SF-ns3-2 SF-ns2-1 SF-ns1-0 main)
+
+(type-of $(value-of ns3))
+;=>instance
+
+(frame-of $(value-of ns3))
+;=>SF-ns3-2
+
+(print-frame-tree)
+;;;
+
+(+ (:: (:: (:: (:: main ns1) ns2) ns3) var3) 1)
+;=>2
+
+(+ main::ns1::ns2::ns3::var3 1)
+;=>2
+

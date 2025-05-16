@@ -1,0 +1,30 @@
+name=un2, string=class1@un2, lvl=1, ref=2/2, parent=class1, final=false, mbrs=5, frame=9(SF-un2-6)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?rv                            : default                      0    1    var        int, 5
+?value                         : default              Y       4    1    var        int, 5
+get                            : default              Y       4    1    func       (get) : frame=SF-un2-6, type=lambda
+init                           : default              Y       4    1    funcList   {} : frame=null, type=list
+                                                                   1    func       (init) : frame=SF-un2-6, type=lambda
+                                                                   1    func       (init nil) : frame=SF-un2-6, type=lambda
+                                                                   1    func       (init nil nil) : frame=SF-un2-6, type=lambda
+this                           : default                      0    2    instance   class1@un2
+==========================================================================================================================
+
+
+
+name=class1, string=class1, lvl=0, ref=7/7, parent=null, final=false, mbrs=3, frame=3(SF-class1-0)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?value                         : default                      0    1    var        atom, nil
+get                            : default                      0    7    func       (get) : frame=main
+init                           : default                      0    1    funcList   {} : frame=null, type=list
+                                                                   7    func       (init) : frame=main
+                                                                   7    func       (init nil) : frame=main
+                                                                   7    func       (init nil nil) : frame=main
+==========================================================================================================================
+
+
+

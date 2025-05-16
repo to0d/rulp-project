@@ -1,0 +1,23 @@
+(is-const (add {a} c))
+;=>
+
+(is-const $(add {a} c))
+;err
+
+(is-const $(add {} c))
+;err
+
+(is-const (make-array 3))
+;=>
+
+(is-const $(make-array 3))
+;=>
+
+(is-const $(make-array))
+;=>
+
+(is-const {})
+;=>true
+
+(is-const {a, b, c})
+;=>

@@ -1,0 +1,17 @@
+(load "tool")
+;=>
+
+(load "limits")
+;=>
+
+(println int_max)
+;=>
+
+(println int_min)
+;=>
+
+(+ int_max 1)
+;=>-2147483648
+
+(- int_min 1)
+;=>2147483647

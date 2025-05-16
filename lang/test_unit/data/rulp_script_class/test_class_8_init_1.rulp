@@ -1,0 +1,92 @@
+(load "itest")
+;;;
+
+(defclass class1
+    (defvar ?value)
+    (defun init () (setq ?value 0))
+    (defun init (?x) (setq ?value ?x))
+    (defun init (?x ?y) (setq ?value (+ ?x ?y)))
+    (defun get () (return ?value))
+)
+;;;
+
+(rulp-object-count frame)
+;;;
+
+(rulp-object-count instance)
+;;;
+
+(new class1 o1)
+;;;
+
+(o1::get)
+;;;
+
+(new class1 o2 '(1))
+;;;
+
+(o2::get)
+;;;
+
+(new class1 o3 '(1 2))
+;;;
+
+(o3::get)
+;;;
+
+(defvar o4 (new class1))
+;;;
+
+(o4::get)
+;;;
+
+(defvar o5 (new class1 '(4)))
+;;;
+
+(o5::get)
+;;;
+
+(defvar o6 (new class1 '(2 3)))
+;;;
+
+(o6::get)
+;;;
+
+(script_out (print-subject o1 -1) "_1.txt")
+;;;
+
+(script_out (print-subject o2 -1) "_2.txt")
+;;;
+
+(script_out (print-subject o3 -1) "_3.txt")
+;;;
+
+(script_out (print-subject o4 -1) "_4.txt")
+;;;
+
+(script_out (print-subject o5 -1) "_5.txt")
+;;;
+
+(script_out (print-subject o6 -1) "_6.txt")
+;;;
+
+(rulp-object-count frame)
+;;;
+
+(rulp-object-count instance)
+;;;
+
+(delete o1)
+(delete o2)
+(delete o3)
+(delete o4)
+(delete o5)
+(delete o6)
+;;;
+
+(rulp-object-count frame)
+;=>
+
+(rulp-object-count instance)
+;=>
+

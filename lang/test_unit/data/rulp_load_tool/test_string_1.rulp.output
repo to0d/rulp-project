@@ -1,0 +1,39 @@
+(load "tool")
+;=>nil
+
+(is-empty "")
+;=>true
+
+(is-empty " ")
+;=>false
+
+(is-empty "abc")
+;=>false
+
+(is-empty "\n")
+;=>false
+
+(is-blank "")
+;=>true
+
+(is-blank " ")
+;=>true
+
+(is-blank "abc")
+;=>false
+
+(is-blank "\n")
+;=>false
+
+(file-prename "abc.xyz")
+;=>"abc"
+
+(file-prename "abc.xyz.123")
+;=>"abc.xyz"
+
+(file-subffix "abc.xyz")
+;=>"xyz"
+
+(file-subffix "abc.xyz.123")
+;=>"123"
+

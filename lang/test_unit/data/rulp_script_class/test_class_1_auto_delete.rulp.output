@@ -1,0 +1,21 @@
+(defclass class1
+    (defvar ?value 0)
+    (defun add (?x) (setq ?value (+ ?value ?x)))
+    (defun sub (?x) (setq ?value (- ?value ?x)))
+    (defun get ()   (return ?value))
+    (defun set (?x) (setq ?value ?x))
+)
+;=>class1
+
+(list-of class1)
+;=>'(class1::?value class1::add class1::get class1::set class1::sub)
+
+(new class1 o1)
+;=>class1@o1
+
+(list-of o1)
+;=>'(class1@o1::this)
+
+(o1::get)
+;=>0
+

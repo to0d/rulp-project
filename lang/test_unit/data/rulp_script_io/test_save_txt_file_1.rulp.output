@@ -1,0 +1,6 @@
+(save-txt-file "data/rulp_script_io/save-text-file-1.txt" '("XYZ" "abc" "123"))
+;=>nil
+
+(open-txt-file "data/rulp_script_io/save-text-file-1.txt")
+;=>'("XYZ" "abc" "123")
+

@@ -1,0 +1,5 @@
+INP: name:'()
+INP: name:'(a b c)
+INP: (x name:'(a b c))
+INP: (add-rule m if name1:'(?x p ?y) do (-> '(?y p ?x)))
+INP: :'(a b c)

@@ -1,0 +1,7 @@
+(defvar x 10)
+(defvar y)
+;=>&x &y
+
+(list-of local)
+;=>'(main::?path main::?script-path main::local main::main main::root main::system main::x main::y)
+

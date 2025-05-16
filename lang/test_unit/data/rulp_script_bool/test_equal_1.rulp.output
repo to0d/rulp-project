@@ -1,0 +1,45 @@
+(equal 1 1)
+;=>true
+
+(equal 1 0)
+;=>false
+
+(equal 1.1 1.1)
+;=>true
+
+(equal 1.1 0.1)
+;=>false
+
+(equal a a)
+;=>true
+
+(equal a b)
+;=>false
+
+(equal "a" "a")
+;=>true
+
+(equal "a" "b")
+;=>false
+
+(equal true true)
+;=>true
+
+(equal false false)
+;=>true
+
+(equal true false)
+;=>false
+
+(equal 1L 2L)
+;=>false
+
+(equal nil nil)
+;=>true
+
+(equal '(a b c) '(a b c))
+;=>true
+
+(equal '(a b c) '(b c))
+;=>false
+

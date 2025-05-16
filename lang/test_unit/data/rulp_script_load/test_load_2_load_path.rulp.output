@@ -1,0 +1,21 @@
+(load "data/rulp_script_load/load3.rulp")
+;err:
+file not found: data/rulp_script_load/load3.rulp
+at (load "data/rulp_script_load/load3.rulp") ; main-2
+;eof
+
+(print ?path)
+;=>nil
+;out:
+'(load)
+;eof
+
+(setq ?path (add ?path "data/rulp_script_load/path2"))
+;=>&?path
+
+(load "load3.rulp")
+;=>nil
+
+(list-of)
+;=>'(main::?path main::?rv main::?script-path main::main main::root main::system main::x2)
+

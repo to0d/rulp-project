@@ -1,0 +1,6 @@
+(load "map")
+;=>nil
+
+(property-of map)
+;=>'(final)
+

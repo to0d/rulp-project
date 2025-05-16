@@ -1,0 +1,54 @@
+(can-cast int true)
+;=>false
+
+(can-cast int 123)
+;=>true
+
+(can-cast int "abc")
+;=>false
+
+(can-cast int "123")
+;=>true
+
+(can-cast float "123")
+;=>true
+
+(can-cast float "12.1")
+;=>true
+
+(can-cast '(int float) "12.1")
+;=>true
+
+(can-cast '(int float) "123")
+;=>true
+
+(can-cast)
+;err:
+Too few parameters: (can-cast), min arg count: 3
+at (can-cast) ; main-2
+;eof
+
+(can-cast int "123" 1)
+;err:
+Too many parameters: (can-cast int "123" 1), max arg count: 3
+at (can-cast int "123" 1) ; main-2
+;eof
+
+(can-cast var "123")
+;err:
+not support type: var
+at (can-cast var "123") ; main-2
+;eof
+
+(can-cast 123 "123")
+;err:
+not support type: 123
+at (can-cast 123 "123") ; main-2
+;eof
+
+(can-cast '() "123")
+;err:
+not support type: '()
+at (can-cast '() "123") ; main-2
+;eof
+

@@ -1,0 +1,13 @@
+(defvar ?v true)
+;=>&?v
+
+(if ?v do 
+    (print "action1")
+    (print "action2")
+    (print "action3")
+)
+;=>nil
+;out:
+action1action2action3
+;eof
+

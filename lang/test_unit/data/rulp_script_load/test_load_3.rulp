@@ -1,0 +1,5 @@
+(do (load "data/rulp_script_load/load1.rulp"))
+;=>
+
+(list-of)
+;=>

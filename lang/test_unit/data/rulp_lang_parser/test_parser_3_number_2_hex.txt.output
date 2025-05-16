@@ -1,0 +1,4 @@
+OUT: 1
+OUT: 10
+OUT: 177
+ERR: invalid hex format: str=0xG1, index=0, pos=-1

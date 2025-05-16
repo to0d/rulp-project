@@ -1,0 +1,24 @@
+(list-of)
+;=>'(main::?path main::?script-path main::main main::root main::system)
+
+(list-of local)
+;=>'(main::?path main::?script-path main::local main::main main::root main::system)
+
+(list-of main)
+;=>'(main::?path main::?script-path main::local main::main main::root main::system)
+
+(list-of main abc c)
+;err:
+Too many parameters: (list-of main abc c), max arg count: 3
+at (list-of main abc c) ; main-2
+;eof
+
+(list-of main abc)
+;err:
+Unknow type:abc
+at (list-of main abc) ; main-2
+;eof
+
+(list-of root var)
+;=>'()
+

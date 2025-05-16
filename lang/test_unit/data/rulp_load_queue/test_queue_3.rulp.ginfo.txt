@@ -1,0 +1,202 @@
+************ Interpreter Info: ************
+
+Total runtime info:
+==========================================================================================================================
+                          Name:     info
+--------------------------------------------------------------------------------------------------------------------------
+           Interpreter call id:      244
+    Interpreter call level/max:        0        4
+               Frame max level:        5
+                  Frame max id:        7
+           Frame free id count:        2
+==========================================================================================================================
+
+Optimize info:
+==========================================================================================================================
+      Name: Status
+--------------------------------------------------------------------------------------------------------------------------
+       LCO: rebuild=0, arg=0, pass=0, hit=0
+==========================================================================================================================
+
+Callable stats info: callId=244, row=22, column=62(4), value-max=5, value-unit=2^x
+==========================================================================================================================
+   Frame    RType  Count  Ref Object                         33333333333333333333333333333333333333333333333333443333333553 max=11, unit=2^x
+--------------------------------------------------------------------------------------------------------------------------
+    root   factor    178    0 add-attribute                    333333333333333333333333333333333333333333332               
+    root   factor     47    0 defun                                                                        23331 233333341 
+    root   factor      7    0 alias                          33                                                            
+    root   factor      5    0 make-list                                                                        32          
+    root   factor      5    0 defvar                                                                           32          
+    root   factor      4    0 defmacro                                                                          22         
+    root   factor      3    0 deftemplate                                                                               3  
+    root   factor      2    0 return                                                                                     11
+    main     func      1    1 size-of                                                                                    1 
+    root   factor      1    0 setq                                                                                       1 
+    main     func      1    1 push                                                                                       1 
+    main     func      1    1 pop                                                                                         1
+    root   factor      1    0 new                                                                                        1 
+    root   factor      1    0 load                                                                                      1  
+    root   factor      1    0 init-loader                                                                               1  
+    main     func      1    1 init                                                                                       1 
+    main     func      1    1 fun_push                                                                                   1 
+    root   factor      1    0 defclass                                                                                  1  
+    main   factor      1    1 _queue_size_of                                                                             1 
+    main   factor      1    1 _queue_push_back                                                                           1 
+    main   factor      1    1 _queue_pop_front                                                                            1
+    main   factor      1    1 _queue_init                                                                                1 
+==========================================================================================================================
+
+Global frame list: total=2
+
+id=2, name=main, lvl=2, ref=2/3, entry=14, pid=1(system), subject=main
+==========================================================================================================================
+Name(alias)          : EntryId  FrameId  Ref  Type       Value               
+--------------------------------------------------------------------------------------------------------------------------
+root                 : 1        2        0    frame      root                
+system               : 2        2        0    frame      system              
+main                 : 3        2        2    frame      main                
+?script-path         : 4        2        1    var        string, "data/rulp_load_queue/test_queue_3.rulp"
+?path                : 5        2        1    var        list, '("load")     
+queue                : 6        2        2    class      queue               
+type#queue           : 7        2        2    atom       type#queue          
+size-of              : 8        2        1    funcList   {} : frame=null, type=list
+                                         2    func       (size-of list) : frame=system
+                                         2    func       (size-of array) : frame=system
+                                         2    func       (size-of array int) : frame=system
+                                         1    func       (size-of type#queue) : frame=main
+get                  : 9        2        1    funcList   {} : frame=null, type=list
+                                         2    func       (get list int) : frame=system
+                                         2    func       (get array int) : frame=system
+                                         2    func       (get array int int) : frame=system
+                                         1    func       (get type#queue int) : frame=main
+is-empty             : 10       2        1    funcList   {} : frame=null, type=list
+                                         2    func       (is-empty list) : frame=system
+                                         2    func       (is-empty array) : frame=system
+                                         1    func       (is-empty type#queue) : frame=main
+clear                : 11       2        1    func       (clear type#queue) : frame=main
+to-list              : 12       2        1    funcList   {} : frame=null, type=list
+                                         2    func       (to-list list) : frame=system
+                                         2    func       (to-list array) : frame=system
+                                         2    func       (to-list iterator) : frame=system
+                                         1    func       (to-list type#queue) : frame=main
+fun_push             : 13       2        1    func       (fun_push nil nil) : frame=main
+q1                   : 15       2        1    instance   queue@q1            
+==========================================================================================================================
+
+
+id=3, name=SF-queue-0, lvl=3, ref=2/2, entry=0, pid=2(main), subject=queue
+
+id=4, name=SF-q1-1, lvl=4, ref=5/6, entry=0, pid=3(SF-queue-0), subject=q1
+
+System var list: total=14
+==========================================================================================================================
+Var                  : Value
+--------------------------------------------------------------------------------------------------------------------------
+?file.separator      : "/"
+?load-class          : '()
+?load-jar            : '()
+?load-script         : '("lang/load/queue.rulp")
+?load-system         : '()
+?loader-list         : '("_$xr_queue_loader$_")
+?os.name             : ""
+?os.version          : ""
+?path                : '()
+?path.separator      : ":"
+?trace               : false
+?user.dir            : ""
+?user.home           : ""
+?user.name           : ""
+==========================================================================================================================
+
+Global frame tree:
+
+->FRAME(root): id=0, lvl=0, subject=root
+    ->FRAME(system): id=1, lvl=1, subject=system
+        ->FRAME(main): id=2, lvl=2, subject=main
+            ->FRAME(SF-queue-0): id=3, lvl=3, subject=queue
+                ->FRAME(SF-q1-1): id=4, lvl=4, subject=q1
+
+Global Subject list:
+
+name=queue, string=queue, lvl=0, ref=2/3, parent=null, final=true, mbrs=28, frame=3(SF-queue-0)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?impl                          : private                      0    1    var        atom, nil
+_queue_clear                   : private                      0    1    factor     _queue_clear
+_queue_get                     : private                      0    1    factor     _queue_get
+_queue_init                    : private                      0    1    factor     _queue_init
+_queue_is_empty                : private                      0    1    factor     _queue_is_empty
+_queue_peek_back               : private                      0    1    factor     _queue_peek_back
+_queue_peek_front              : private                      0    1    factor     _queue_peek_front
+_queue_pop_back                : private                      0    1    factor     _queue_pop_back
+_queue_pop_front               : private                      0    1    factor     _queue_pop_front
+_queue_push_back               : private                      0    1    factor     _queue_push_back
+_queue_push_front              : private                      0    1    factor     _queue_push_front
+_queue_size_of                 : private                      0    1    factor     _queue_size_of
+_queue_to_list                 : private                      0    1    factor     _queue_to_list
+clear                          : default Y                    1    1    func       (clear) : frame=main
+get                            : default Y                    1    1    func       (get nil) : frame=main
+init                           : default Y                    1    2    func       (init) : frame=main
+is-empty                       : default Y                    1    1    func       (is-empty) : frame=main
+peek                           : default Y                    1    1    func       (peek) : frame=main
+peek_back                      : default Y                    1    1    func       (peek_back) : frame=main
+peek_front                     : default Y                    1    1    func       (peek_front) : frame=main
+pop                            : default Y                    1    2    func       (pop) : frame=main
+pop_back                       : default Y                    1    1    func       (pop_back) : frame=main
+pop_front                      : default Y                    1    1    func       (pop_front) : frame=main
+push                           : default Y                    1    2    func       (push nil) : frame=main
+push_back                      : default Y                    1    1    func       (push_back nil) : frame=main
+push_front                     : default Y                    1    1    func       (push_front nil) : frame=main
+size-of                        : default Y                    1    2    func       (size-of) : frame=main
+to-list                        : default Y                    1    1    func       (to-list) : frame=main
+==========================================================================================================================
+
+name=q1, string=queue@q1, lvl=1, ref=1/3, parent=queue, final=false, mbrs=7, frame=4(SF-q1-1)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?impl                          : private              Y       4    1    var        instance, noclass@un0
+?rv                            : default                      0    1    var        int, 1
+init                           : default Y            Y       5    1    func       (init) : frame=SF-q1-1, type=lambda
+pop                            : default Y            Y       5    1    func       (pop) : frame=SF-q1-1, type=lambda
+push                           : default Y            Y       5    1    func       (push nil) : frame=SF-q1-1, type=lambda
+size-of                        : default Y            Y       5    1    func       (size-of) : frame=SF-q1-1, type=lambda
+this                           : default                      0    1    instance   queue@q1
+==========================================================================================================================
+
+
+
+************** Global Info: **************
+
+Expression compute count:
+==========================================================================================================================
+     RType:    Count
+--------------------------------------------------------------------------------------------------------------------------
+    factor:      260
+      func:        5
+==========================================================================================================================
+
+Object create count:
+==========================================================================================================================
+       RType:       Create       Delete        Exist
+--------------------------------------------------------------------------------------------------------------------------
+        atom:          362          362            0
+      string:            9            9            0
+        list:           15           15            0
+        expr:          557          557            0
+         var:          145          145            0
+      factor:           12           12            0
+        func:           83           83            0
+    template:            1            1            0
+       macro:            4            4            0
+    instance:            2            2            0
+       class:            3            3            0
+      member:          315          315            0
+       frame:           10           10            0
+ interpreter:            1            0
+  frameEntry:          257            0
+      lambda:            4            0
+==========================================================================================================================
+
+

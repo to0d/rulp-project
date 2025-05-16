@@ -1,0 +1,2 @@
+INP: nm:hasChild
+INP: (nm:a nm:b)

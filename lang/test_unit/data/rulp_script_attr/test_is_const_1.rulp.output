@@ -1,0 +1,12 @@
+(is-const 10)
+;=>true
+
+(is-const true)
+;=>true
+
+(is-const abc)
+;=>true
+
+(is-const {1,2})
+;=>true
+

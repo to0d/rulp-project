@@ -1,0 +1,12 @@
+(load "data/rulp_script_load/load1.rulp")
+;=>nil
+
+(list-of)
+;=>'(main::?path main::?script-path main::main main::root main::system main::x1)
+
+(load "data/rulp_script_load/load1.rulp") ; load twice
+;=>nil
+
+(list-of)
+;=>'(main::?path main::?script-path main::main main::root main::system main::x1)
+

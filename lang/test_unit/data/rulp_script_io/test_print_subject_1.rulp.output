@@ -1,0 +1,12 @@
+(load "itest")
+;=>nil
+
+(script_out (print-subject root) "_root.txt")
+;=>nil
+
+(script_out (print-subject system) "_system.txt")
+;=>nil
+
+(script_out (print-subject main) "_main.txt")
+;=>nil
+

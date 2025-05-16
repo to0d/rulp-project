@@ -1,0 +1,60 @@
+(defun fun1 (?x)
+    (if (<= ?x 0)
+        (return 0))
+    (return (+ (fun2 (- ?x 1)) 2))
+)[opt-lco]
+
+(defun fun2 (?x)
+    (if (<= ?x 0)
+        (return 0))
+    (return (+ (fun1 (- ?x 1)) 2))
+)[opt-lco]
+;=>fun1 fun2
+
+(fun1 0)
+;=>0
+
+(fun1 2)
+;=>4
+
+(attribute-of fun1)
+;=>'(opt-lco)
+
+(attribute-of fun2)
+;=>'(opt-lco)
+
+(print-impl fun1)
+;=>nil
+;out:
+(defun fun1 (?x[opt-lco])
+    (if (<= ?x 0)
+        (return 0)
+    )
+    (return (+ (fun2 (- ?x 1)) 2))
+)[opt-lco]
+
+;eof
+
+(print-impl fun2)
+;=>nil
+;out:
+(defun fun2 (?x[opt-lco])
+    (if (<= ?x 0)
+        (return 0)
+    )
+    (return (+ (fun1 (- ?x 1)) 2))
+)[opt-lco]
+
+;eof
+
+(opt-status)
+;=>nil
+;out:
+==========================================================================================================================
+      Name: Status
+--------------------------------------------------------------------------------------------------------------------------
+       LCO: rebuild=2, arg=2, pass=2, hit=2
+==========================================================================================================================
+
+;eof
+

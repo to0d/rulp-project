@@ -1,0 +1,196 @@
+************ Interpreter Info: ************
+
+Total runtime info:
+==========================================================================================================================
+                          Name:     info
+--------------------------------------------------------------------------------------------------------------------------
+           Interpreter call id:      247
+    Interpreter call level/max:        0        6
+               Frame max level:        7
+                  Frame max id:       10
+           Frame free id count:        1
+==========================================================================================================================
+
+Optimize info:
+==========================================================================================================================
+      Name: Status
+--------------------------------------------------------------------------------------------------------------------------
+       LCO: rebuild=0, arg=0, pass=0, hit=0
+==========================================================================================================================
+
+Callable stats info: callId=247, row=19, column=62(4), value-max=4, value-unit=2^x
+==========================================================================================================================
+   Frame    RType  Count  Ref Object                         33333333333333333333333333333333333333333333333333443333333535 max=12, unit=2^x
+--------------------------------------------------------------------------------------------------------------------------
+    root   factor    178    0 add-attribute                    333333333333333333333333333333333333333333332               
+    root   factor     46    0 defun                                                                        23331 233333331 
+    root   factor      7    0 alias                          33                                                            
+    root   factor      6    0 defvar                                                                           32        1 
+    root   factor      5    0 make-list                                                                        32          
+    root   factor      4    0 defmacro                                                                          22         
+    root   factor      3    0 rulp-object-count                                                                          21
+    root   factor      3    0 deftemplate                                                                               3  
+    root   factor      2    0 setq                                                                                        2
+    root   factor      2    0 new                                                                                         2
+    root   factor      2    0 defclass                                                                                  1 1
+    root   factor      1    0 load                                                                                      1  
+    root   factor      1    0 init-loader                                                                               1  
+    main     func      1    1 init                                                                                        1
+    main     func      1    1 fun_add                                                                                     1
+    root   factor      1    0 do                                                                                          1
+    main     func      1    1 add                                                                                         1
+    main   factor      1    1 _set_init                                                                                   1
+    main   factor      1    1 _set_add                                                                                    1
+==========================================================================================================================
+
+Global frame list: total=6
+
+id=2, name=main, lvl=2, ref=3/3, entry=14, pid=1(system), subject=main
+==========================================================================================================================
+Name(alias)          : EntryId  FrameId  Ref  Type       Value               
+--------------------------------------------------------------------------------------------------------------------------
+root                 : 1        2        0    frame      root                
+system               : 2        2        0    frame      system              
+main                 : 3        2        3    frame      main                
+?script-path         : 4        2        1    var        string, data/rulp_load_set/test_set_8_ref_a.rulp
+?path                : 5        2        1    var        list, '("load")     
+set                  : 6        2        2    class      set                 
+type#set             : 7        2        2    atom       type#set            
+size-of              : 8        2        1    funcList   {} : frame=null, type=list
+                                         2    func       (size-of list) : frame=system
+                                         2    func       (size-of array) : frame=system
+                                         2    func       (size-of array int) : frame=system
+                                         1    func       (size-of type#set) : frame=main
+is-empty             : 9        2        1    funcList   {} : frame=null, type=list
+                                         2    func       (is-empty list) : frame=system
+                                         2    func       (is-empty array) : frame=system
+                                         1    func       (is-empty type#set) : frame=main
+clear                : 10       2        1    func       (clear type#set) : frame=main
+to-list              : 11       2        1    funcList   {} : frame=null, type=list
+                                         2    func       (to-list list) : frame=system
+                                         2    func       (to-list array) : frame=system
+                                         2    func       (to-list iterator) : frame=system
+                                         1    func       (to-list type#set) : frame=main
+?x                   : 12       2        1    var        int, 0              
+fun_add              : 13       2        1    func       (fun_add nil) : frame=main
+s1                   : 15       2        2    instance   set@s1              
+==========================================================================================================================
+
+
+id=3, name=SF-set-0, lvl=3, ref=2/2, entry=0, pid=2(main), subject=set
+
+id=4, name=SF-s1-1, lvl=4, ref=3/4, entry=0, pid=3(SF-set-0), subject=s1
+
+id=5, name=_$fun$_fun_add, lvl=3, ref=1/2, entry=1, pid=2(main), subject=_$fun$_fun_add
+==========================================================================================================================
+Name(alias)          : EntryId  FrameId  Ref  Type       Value               
+--------------------------------------------------------------------------------------------------------------------------
+?set                 : 16       5        1    var        instance, set@s1    
+==========================================================================================================================
+
+id=6, name=do, lvl=4, ref=1/2, entry=0, pid=5(_$fun$_fun_add), subject=do
+
+id=7, name=SF-class1-2, lvl=5, ref=2/2, entry=0, pid=6(do), subject=class1
+
+id=8, name=SF-o1-3, lvl=6, ref=2/3, entry=0, pid=7(SF-class1-2), subject=o1
+
+System var list: total=14
+==========================================================================================================================
+Var                  : Value
+--------------------------------------------------------------------------------------------------------------------------
+?file.separator      : /
+?load-class          : '()
+?load-jar            : '()
+?load-script         : '("lang/load/set.rulp")
+?load-system         : '()
+?loader-list         : '("_$xr_set_loader$_")
+?os.name             : 
+?os.version          : 
+?path                : '()
+?path.separator      : :
+?trace               : false
+?user.dir            : 
+?user.home           : 
+?user.name           : 
+==========================================================================================================================
+
+Global frame tree:
+
+->FRAME(root): id=0, lvl=0, subject=root
+    ->FRAME(system): id=1, lvl=1, subject=system
+        ->FRAME(main): id=2, lvl=2, subject=main
+            ->FRAME(SF-set-0): id=3, lvl=3, subject=set
+                ->FRAME(SF-s1-1): id=4, lvl=4, subject=s1
+            ->FRAME(_$fun$_fun_add): id=5, lvl=3, subject=_$fun$_fun_add
+                ->FRAME(do): id=6, lvl=4, subject=do
+                    ->FRAME(SF-class1-2): id=7, lvl=5, subject=class1
+                        ->FRAME(SF-o1-3): id=8, lvl=6, subject=o1
+
+Global Subject list:
+
+name=set, string=set, lvl=0, ref=2/3, parent=null, final=true, mbrs=15, frame=3(SF-set-0)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?impl                          : private                      0    1    var        atom, nil
+_set_add                       : private                      0    1    factor     _set_add
+_set_clear                     : private                      0    1    factor     _set_clear
+_set_has                       : private                      0    1    factor     _set_has
+_set_init                      : private                      0    1    factor     _set_init
+_set_is_empty                  : private                      0    1    factor     _set_is_empty
+_set_size_of                   : private                      0    1    factor     _set_size_of
+_set_to_list                   : private                      0    1    factor     _set_to_list
+add                            : default Y                    1    2    func       (add nil) : frame=main
+clear                          : default Y                    1    1    func       (clear) : frame=main
+has                            : default Y                    1    1    func       (has nil) : frame=main
+init                           : default Y                    1    2    func       (init) : frame=main
+is-empty                       : default Y                    1    1    func       (is-empty) : frame=main
+size-of                        : default Y                    1    1    func       (size-of) : frame=main
+to-list                        : default Y                    1    1    func       (to-list) : frame=main
+==========================================================================================================================
+
+name=s1, string=set@s1, lvl=1, ref=2/3, parent=set, final=false, mbrs=4, frame=4(SF-s1-1)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?impl                          : private              Y       4    1    var        instance, noclass@un0
+add                            : default Y            Y       5    1    func       (add nil) : frame=SF-s1-1, type=lambda
+init                           : default Y            Y       5    1    func       (init) : frame=SF-s1-1, type=lambda
+this                           : default                      0    2    instance   set@s1
+==========================================================================================================================
+
+
+
+************** Global Info: **************
+
+Expression compute count:
+==========================================================================================================================
+     RType:    Count
+--------------------------------------------------------------------------------------------------------------------------
+    factor:      263
+      func:        4
+==========================================================================================================================
+
+Object create count:
+==========================================================================================================================
+       RType:       Create       Delete        Exist
+--------------------------------------------------------------------------------------------------------------------------
+        atom:          338          316           22
+      string:           10            9            1
+        list:           15           15            0
+        expr:          542          525           17
+         var:          141          134            7
+      factor:            7            0            7
+        func:           74           62           12
+    template:            1            1            0
+       macro:            4            4            0
+    instance:            3            0            3
+       class:            4            2            2
+      member:          297          262           35
+       frame:           12            5            7
+ interpreter:            1            0
+  frameEntry:          260            0
+      lambda:            3            0
+==========================================================================================================================
+
+

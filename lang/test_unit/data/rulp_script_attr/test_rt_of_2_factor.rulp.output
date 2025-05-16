@@ -1,0 +1,9 @@
+(return-type-of +)
+;=>nil
+
+(return-type-of and)
+;=>bool
+
+(return-type-of str-trim)
+;=>string
+

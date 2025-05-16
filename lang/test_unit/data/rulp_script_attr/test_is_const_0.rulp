@@ -1,0 +1,24 @@
+(defun list-of-is-const (?subject) 
+    (if (equal ?subject local)
+    
+        (list-of-is-const (value-of (:: (value-of local::parent) parent)))
+        
+        (loop for ?mbr in (list-of ?subject) do 
+            (if (is-const  $(value-of (value-of ?mbr)))
+                (print (str-format "obj=%-20s, type=%s\n" 
+                            (name-of $(value-of ?mbr)) 
+                             (to-string (type-of $(value-of (value-of ?mbr))))))
+            )
+        )
+    )
+)
+;;;
+
+(list-of-is-const root)
+;;;
+
+(list-of-is-const system)
+;;;
+
+(list-of-is-const main)
+;;;

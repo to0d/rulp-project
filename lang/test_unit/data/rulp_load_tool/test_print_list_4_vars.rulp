@@ -1,0 +1,9 @@
+(load "tool")
+;=>
+
+(defvar x 10)
+(defvar y)
+;=>
+
+(print-list local var)
+;=>

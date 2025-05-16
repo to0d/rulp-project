@@ -1,0 +1,21 @@
+(load "stack")
+;=>nil
+
+(defclass class1 (stack))
+;err:
+Invalid member expression: (stack)
+at (defclass class1 (stack)) ; main-2
+;eof
+
+(defvar stack::?v2 0)
+;err:
+can't define member variable<?v2> for final subject: stack
+at (defvar stack::?v2 0) ; main-2
+;eof
+
+(defun stack::fun () ())
+;err:
+can't define member<fun> for final subject: stack
+at (defun stack::fun () ()) ; main-2
+;eof
+

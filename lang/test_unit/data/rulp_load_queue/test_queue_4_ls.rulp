@@ -1,0 +1,22 @@
+(load "queue")
+(load "tool")
+;=>
+
+(list-of queue)
+;=>
+
+(new queue q1)
+;=>
+
+(list-of q1)
+;=>
+
+(q1::push 1)
+;=>
+
+(list-of q1)
+;=>
+
+(print-list queue)
+;=>
+

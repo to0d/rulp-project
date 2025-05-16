@@ -1,0 +1,21 @@
+(load "queue")
+;=>nil
+
+(defclass class1 (queue))
+;err:
+Invalid member expression: (queue)
+at (defclass class1 (queue)) ; main-2
+;eof
+
+(defvar queue::?v2 0)
+;err:
+can't define member variable<?v2> for final subject: queue
+at (defvar queue::?v2 0) ; main-2
+;eof
+
+(defun queue::fun () ())
+;err:
+can't define member<fun> for final subject: queue
+at (defun queue::fun () ()) ; main-2
+;eof
+

@@ -1,0 +1,5 @@
+OUT: name:'()
+OUT: name:'(a b c)
+OUT: (x name:'(a b c))
+OUT: (add-rule m if name1:'(?x p ?y) do (-> '(?y p ?x)))
+OUT: :' (a b c)

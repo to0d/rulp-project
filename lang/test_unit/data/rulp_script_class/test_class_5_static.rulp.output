@@ -1,0 +1,59 @@
+(load "tool")
+;=>nil
+
+(defclass class1
+    (defvar ?v1 0)
+    (defvar ?v2 0)[static]
+    (defun fun1 () (return 1))[static]
+)
+;=>class1
+
+(new class1 o1)
+;=>class1@o1
+
+(value-of o1::?v1)
+;=>&?v1
+
+(type-of $(value-of o1::?v1))
+;=>var
+
+(value-of (value-of o1::?v1))
+;=>0
+
+(value-of (value-of o1::?v2))
+;=>0
+
+(setq class1::?v1 1)
+;=>&?v1
+
+(setq class1::?v2 2)
+;=>&?v2
+
+(value-of (value-of o1::?v1))
+;=>0
+
+(value-of (value-of o1::?v2))
+;=>2
+
+(class1::fun1)
+;=>1
+
+(print-list class1)
+;=>nil
+;out:
+mbr=?rv, mbr-property='(default), mbr-attribute='(), obj=?rv, obj-type=var, obj-attribute='(), var-value="1"
+mbr=?v1, mbr-property='(default), mbr-attribute='(), obj=?v1, obj-type=var, obj-attribute='(), var-value="1"
+mbr=?v2, mbr-property='(default static), mbr-attribute='(static), obj=?v2, obj-type=var, obj-attribute='(), var-value="2"
+mbr=fun1, mbr-property='(default), mbr-attribute='(static), obj=(fun1), obj-type=func, obj-attribute='()
+
+;eof
+
+(print-list o1)
+;=>nil
+;out:
+mbr=?v1, mbr-property='(default), mbr-attribute='(), obj=?v1, obj-type=var, obj-attribute='(), var-value="0"
+mbr=?v2, mbr-property='(default static), mbr-attribute='(), obj=?v2, obj-type=var, obj-attribute='(), var-value="2"
+mbr=this, mbr-property='(default), mbr-attribute='(), obj=o1, obj-type=instance, obj-attribute='(), instance-class=class1
+
+;eof
+

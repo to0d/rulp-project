@@ -1,0 +1,14 @@
+(load "queue")
+;=>
+
+(new queue q1)
+;;;
+
+(q1::push (lambda (?v) (print "action1:" ?v "\n")))
+;;;
+
+(q1::push (lambda (?v) (print "action2:" ?v "\n")))
+;;;
+
+(loop for ?action in (to-list q1) do (?action 1))
+;;;

@@ -1,0 +1,18 @@
+(try 
+    (throw e1 "msg1") 
+    (catch e2 (print e2))
+)
+;err:
+error: e1, msg1
+at (throw e1 "msg1") ; try-3
+at (try (throw e1 "msg1") (catch e2 (print e2))) ; main-2
+;eof
+
+(try 
+    (try 
+        (throw e1 "msg1") 
+        (catch e2 (print e2))
+    ) 
+    (catch ?e (print ?e))
+)
+;;;

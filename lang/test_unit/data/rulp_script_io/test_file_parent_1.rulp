@@ -1,0 +1,5 @@
+(file-parent "data/rulp_script_io")
+;=>
+
+(file-parent "data/rulp_script_io/test_file_parent_1.rulp")
+;=>

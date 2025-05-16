@@ -1,0 +1,19 @@
+(load "itest")
+;=>
+
+(defun fun1 (?v) (return (+ ?v 1)))
+;=>fun1
+
+(name-of fun1)
+;=>"(fun1 nil)"
+
+(fun1 1)
+;=>2
+
+(do
+    (defun fun1 (?v) (return (+ ?v 2)))    
+    (script_out (print-subject 2) ".txt")
+    (fun1 1)
+)
+;;;
+

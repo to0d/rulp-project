@@ -1,0 +1,148 @@
+************ Interpreter Info: ************
+
+Total runtime info:
+==========================================================================================================================
+                          Name:     info
+--------------------------------------------------------------------------------------------------------------------------
+           Interpreter call id:      243
+    Interpreter call level/max:        0       10
+               Frame max level:        6
+                  Frame max id:        7
+           Frame free id count:        4
+==========================================================================================================================
+
+Optimize info:
+==========================================================================================================================
+      Name: Status
+--------------------------------------------------------------------------------------------------------------------------
+       LCO: rebuild=0, arg=0, pass=0, hit=0
+==========================================================================================================================
+
+Callable stats info: callId=243, row=26, column=61(4), value-max=156, value-unit=2^x
+==========================================================================================================================
+   Frame    RType  Count  Ref Object                         333333333333333333333333333333333333333333333333334433333336X max=723, unit=2^x
+--------------------------------------------------------------------------------------------------------------------------
+    root   factor    178    0 add-attribute                    333333333333333333333333333333333333333333332              
+    root   factor    156    0 value-of                                                                                   9
+    root   factor     83    0 return                                                                                     8
+    root   factor     83    0 equal_def                                                                                  8
+  system funcList     83    1 equal                                                                                      8
+    root   factor     71    0 not                                                                                        8
+    root   factor     57    0 defun                                                                        23331 23333335 
+    root   factor     55    0 if                                                                                         7
+    root   factor     53    0 type-of                                                                                    7
+    root   factor     40    0 print                                                                                      7
+    root   factor     33    0 and                                                                                        7
+    root   factor     28    0 continue                                                                                   6
+    root   factor     10    0 name-of                                                                                    5
+    root   factor     10    0 attribute-of                                                                               5
+    root   factor      7    0 alias                          33                                                           
+    root   factor      6    0 defvar                                                                           32        1
+    root   factor      5    0 property-of                                                                                4
+    root   factor      5    0 make-list                                                                        32         
+    root   factor      5    0 access                                                                                     4
+    root   factor      4    0 defmacro                                                                          22        
+    root   factor      3    0 deftemplate                                                                               3 
+    main funcList      2    1 print-list                                                                                 2
+    root   factor      2    0 loop                                                                                       2
+    root   factor      2    0 list-of                                                                                    2
+    root   factor      1    0 load                                                                                      1 
+    root   factor      1    0 delete                                                                                     1
+==========================================================================================================================
+
+Global frame list: total=0
+
+id=2, name=main, lvl=2, ref=1/6, entry=16, pid=1(system), subject=main
+==========================================================================================================================
+Name(alias)          : EntryId  FrameId  Ref  Type       Value               
+--------------------------------------------------------------------------------------------------------------------------
+root                 : 1        2        0    frame      root                
+system               : 2        2        0    frame      system              
+main                 : 3        2        1    frame      main                
+?script-path         : 4        2        1    var        string, "data/rulp_script_var/test_delete_1_remove_var.rulp"
+?path                : 5        2        1    var        list, '("load")     
+is-empty             : 6        2        1    funcList   {} : frame=null, type=list
+                                         2    func       (is-empty list) : frame=system
+                                         2    func       (is-empty array) : frame=system
+                                         1    func       (is-empty string) : frame=main
+is-blank             : 7        2        1    func       (is-blank string) : frame=main
+file-prename         : 8        2        1    func       (file-prename string) : frame=main
+file-subffix         : 9        2        1    func       (file-subffix string) : frame=main
+str-split-line       : 10       2        1    func       (str-split-line string) : frame=main
+to-one-line          : 11       2        1    func       (to-one-line list) : frame=main
+sort                 : 12       2        1    funcList   {} : frame=null, type=list
+                                         1    func       (sort list) : frame=main
+                                         1    func       (sort list func) : frame=main
+                                         1    func       (sort array) : frame=main
+                                         1    func       (sort array func) : frame=main
+print-list           : 13       2        1    funcList   {} : frame=null, type=list
+                                         1    func       (print-list list) : frame=main
+                                         1    func       (print-list nil nil) : frame=main
+                                         1    func       (print-list nil) : frame=main
+to-valid-path        : 14       2        1    func       (to-valid-path string) : frame=main
+day-is-bigger-than   : 15       2        1    func       (day-is-bigger-than string string) : frame=main
+day-is-smaller-than  : 16       2        1    func       (day-is-smaller-than string string) : frame=main
+==========================================================================================================================
+
+
+System var list: total=14
+==========================================================================================================================
+Var                  : Value
+--------------------------------------------------------------------------------------------------------------------------
+?file.separator      : "/"
+?load-class          : '()
+?load-jar            : '()
+?load-script         : '("lang/load/tool.rulp")
+?load-system         : '()
+?loader-list         : '()
+?os.name             : ""
+?os.version          : ""
+?path                : '()
+?path.separator      : ":"
+?trace               : false
+?user.dir            : ""
+?user.home           : ""
+?user.name           : ""
+==========================================================================================================================
+
+Global frame tree:
+
+->FRAME(root): id=0, lvl=0, subject=root
+    ->FRAME(system): id=1, lvl=1, subject=system
+        ->FRAME(main): id=2, lvl=2, subject=main
+
+Global Subject list:
+
+
+
+************** Global Info: **************
+
+Expression compute count:
+==========================================================================================================================
+     RType:    Count
+--------------------------------------------------------------------------------------------------------------------------
+    factor:      898
+      func:       85
+==========================================================================================================================
+
+Object create count:
+==========================================================================================================================
+       RType:       Create       Delete        Exist
+--------------------------------------------------------------------------------------------------------------------------
+        atom:          473          473            0
+      string:           34           34            0
+        list:           22           22            0
+        expr:          896          896            0
+         var:          354          354            0
+        func:           73           73            0
+    template:            1            1            0
+       macro:            4            4            0
+       class:            2            2            0
+      member:          466          466            0
+       frame:          123          123            0
+ interpreter:            1            0
+  frameEntry:          465            0
+      lambda:            0            0
+==========================================================================================================================
+
+

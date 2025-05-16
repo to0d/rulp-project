@@ -1,0 +1,57 @@
+(load "queue")
+;=>nil
+
+(defvar q1 (new queue))
+;=>&q1
+
+(name-of q1)
+;=>"q1"
+
+(q1::size-of)
+;=>0
+
+(q1::push 1)        ;;; push & pop
+;=>nil
+
+(q1::push 2)
+;=>nil
+
+(q1::size-of)
+;=>2
+
+(q1::get 0)
+;=>1
+
+(get q1 1)
+;=>2
+
+(q1::pop)
+;=>1
+
+(q1::size-of)
+;=>1
+
+(setq q1 (new queue))       ;; replace queue
+;=>&q1
+
+(q1::size-of)
+;=>0
+
+(q1::is-empty)      ;;  clear && is-empty
+;=>true
+
+(q1::push 1)
+;=>nil
+
+(is-empty q1)
+;=>false
+
+(q1::clear)
+;=>nil
+
+(clear q1)
+;=>nil
+
+(is-empty q1)
+;=>true
+

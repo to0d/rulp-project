@@ -1,0 +1,12 @@
+(defclass class1)
+;=>class1
+
+(new class1 obj1)
+;=>class1@obj1
+
+(new class1 obj1)
+;err:
+duplicate object<obj1> found: class1@obj1
+at (new class1 obj1) ; main-2
+;eof
+

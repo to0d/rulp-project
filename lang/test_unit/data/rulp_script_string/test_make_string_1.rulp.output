@@ -1,0 +1,12 @@
+(make-string)
+;err:
+Too few parameters: (make-string), min arg count: 2
+at (make-string) ; main-2
+;eof
+
+(make-string abc)
+;err:
+not support: abc
+at (make-string abc) ; main-2
+;eof
+

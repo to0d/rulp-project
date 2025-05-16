@@ -1,0 +1,5 @@
+(defconst int_max 2147483647)
+(defconst int_min -2147483648)
+
+(defconst long_max 9223372036854775807L)
+(defconst long_min -9223372036854775808L)

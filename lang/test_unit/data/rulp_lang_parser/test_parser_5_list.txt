@@ -1,0 +1,2 @@
+INP: '(a b c)
+INP: ' (a b c)

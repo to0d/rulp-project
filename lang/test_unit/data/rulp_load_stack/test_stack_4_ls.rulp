@@ -1,0 +1,22 @@
+(load "stack")
+(load "tool")
+;=>
+
+(list-of stack)
+;=>
+
+(new stack s1)
+;=>
+
+(list-of s1)
+;=>
+
+(s1::push 1)
+;=>
+
+(list-of s1)
+;=>
+
+(print-list stack)
+;=>
+

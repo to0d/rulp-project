@@ -1,0 +1,105 @@
+(load "queue")
+;=>nil
+
+(new queue q1)
+;=>queue@q1
+
+(name-of q1)
+;=>"q1"
+
+(q1::size-of)
+;=>0
+
+(q1::push 1)            ;;; push & pop
+;=>nil
+
+(q1::push 2)
+;=>nil
+
+(q1::get 0)
+;=>1
+
+(get q1 1)
+;=>2
+
+(q1::size-of)
+;=>2
+
+(q1::pop)
+;=>1
+
+(q1::pop)
+;=>2
+
+(q1::size-of)
+;=>0
+
+(q1::push_back 1)   ;;; push_back & pop_back
+;=>nil
+
+(q1::push_back 2)
+;=>nil
+
+(q1::size-of)
+;=>2
+
+(q1::pop_back)
+;=>2
+
+(q1::pop_back)
+;=>1
+
+(q1::size-of)
+;=>0
+
+(q1::push_front 1)      ;;; push_front & pop_front
+;=>nil
+
+(q1::push_front 2)
+;=>nil
+
+(q1::size-of)
+;=>2
+
+(q1::pop_front)
+;=>2
+
+(q1::pop_front)
+;=>1
+
+(q1::size-of)
+;=>0
+
+(q1::is-empty)          ;;; is-empty
+;=>true
+
+(is-empty q1)
+;=>true
+
+(q1::push 1)            ;;; to-list
+;=>nil
+
+(q1::push 2)
+;=>nil
+
+(q1::push 3)
+;=>nil
+
+(q1::to-list)
+;=>'(1 2 3)
+
+(to-list q1)
+;=>'(1 2 3)
+
+(is-empty q1)           ;;; clear
+;=>false
+
+(q1::clear)
+;=>nil
+
+(clear q1)
+;=>nil
+
+(is-empty q1)
+;=>true
+

@@ -1,0 +1,47 @@
+(load "itest")
+;=>nil
+
+(defun fun1 (?v) (return (+ ?v 1)))
+;=>fun1
+
+(name-of fun1)
+;=>"(fun1 nil)"
+
+(fun1 1)
+;=>2
+
+(do
+    (defun fun1 (?v1 ?v2) (return (+ ?v1 ?v2)))
+    (script_out (print-subject 2) "_a.txt")
+    (fun1 1 2)
+)
+;=>nil
+
+(script_out (print-subject 1) "_b.txt")
+;=>nil
+
+(fun1 1 2)
+;err:
+Unexpect argument number in fun<fun1>: expect=1, actual=2
+at (fun1 1 2) ; main-2
+;eof
+
+(do
+    (defun fun1 (?v1 ?v2) (return (+ ?v1 ?v2)))
+    (script_out (print-subject 2) "_c.txt")
+    (do
+        (defun fun1 (?v1 ?v2 ?v3) (return (+ ?v1 ?v2 ?v3)))
+        (script_out (print-subject 3) "_d.txt")
+    )
+    (script_out (print-subject 2) "_e.txt")
+    (fun1 1 2 3)
+)
+;err:
+match funcion not found: expr=(fun1 1 2 3)
+at (fun1 1 2 3) ; do-3
+at (do (defun fun1 (?v1 ?v2) (return (+ ?v1 ?v2))) (script_out (print-subject 2)... ; main-2
+;eof
+
+(script_out (print-subject 1) "_f.txt")
+;=>nil
+

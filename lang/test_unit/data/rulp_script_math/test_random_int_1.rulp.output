@@ -1,0 +1,15 @@
+(type-of $(random-int 128))
+;=>int
+
+(random-int 1 2)
+;err:
+Too many parameters: (random-int 1 2), max arg count: 2
+at (random-int 1 2) ; main-2
+;eof
+
+(< (random-int 128) 128)
+;=>true
+
+(>= (random-int 10) 0)
+;=>true
+

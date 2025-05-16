@@ -1,0 +1,20 @@
+(new namespace ns1)
+;=>namespace@ns1
+
+(deftemplate ask (teacher (?question expr)) (print "teacher say: yes, I know " ?question ", answer is " (value-of $(value-of ?question))))
+;=>ask
+
+(deftemplate ns1::ask (student (?question expr)) (print "student say: no, I don't know " ?question "."))
+;=>ask
+
+(ask teacher (+ 1 1))
+;=>
+
+(ask student (+ 1 1))
+;err
+
+(ns1::ask student (+ 1 1))
+;=>
+
+(ns1::ask teacher (+ 1 1))
+;=>

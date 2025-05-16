@@ -1,0 +1,3 @@
+(load "data/rulp_script_load/load2.rulp")
+;=>nil
+

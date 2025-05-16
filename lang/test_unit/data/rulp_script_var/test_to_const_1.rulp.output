@@ -1,0 +1,30 @@
+(to-const 123)
+;=>123
+
+(to-const "123")
+;=>"123"
+
+(to-const 1.1)
+;=>1.100000
+
+(defvar ?x 1)
+;=>&?x
+
+(defvar ?y '((to-const ?x))) 
+;=>&?y
+
+(setq ?x 2)
+;=>&?x
+
+?y
+;=>'(1)
+
+(to-const ?x)
+;=>2
+
+(to-const size-of)
+;err:
+Can't to-const: size-of
+at (to-const size-of) ; main-2
+;eof
+

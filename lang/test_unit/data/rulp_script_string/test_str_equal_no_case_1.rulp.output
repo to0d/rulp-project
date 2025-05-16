@@ -1,0 +1,24 @@
+(str-equal-nocase)
+;err:
+Too few parameters: (str-equal-nocase), min arg count: 3
+at (str-equal-nocase) ; main-2
+;eof
+
+(str-equal-nocase "abc")
+;err:
+Too few parameters: (str-equal-nocase "abc"), min arg count: 3
+at (str-equal-nocase "abc") ; main-2
+;eof
+
+(str-equal-nocase "abc" "abc" "abc")
+;err:
+Too many parameters: (str-equal-nocase "abc" "abc" "abc"), max arg count: 3
+at (str-equal-nocase "abc" "abc" "abc") ; main-2
+;eof
+
+(str-equal-nocase "abc" "abc" )
+;=>true
+
+(str-equal-nocase "abc" "AbC" )
+;=>true
+

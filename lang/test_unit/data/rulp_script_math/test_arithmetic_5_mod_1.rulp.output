@@ -1,0 +1,18 @@
+(% 10 3)
+;=>1
+
+(% 9.0 2.0)
+;err:
+Not support op: MOD
+at (% 9.000000 2.000000) ; main-2
+;eof
+
+(% 100L 33L)
+;=>1L
+
+(% 100D 3D)
+;err:
+Not support op: MOD
+at (% 100.000000D 3.000000D) ; main-2
+;eof
+

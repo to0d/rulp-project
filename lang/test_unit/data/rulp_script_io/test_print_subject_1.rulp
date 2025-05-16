@@ -1,0 +1,11 @@
+(load "itest")
+;=>
+
+(script_out (print-subject root) "_root.txt")
+;=>
+
+(script_out (print-subject system) "_system.txt")
+;=>
+
+(script_out (print-subject main) "_main.txt")
+;=>

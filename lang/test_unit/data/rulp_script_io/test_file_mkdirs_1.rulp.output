@@ -1,0 +1,24 @@
+(file-exist "data/test_fs")
+;=>true
+
+(file-exist "data/test_fs/test_dir_1")
+;=>false
+
+(file-mkdirs "data/test_fs/test_dir_1")
+;=>true
+
+(file-exist "data/test_fs/test_dir_1")
+;=>true
+
+(file-mkdirs "data/test_fs/test_dir_1/a/b")
+;=>true
+
+(file-exist "data/test_fs/test_dir_1/a/b")
+;=>true
+
+(file-delete "data/test_fs/test_dir_1")
+;=>true
+
+(file-exist "data/test_fs/test_dir_1")
+;=>false
+

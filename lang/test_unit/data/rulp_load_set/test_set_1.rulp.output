@@ -1,0 +1,60 @@
+(load "set")
+;=>nil
+
+(new set set1)
+;=>set@set1
+
+(name-of set1)
+;=>"set1"
+
+(set1::size-of)
+;=>0
+
+(set1::add 1)
+;=>nil
+
+(set1::size-of)
+;=>1
+
+(set1::has 1)
+;=>true
+
+(set1::has 2)
+;=>false
+
+(set1::add a)
+;=>nil
+
+(set1::size-of)
+;=>2
+
+(set1::has a)
+;=>true
+
+(set1::has b)
+;=>false
+
+(set1::add "str1")
+;=>nil
+
+(set1::size-of)
+;=>3
+
+(set1::has "str1")
+;=>true
+
+(set1::has "str2")
+;=>false
+
+(set1::add '(a))
+;=>nil
+
+(set1::size-of)
+;=>4
+
+(set1::has '(a))
+;=>true
+
+(set1::has '(b))
+;=>false
+

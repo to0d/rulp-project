@@ -1,0 +1,28 @@
+(defun list-of-return-type-of (?subject) 
+    (if (equal ?subject local)
+    
+        (list-of-return-type-of (value-of (:: (value-of local::parent) parent)))
+
+        (loop for ?mbr in (list-of ?subject) do
+
+            (defvar ?type (return-type-of $(value-of (value-of ?mbr))))
+            
+            (if (!= ?type nil)
+                (print (str-format "obj=%-20s, type=%-8s, return=%s\n" 
+                            (name-of $(value-of ?mbr))
+                            (to-string (type-of $(value-of (value-of ?mbr))))
+                            (to-string ?type)))
+            )
+        )
+    )
+)
+;;;
+
+(list-of-return-type-of root)
+;=>
+
+(list-of-return-type-of system)
+;=>
+
+(list-of-return-type-of main)
+;=>

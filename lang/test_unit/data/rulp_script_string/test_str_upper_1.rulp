@@ -1,0 +1,8 @@
+(str-upper "abc")
+;=>"ABC"
+
+(str-upper "ABC")
+;=>"ABC"
+
+(str-upper)
+;err

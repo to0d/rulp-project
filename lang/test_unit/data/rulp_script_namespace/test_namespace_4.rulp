@@ -1,0 +1,6 @@
+(use namespace ns1)
+;err:
+error: bad-type, namespace not found: ns1
+at (throw bad-type (strcat "namespace not found: " (to-string ?ns))) ; _$fun$_use-3
+at (use namespace ns1) ; main-2
+;eof

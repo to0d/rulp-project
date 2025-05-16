@@ -1,0 +1,12 @@
+(defun fun1 (?v) (return (lambda () (return (* ?v ?v)))))
+;=>fun1
+
+(name-of fun1)
+;=>"(fun1 nil)"
+
+((fun1 2))
+;=>4
+
+((fun1 4))
+;=>16
+

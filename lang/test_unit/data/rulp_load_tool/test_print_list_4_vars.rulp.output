@@ -1,0 +1,17 @@
+(load "tool")
+;=>nil
+
+(defvar x 10)
+(defvar y)
+;=>&x &y
+
+(print-list local var)
+;=>nil
+;out:
+mbr=?path, mbr-property='(public), mbr-attribute='(), obj=?path, obj-type=var, obj-attribute='(), var-value="'(load)"
+mbr=?script-path, mbr-property='(public), mbr-attribute='(), obj=?script-path, obj-type=var, obj-attribute='(), var-value="data/rulp_load_tool/test_print_list_4_vars.rulp"
+mbr=x, mbr-property='(public), mbr-attribute='(), obj=x, obj-type=var, obj-attribute='(), var-value="10"
+mbr=y, mbr-property='(public), mbr-attribute='(), obj=y, obj-type=var, obj-attribute='(), var-value="nil"
+
+;eof
+

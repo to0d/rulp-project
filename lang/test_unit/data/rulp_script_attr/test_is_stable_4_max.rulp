@@ -1,0 +1,5 @@
+(load "tool")
+;=>
+
+(is-stable max)
+;=>true

@@ -1,0 +1,11 @@
+(defun fun1 ((?x string)) 
+    (print ?x)
+)
+;=>fun1
+
+(fun1 nil)
+;=>nil
+;out:
+nil
+;eof
+

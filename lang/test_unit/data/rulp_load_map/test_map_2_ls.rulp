@@ -1,0 +1,22 @@
+(load "map")
+(load "tool")
+;=>
+
+(list-of map)
+;=>'(map::?impl map::_map_clear map::_map_get map::_map_has_key map::_map_init map::_map_is_empty map::_map_key_list map::_map_put map::_map_size_of map::_map_value_list map::clear map::get map::has-key map::init map::is-empty map::key-list map::put map::size-of map::value-list)
+
+(new map map1)
+;=>map@map1
+
+(list-of map1)
+;=>'(map@map1::?impl map@map1::init map@map1::this)
+
+(map1::put 1 2)
+;=>
+
+(list-of map1)
+;=>'(map@map1::?impl map@map1::init map@map1::put map@map1::this)
+
+(print-list map)
+;=>
+

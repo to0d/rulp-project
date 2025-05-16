@@ -1,0 +1,21 @@
+(str-match "*-*" "abc-xyz")
+;=>true
+
+(str-match "*-*" "abc")
+;=>false
+
+(str-match "* *" "abc xyz")
+;=>true
+
+(str-match "* *")
+;err:
+Too few parameters: (str-match "* *"), min arg count: 3
+at (str-match "* *") ; main-2
+;eof
+
+(str-match "* *" "abc xyz" "" "")
+;err:
+Too many parameters: (str-match "* *" "abc xyz" "" ""), max arg count: 4
+at (str-match "* *" "abc xyz" "" "") ; main-2
+;eof
+

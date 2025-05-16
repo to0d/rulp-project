@@ -1,0 +1,2 @@
+INP: &var
+INP: & var

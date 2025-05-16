@@ -1,0 +1,6 @@
+(init-loader "xxx-loader")
+;=>nil
+
+(init-loader "xxx-loader")
+;=>nil
+

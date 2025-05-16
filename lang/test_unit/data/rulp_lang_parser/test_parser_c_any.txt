@@ -1,0 +1,5 @@
+INP: &name
+INP: -NONE-
+INP: *pro*
+INP: *T*-2
+INP: (3.2万)

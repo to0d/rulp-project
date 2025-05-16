@@ -1,0 +1,8 @@
+(file-exist "abc")
+;=>
+
+(file-exist "data/rulp_script_io")
+;=>
+
+(file-exist "data/rulp_script_io/test_file_exist_1.rulp")
+;=>

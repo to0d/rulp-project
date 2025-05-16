@@ -1,0 +1,10 @@
+(defvar ?v true)
+;=>
+
+(if ?v do 
+    (print "action1")
+    (print "action2")
+    (print "action3")
+)
+;=>
+

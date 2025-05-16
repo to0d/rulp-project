@@ -1,0 +1,34 @@
+(load "stack")
+(load "tool")
+;=>nil nil
+
+(list-of stack)
+;=>'(stack::?impl stack::clear stack::init stack::is-empty stack::peek stack::pop stack::push stack::size-of stack::to-list)
+
+(new stack s1)
+;=>stack@s1
+
+(list-of s1)
+;=>'(stack@s1::?impl stack@s1::init stack@s1::this)
+
+(s1::push 1)
+;=>nil
+
+(list-of s1)
+;=>'(stack@s1::?impl stack@s1::init stack@s1::push stack@s1::this)
+
+(print-list stack)
+;=>nil
+;out:
+mbr=?impl, access deny
+mbr=clear, mbr-property='(default final), mbr-attribute='(final), obj=(clear), obj-type=func, obj-attribute='()
+mbr=init, mbr-property='(default final), mbr-attribute='(final), obj=(init), obj-type=func, obj-attribute='()
+mbr=is-empty, mbr-property='(default final), mbr-attribute='(final), obj=(is-empty), obj-type=func, obj-attribute='()
+mbr=peek, mbr-property='(default final), mbr-attribute='(final), obj=(peek), obj-type=func, obj-attribute='()
+mbr=pop, mbr-property='(default final), mbr-attribute='(final), obj=(pop), obj-type=func, obj-attribute='()
+mbr=push, mbr-property='(default final), mbr-attribute='(final), obj=(push nil), obj-type=func, obj-attribute='()
+mbr=size-of, mbr-property='(default final), mbr-attribute='(final), obj=(size-of), obj-type=func, obj-attribute='()
+mbr=to-list, mbr-property='(default final), mbr-attribute='(final), obj=(to-list), obj-type=func, obj-attribute='()
+
+;eof
+

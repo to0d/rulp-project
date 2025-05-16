@@ -1,0 +1,25 @@
+(load "itest")
+
+(defun fun1 (?v) 
+    (return (do 
+        (return 
+            (lambda () (return (* ?v ?v)))))))
+;;;
+
+(defvar ?f (fun1 2))
+;;;
+
+(?f)
+;=>4
+
+(?f)
+;=>4
+
+(_ginfo "a")
+;;;
+
+(setq ?f nil)
+;;;
+
+(_ginfo "b")
+;;;

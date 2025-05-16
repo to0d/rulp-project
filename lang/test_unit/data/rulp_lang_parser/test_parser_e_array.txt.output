@@ -1,0 +1,4 @@
+OUT: {a,b}
+OUT: {'(a b c),'(x y),z}
+OUT: {'(a b c),'(x y),z}
+OUT: {{a,b,c},{x,y},z}

@@ -1,0 +1,11 @@
+(load "data/rulp_script_load/load1.rulp")
+;=>
+
+(list-of)
+;=>
+
+(load "data/rulp_script_load/load1.rulp") ; load twice
+;=>
+
+(list-of)
+;=>

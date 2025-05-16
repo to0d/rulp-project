@@ -1,0 +1,9 @@
+INP: "\n"
+OUT: {TK(type=T, value="
+", line=-1, pos=4)}
+INP: "\r"
+OUT: {TK(type=T, value="", line=-1, pos=4)}
+INP: "\"
+OUT: {TK(type=B, value="", line=-1, pos=3)}
+INP: "a\"b"
+OUT: {TK(type=T, value="a"b", line=-1, pos=6)}

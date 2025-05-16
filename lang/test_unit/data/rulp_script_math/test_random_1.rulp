@@ -1,0 +1,8 @@
+(type-of $(random))
+;=>double
+
+(random 1)
+;err
+
+(>= (random) 0)
+;=>true

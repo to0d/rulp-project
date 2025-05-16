@@ -1,0 +1,63 @@
+(defclass class1
+    (defvar ?value 0)[private]
+    (defun add (?x) (setq ?value (+ ?value ?x)))[public]
+    (defun sub (?x) (setq ?value (- ?value ?x)))[private]
+    (defun get ()   (return ?value))
+    (defun set (?x) (setq ?value ?x))
+)
+;;;
+(list-of class1)
+;;;
+(new class1 o1)
+;;;
+(list-of o1)
+;;;
+(o1::get)
+;;;
+(list-of o1)
+;;;
+(o1::set 5)
+;;;
+(o1::get)
+;;;
+(o1::add 1)
+;;;
+(o1::get)
+;;;
+(access o1::add)
+;;;
+(access o1::sub)
+;;;
+
+(o1::sub 2)
+;err
+
+(value-of o1::?value)
+;err
+
+(class1::sub 2)
+;err
+
+(value-of class1::?value)
+;err
+
+(property-of class1::?value)
+;;;
+(property-of class1::add)
+;;;
+(property-of class1::sub)
+;;;
+(property-of class1::get)
+;;;
+(property-of class1::set)
+;;;
+(property-of o1::?value)
+;;;
+(property-of o1::add)
+;;;
+(property-of o1::sub)
+;;;
+(property-of o1::get)
+;;;
+(property-of o1::set)
+;;;

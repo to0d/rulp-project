@@ -56,5 +56,7 @@ process_directory "$prj_dir/lfc/include"
 process_directory "$prj_dir/lfc/src"
 process_directory "$prj_dir/lfm/include"
 process_directory "$prj_dir/lfm/src"
+process_directory "$prj_dir/lang/include"
+process_directory "$prj_dir/lang/src"
 
 exit $?

@@ -1,0 +1,6 @@
+(load "tool")
+;=>nil
+
+(is-stable max)
+;=>true
+

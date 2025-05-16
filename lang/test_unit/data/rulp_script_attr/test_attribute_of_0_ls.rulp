@@ -1,0 +1,23 @@
+(defun list-of-attribute-of (?subject) 
+    (if (equal ?subject local)
+    
+        (list-of-is-const (value-of (:: (value-of local::parent) parent)))
+        
+        (loop for ?mbr in (list-of ?subject) do 
+            (print "obj=" (name-of $(value-of ?mbr)))
+            (print ", type=" (type-of $(value-of (value-of ?mbr))))
+            (print ", attribute=" (attribute-of  $(value-of (value-of ?mbr))))
+            (print "\n")
+        )
+    )
+)
+;=>list-of-attribute-of
+
+(list-of-attribute-of root)
+;=>
+
+(list-of-attribute-of system)
+;=>
+
+(list-of-attribute-of main)
+;=>

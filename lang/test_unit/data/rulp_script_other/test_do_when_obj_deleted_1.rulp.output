@@ -1,0 +1,7 @@
+(load "itest")
+;err:
+file not found: tool
+at (load "tool") ; main-2
+at (load "itest") ; main-2
+;eof
+

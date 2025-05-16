@@ -1,0 +1,60 @@
+(load "stack")
+;=>nil
+
+(new stack s1)
+;=>
+
+(name-of s1)
+;=>"s1"
+
+(s1::size-of)
+;=>0
+
+(s1::push 1)
+;=>nil
+
+(s1::push 2)
+;=>nil
+
+(s1::size-of)
+;=>2
+
+(s1::pop)
+;=>2
+
+(s1::pop)
+;=>1
+
+(s1::size-of)
+;=>0
+
+(s1::is-empty)
+;=>true
+
+(is-empty s1)
+;=>true
+
+(s1::push 1)
+;=>nil
+
+(s1::push 2)
+;=>nil
+
+(s1::push 3)
+;=>nil
+
+(s1::to-list)
+;=>'(1 2 3)
+
+(to-list s1)
+;=>'(1 2 3)
+
+(s1::clear)
+;=>nil
+
+(clear s1)
+;=>nil
+
+(is-empty s1)
+;=>true
+

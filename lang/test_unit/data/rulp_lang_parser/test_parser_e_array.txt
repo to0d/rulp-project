@@ -1,0 +1,4 @@
+INP: {a,b}
+INP: {a b c,x y,z}
+INP: {'(a b c),'(x y),z}
+INP: {{a,b,c},{x,y},z}

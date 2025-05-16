@@ -1,0 +1,4 @@
+OUT: (a b) (x y)
+OUT: (a b) (x y)
+OUT: (a b (x y))
+OUT: (a b)

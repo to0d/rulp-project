@@ -1,0 +1,87 @@
+(defclass class1
+    (defvar ?value)
+    (defvar ?children (make-array))  
+    (defun init (?x) (setq ?value ?x))
+    (defun add ((?c class1)) (add ?children ?c))
+    (defun dump () 
+        (println ?value)
+        (loop for ?c in (to-list ?children) do
+            (?c::dump)
+        )
+    )
+    (defun get () (return ?children))    
+)
+;=>class1
+
+(defvar o1 (new class1 '(1)))
+;=>&o1
+
+(defvar o2 (new class1 '(2)))
+;=>&o2
+
+(o1::add o2)
+;=>nil
+
+(o1::get)
+;=>{class1@un1}
+
+(print-subject class1)
+;=>nil
+;out:
+name=class1, string=class1, lvl=0, ref=3/3, parent=null, final=false, mbrs=6, frame=3(SF-class1-0)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?children                      : default                      0    1    var        expr, (lambda)
+?value                         : default                      0    1    var        atom, nil
+add                            : default                      0    2    func       (add type#class1) : frame=main
+dump                           : default                      0    1    func       (dump) : frame=main
+get                            : default                      0    2    func       (get) : frame=main
+init                           : default                      0    3    func       (init nil) : frame=main
+==========================================================================================================================
+
+
+;eof
+
+(print-subject o1)
+;=>nil
+;out:
+name=un0, string=class1@un0, lvl=1, ref=1/2, parent=class1, final=false, mbrs=7, frame=4(SF-un0-1)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?children                      : default              Y       4    1    var        array, {class1@un1}
+?rv                            : default                      0    1    var        array, {class1@un1}
+?value                         : default              Y       4    1    var        int, 1
+add                            : default              Y       4    1    func       (add type#class1) : frame=SF-un0-1, type=lambda
+get                            : default              Y       4    1    func       (get) : frame=SF-un0-1, type=lambda
+init                           : default              Y       4    1    func       (init nil) : frame=SF-un0-1, type=lambda
+this                           : default                      0    1    instance   class1@un0
+==========================================================================================================================
+
+
+;eof
+
+(print-subject o2)
+;=>nil
+;out:
+name=un1, string=class1@un1, lvl=1, ref=3/8, parent=class1, final=false, mbrs=3, frame=5(SF-un1-2)
+==========================================================================================================================
+Name                           : Access  Final Static Inherit Prop Ref  Type       Value
+--------------------------------------------------------------------------------------------------------------------------
+?value                         : default              Y       4    1    var        int, 2
+init                           : default              Y       4    1    func       (init nil) : frame=SF-un1-2, type=lambda
+this                           : default                      0    3    instance   class1@un1
+==========================================================================================================================
+
+
+;eof
+
+(o1::dump)
+;=>nil
+;out:
+1"
+"\2"
+"\
+;eof
+

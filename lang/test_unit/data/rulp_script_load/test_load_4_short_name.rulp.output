@@ -1,0 +1,6 @@
+(load "data/rulp_script_load/load1")
+;=>nil
+
+(list-of)
+;=>'(main::?path main::?script-path main::main main::root main::system main::x1)
+

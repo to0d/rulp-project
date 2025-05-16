@@ -1,0 +1,60 @@
+INP: 1.1d
+OUT: {TK(type=F, value=1.1, line=-1, pos=3),TK(type=N, value=d, line=-1, pos=4)}
+INP: "'hello'"
+OUT: {TK(type=T, value="'hello'", line=-1, pos=9)}
+INP: a
+OUT: {TK(type=N, value=a, line=-1, pos=1)}
+INP: b
+OUT: {TK(type=N, value=b, line=-1, pos=1)}
+INP: a-b
+OUT: {TK(type=N, value=a, line=-1, pos=1),TK(type=S, value=-, line=-1, pos=2),TK(type=N, value=b, line=-1, pos=3)}
+INP: ABC123
+OUT: {TK(type=N, value=ABC123, line=-1, pos=6)}
+INP: 123ABC
+OUT: {TK(type=N, value=123ABC, line=-1, pos=6)}
+INP: ABC 123
+OUT: {TK(type=N, value=ABC, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=I, value=123, line=-1, pos=7)}
+INP: ABC -123
+OUT: {TK(type=N, value=ABC, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=S, value=-, line=-1, pos=5),TK(type=I, value=123, line=-1, pos=8)}
+INP: ABC -123.5
+OUT: {TK(type=N, value=ABC, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=S, value=-, line=-1, pos=5),TK(type=F, value=123.5, line=-1, pos=10)}
+INP: 123 ABC
+OUT: {TK(type=I, value=123, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=N, value=ABC, line=-1, pos=7)}
+INP: 123_ABC
+OUT: {TK(type=N, value=123_ABC, line=-1, pos=7)}
+INP: ABC_123
+OUT: {TK(type=N, value=ABC_123, line=-1, pos=7)}
+INP: ABC_123___
+OUT: {TK(type=N, value=ABC_123___, line=-1, pos=10)}
+INP: _ABC123
+OUT: {TK(type=N, value=_ABC123, line=-1, pos=7)}
+INP: ____ABC123
+OUT: {TK(type=N, value=____ABC123, line=-1, pos=10)}
+INP: ____ABC123___
+OUT: {TK(type=N, value=____ABC123___, line=-1, pos=13)}
+INP: __
+OUT: {TK(type=N, value=__, line=-1, pos=2)}
+INP: _123ABC
+OUT: {TK(type=N, value=_123ABC, line=-1, pos=7)}
+INP: XXX 123ABC
+OUT: {TK(type=N, value=XXX, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=N, value=123ABC, line=-1, pos=10)}
+INP: XXX 123 ABC
+OUT: {TK(type=N, value=XXX, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=I, value=123, line=-1, pos=7),TK(type=X, value= , line=-1, pos=8),TK(type=N, value=ABC, line=-1, pos=11)}
+INP: XXX 123.5 ABC
+OUT: {TK(type=N, value=XXX, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=F, value=123.5, line=-1, pos=9),TK(type=X, value= , line=-1, pos=10),TK(type=N, value=ABC, line=-1, pos=13)}
+INP: .2 A
+OUT: {TK(type=S, value=., line=-1, pos=1),TK(type=I, value=2, line=-1, pos=2),TK(type=X, value= , line=-1, pos=3),TK(type=N, value=A, line=-1, pos=4)}
+INP: ABC " ' 12" 
+OUT: {TK(type=N, value=ABC, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=T, value=" ' 12", line=-1, pos=11),TK(type=X, value= , line=-1, pos=12)}
+INP: {}
+OUT: {TK(type=S, value={, line=-1, pos=1),TK(type=S, value=}, line=-1, pos=2)}
+INP: {};
+OUT: {TK(type=S, value={, line=-1, pos=1),TK(type=S, value=}, line=-1, pos=2),TK(type=S, value=;, line=-1, pos=3)}
+INP: &name
+OUT: {TK(type=S, value=&, line=-1, pos=1),TK(type=N, value=name, line=-1, pos=5)}
+INP: -NONE-
+OUT: {TK(type=S, value=-, line=-1, pos=1),TK(type=N, value=NONE, line=-1, pos=5),TK(type=S, value=-, line=-1, pos=6)}
+INP: *pro*
+OUT: {TK(type=S, value=*, line=-1, pos=1),TK(type=N, value=pro, line=-1, pos=4),TK(type=S, value=*, line=-1, pos=5)}
+INP: *T*-2
+OUT: {TK(type=S, value=*, line=-1, pos=1),TK(type=N, value=T, line=-1, pos=2),TK(type=S, value=*, line=-1, pos=3),TK(type=S, value=-, line=-1, pos=4),TK(type=I, value=2, line=-1, pos=5)}

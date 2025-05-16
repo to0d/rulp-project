@@ -1,0 +1,9 @@
+(defvar x 10) x
+;=>&x 10
+
+(defvar y) y
+;=>&y nil
+
+(list-of)
+;=>
+

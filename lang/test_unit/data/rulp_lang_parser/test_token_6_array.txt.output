@@ -1,0 +1,2 @@
+INP: {a b c,x y,z}
+OUT: {TK(type=S, value={, line=-1, pos=1),TK(type=N, value=a, line=-1, pos=2),TK(type=X, value= , line=-1, pos=3),TK(type=N, value=b, line=-1, pos=4),TK(type=X, value= , line=-1, pos=5),TK(type=N, value=c, line=-1, pos=6),TK(type=S, value=,, line=-1, pos=7),TK(type=N, value=x, line=-1, pos=8),TK(type=X, value= , line=-1, pos=9),TK(type=N, value=y, line=-1, pos=10),TK(type=S, value=,, line=-1, pos=11),TK(type=N, value=z, line=-1, pos=12),TK(type=S, value=}, line=-1, pos=13)}

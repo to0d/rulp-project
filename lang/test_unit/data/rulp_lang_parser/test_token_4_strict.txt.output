@@ -1,0 +1,4 @@
+INP: ")
+OUT: {TK(type=B, value="), line=-1, pos=2)}
+INP: (PU ")
+OUT: {TK(type=S, value=(, line=-1, pos=1),TK(type=N, value=PU, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=B, value="), line=-1, pos=6)}

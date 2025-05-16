@@ -1,0 +1,5 @@
+(init-loader "xxx-loader")
+;=>
+
+(init-loader "xxx-loader")
+;=>

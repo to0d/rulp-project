@@ -1,0 +1,244 @@
+(defun list-of-is-const (?subject) 
+    (if (equal ?subject local)
+    
+        (list-of-is-const (value-of (:: (value-of local::parent) parent)))
+        
+        (loop for ?mbr in (list-of ?subject) do 
+            (if (is-const  $(value-of (value-of ?mbr)))
+                (print (str-format "obj=%-20s, type=%s\n" 
+                            (name-of $(value-of ?mbr)) 
+                             (to-string (type-of $(value-of (value-of ?mbr))))))
+            )
+        )
+    )
+)
+;=>list-of-is-const
+
+(list-of-is-const root)
+;=>nil
+;out:
+obj=!=                  , type=factor
+obj=%                   , type=factor
+obj=&                   , type=factor
+obj=*                   , type=factor
+obj=+                   , type=factor
+obj=-                   , type=factor
+obj=/                   , type=factor
+obj=::                  , type=factor
+obj=<                   , type=factor
+obj=<=                  , type=factor
+obj==                   , type=factor
+obj=>                   , type=factor
+obj=>=                  , type=factor
+obj=^                   , type=factor
+obj=access              , type=factor
+obj=add-array-to-list   , type=factor
+obj=add-attribute       , type=factor
+obj=add-list-to-array   , type=factor
+obj=add-list-to-list    , type=factor
+obj=add_search_frame    , type=factor
+obj=alias               , type=factor
+obj=and                 , type=factor
+obj=array               , type=atom
+obj=atom                , type=atom
+obj=attribute-of        , type=factor
+obj=blob                , type=atom
+obj=blob-length         , type=factor
+obj=bool                , type=atom
+obj=break               , type=factor
+obj=can-cast            , type=factor
+obj=case                , type=factor
+obj=class               , type=atom
+obj=class-of            , type=factor
+obj=clone               , type=factor
+obj=cmp_def             , type=factor
+obj=compute             , type=factor
+obj=constant            , type=atom
+obj=continue            , type=factor
+obj=date                , type=factor
+obj=day-number          , type=factor
+obj=day-of-week         , type=factor
+obj=default             , type=atom
+obj=defclass            , type=factor
+obj=defconst            , type=factor
+obj=defmacro            , type=factor
+obj=deftemplate         , type=factor
+obj=defun               , type=factor
+obj=defvar              , type=factor
+obj=delete              , type=factor
+obj=do                  , type=factor
+obj=do-when-obj-deleted , type=factor
+obj=do-when-var-changed , type=factor
+obj=double              , type=atom
+obj=equal_def           , type=factor
+obj=error-value         , type=factor
+obj=expr                , type=atom
+obj=factor              , type=atom
+obj=false               , type=bool
+obj=file-delete         , type=factor
+obj=file-exist          , type=factor
+obj=file-is-folder      , type=factor
+obj=file-list           , type=factor
+obj=file-mkdirs         , type=factor
+obj=file-parent         , type=factor
+obj=final               , type=atom
+obj=float               , type=atom
+obj=foreach             , type=factor
+obj=format              , type=factor
+obj=frame               , type=atom
+obj=frame-of            , type=factor
+obj=from                , type=atom
+obj=func                , type=atom
+obj=get-attribute       , type=factor
+obj=get-of-array        , type=factor
+obj=get-of-list         , type=factor
+obj=has-member          , type=factor
+obj=has-next            , type=factor
+obj=if                  , type=factor
+obj=init-loader         , type=factor
+obj=instance            , type=atom
+obj=int                 , type=atom
+obj=is-const            , type=factor
+obj=is-debug-active     , type=factor
+obj=is-recursive        , type=factor
+obj=is-stable           , type=factor
+obj=iterator            , type=atom
+obj=join                , type=factor
+obj=lambda              , type=factor
+obj=let                 , type=factor
+obj=list                , type=atom
+obj=list-of             , type=factor
+obj=load                , type=factor
+obj=long                , type=atom
+obj=loop                , type=factor
+obj=macro               , type=atom
+obj=make-array          , type=factor
+obj=make-blob           , type=factor
+obj=make-list           , type=factor
+obj=make-list-Iterator  , type=factor
+obj=make-string         , type=factor
+obj=member              , type=atom
+obj=name-of             , type=factor
+obj=nan                 , type=atom
+obj=native              , type=atom
+obj=new                 , type=factor
+obj=next                , type=factor
+obj=nil                 , type=atom
+obj=noclass             , type=class
+obj=not                 , type=factor
+obj=open-txt-file       , type=factor
+obj=opt-status          , type=factor
+obj=or                  , type=factor
+obj=out-to-file         , type=factor
+obj=parent-of           , type=factor
+obj=power               , type=factor
+obj=print               , type=factor
+obj=print-frame-tree    , type=factor
+obj=print-global-info   , type=factor
+obj=print-impl          , type=factor
+obj=print-object        , type=factor
+obj=print-subject       , type=factor
+obj=private             , type=atom
+obj=property-of         , type=factor
+obj=public              , type=atom
+obj=random-double       , type=factor
+obj=random-float        , type=factor
+obj=random-int          , type=factor
+obj=read-line           , type=factor
+obj=ref                 , type=factor
+obj=remove-all-list     , type=factor
+obj=return              , type=factor
+obj=return-type-of      , type=factor
+obj=reverse             , type=factor
+obj=rulp-object-count   , type=factor
+obj=run                 , type=factor
+obj=runtime-call-count  , type=factor
+obj=save-txt-file       , type=factor
+obj=search-frame-of     , type=factor
+obj=seta                , type=factor
+obj=setq                , type=factor
+obj=size-of-array       , type=factor
+obj=size-of-list        , type=factor
+obj=sort-list           , type=factor
+obj=static              , type=atom
+obj=stmt-count-of       , type=factor
+obj=str-char-at         , type=factor
+obj=str-end-with        , type=factor
+obj=str-equal           , type=factor
+obj=str-equal-nocase    , type=factor
+obj=str-format          , type=factor
+obj=str-index-of        , type=factor
+obj=str-last-index-of   , type=factor
+obj=str-length          , type=factor
+obj=str-match           , type=factor
+obj=str-replace         , type=factor
+obj=str-split           , type=factor
+obj=str-start-with      , type=factor
+obj=str-substr          , type=factor
+obj=str-trim            , type=factor
+obj=str-trim-head       , type=factor
+obj=str-trim-tail       , type=factor
+obj=str-upper           , type=factor
+obj=strcat              , type=factor
+obj=string              , type=atom
+obj=subject-of          , type=factor
+obj=sys-os-type         , type=factor
+obj=sys-time            , type=factor
+obj=template            , type=atom
+obj=throw               , type=factor
+obj=to-atom             , type=factor
+obj=to-blob             , type=factor
+obj=to-const            , type=factor
+obj=to-double           , type=factor
+obj=to-expr             , type=factor
+obj=to-float            , type=factor
+obj=to-int              , type=factor
+obj=to-long             , type=factor
+obj=to-named-list       , type=factor
+obj=to-nonamed-list     , type=factor
+obj=to-string           , type=factor
+obj=to-vary             , type=factor
+obj=trace               , type=factor
+obj=true                , type=bool
+obj=try                 , type=factor
+obj=type#namespace      , type=atom
+obj=type#noclass        , type=atom
+obj=type-of             , type=factor
+obj=union               , type=factor
+obj=uniq                , type=factor
+obj=value-of            , type=factor
+obj=value-type-of       , type=factor
+obj=var                 , type=atom
+obj=when                , type=factor
+obj=write-blob          , type=factor
+obj=|                   , type=factor
+obj=~                   , type=factor
+
+;eof
+
+(list-of-is-const system)
+;=>nil
+;out:
+obj=++                  , type=macro
+obj=--                  , type=macro
+obj=add-all             , type=func
+obj=cmp                 , type=func
+obj=dec                 , type=macro
+obj=inc                 , type=macro
+obj=index-of            , type=func
+obj=noclass             , type=class
+obj=remove              , type=func
+obj=remove-all          , type=func
+obj=to-array            , type=func
+obj=type#namespace      , type=atom
+obj=type#noclass        , type=atom
+
+;eof
+
+(list-of-is-const main)
+;=>nil
+;out:
+obj=list-of-is-const    , type=func
+
+;eof
+

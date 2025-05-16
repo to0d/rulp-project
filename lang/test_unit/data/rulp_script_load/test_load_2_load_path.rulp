@@ -1,0 +1,14 @@
+(load "data/rulp_script_load/load3.rulp")
+;err
+
+(print ?path)
+;=>
+
+(setq ?path (add ?path "data/rulp_script_load/path2"))
+;=>
+
+(load "load3.rulp")
+;=>
+
+(list-of)
+;=>

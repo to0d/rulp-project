@@ -1,0 +1,14 @@
+(load "tool")
+;=>nil
+
+(defun fun1 (?v) 
+    (return (+ ?v 1))
+)
+;=>fun1
+
+(stmt-count-of fun1)
+;=>4
+
+(stmt-count-of max)
+;=>33
+

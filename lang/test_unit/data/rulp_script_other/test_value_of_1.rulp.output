@@ -1,0 +1,42 @@
+(value-of nil)
+;=>nil
+
+(value-of true)
+;=>true
+
+(value-of 1)
+;=>1
+
+(value-of 1.1)
+;=>1.100000
+
+(value-of '(a b))
+;=>'(a b)
+
+(value-of print-list)
+;err:
+object not found: print-list
+at (value-of print-list) ; main-2
+;eof
+
+(value-of "abc")
+;=>"abc"
+
+(defvar v1 10)
+;=>&v1
+
+(value-of v1)
+;=>10
+
+(value-of a)
+;err:
+object not found: a
+at (value-of a) ; main-2
+;eof
+
+(defun f1 (?x) (return ?x))
+;=>f1
+
+(value-of f1)
+;=>f1
+

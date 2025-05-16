@@ -1,0 +1,11 @@
+(type-of $(random-int 128))
+;=>
+
+(random-int 1 2)
+;err
+
+(< (random-int 128) 128)
+;=>
+
+(>= (random-int 10) 0)
+;=>

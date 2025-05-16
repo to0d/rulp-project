@@ -1,0 +1,10 @@
+INP: a[1]
+OUT: {TK(type=N, value=a, line=-1, pos=1),TK(type=S, value=[, line=-1, pos=2),TK(type=I, value=1, line=-1, pos=3),TK(type=S, value=], line=-1, pos=4)}
+INP: '(a b c)[k]
+OUT: {TK(type=S, value=', line=-1, pos=1),TK(type=S, value=(, line=-1, pos=2),TK(type=N, value=a, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=N, value=b, line=-1, pos=5),TK(type=X, value= , line=-1, pos=6),TK(type=N, value=c, line=-1, pos=7),TK(type=S, value=), line=-1, pos=8),TK(type=S, value=[, line=-1, pos=9),TK(type=N, value=k, line=-1, pos=10),TK(type=S, value=], line=-1, pos=11)}
+INP: (a b) [m]
+OUT: {TK(type=S, value=(, line=-1, pos=1),TK(type=N, value=a, line=-1, pos=2),TK(type=X, value= , line=-1, pos=3),TK(type=N, value=b, line=-1, pos=4),TK(type=S, value=), line=-1, pos=5),TK(type=X, value= , line=-1, pos=6),TK(type=S, value=[, line=-1, pos=7),TK(type=N, value=m, line=-1, pos=8),TK(type=S, value=], line=-1, pos=9)}
+INP: {a,b,c}[n]
+OUT: {TK(type=S, value={, line=-1, pos=1),TK(type=N, value=a, line=-1, pos=2),TK(type=S, value=,, line=-1, pos=3),TK(type=N, value=b, line=-1, pos=4),TK(type=S, value=,, line=-1, pos=5),TK(type=N, value=c, line=-1, pos=6),TK(type=S, value=}, line=-1, pos=7),TK(type=S, value=[, line=-1, pos=8),TK(type=N, value=n, line=-1, pos=9),TK(type=S, value=], line=-1, pos=10)}
+INP: a[1 2]
+OUT: {TK(type=N, value=a, line=-1, pos=1),TK(type=S, value=[, line=-1, pos=2),TK(type=I, value=1, line=-1, pos=3),TK(type=X, value= , line=-1, pos=4),TK(type=I, value=2, line=-1, pos=5),TK(type=S, value=], line=-1, pos=6)}

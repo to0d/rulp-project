@@ -1,0 +1,46 @@
+(let ($idx 1) 
+    (loop for ?x in (list-of root) do 
+        (if (not (equal (type-of $(value-of (value-of ?x))) var)) 
+            (continue))
+        (print $idx ":"  (type-of $(value-of (value-of ?x))) ", name=" (name-of ?x) "\n") 
+        (setq $idx (+ $idx 1))))
+;=>nil
+
+(let ($idx 1) 
+    (loop for ?x in (list-of system) do 
+        (if (not (equal (type-of $(value-of (value-of ?x))) var)) 
+            (continue))
+        (print $idx ":"  (type-of $(value-of (value-of ?x))) ", name=" (name-of ?x) "\n") 
+        (setq $idx (+ $idx 1))))
+;=>nil
+;out:
+1:var, name=?file.separator
+2:var, name=?load-class
+3:var, name=?load-jar
+4:var, name=?load-script
+5:var, name=?load-system
+6:var, name=?loader-list
+7:var, name=?os.name
+8:var, name=?os.version
+9:var, name=?path
+10:var, name=?path.separator
+11:var, name=?trace
+12:var, name=?user.dir
+13:var, name=?user.home
+14:var, name=?user.name
+
+;eof
+
+(let ($idx 1) 
+    (loop for ?x in (list-of main) do 
+        (if (not (equal (type-of $(value-of (value-of ?x))) var)) 
+            (continue))
+        (print $idx ":"  (type-of $(value-of (value-of ?x))) ", name=" (name-of ?x) "\n") 
+        (setq $idx (+ $idx 1))))
+;=>nil
+;out:
+1:var, name=?path
+2:var, name=?script-path
+
+;eof
+

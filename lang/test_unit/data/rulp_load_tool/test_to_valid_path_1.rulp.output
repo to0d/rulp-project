@@ -1,0 +1,6 @@
+(load "tool")
+;=>nil
+
+(to-valid-path "abc")
+;=>"abc/"
+

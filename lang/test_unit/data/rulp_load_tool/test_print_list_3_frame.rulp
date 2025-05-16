@@ -1,0 +1,15 @@
+(load "tool")
+(load "map")
+(load "queue")
+(load "set")
+(load "stack")
+;=>
+
+(print-list root)
+;=>
+
+(print-list system)
+;=>
+
+(print-list main)
+;=>

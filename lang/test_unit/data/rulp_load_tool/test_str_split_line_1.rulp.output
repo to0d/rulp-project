@@ -1,0 +1,30 @@
+(load "tool")
+;=>nil
+
+(str-split-line "")
+;=>'("")
+
+(str-split-line "abc")
+;=>'("abc")
+
+(str-split-line "abc " )
+;=>'("abc ")
+
+(str-split-line "abc  def")
+;=>'("abc  def")
+
+(str-split-line "abc\ndef")
+;=>'("abc" "def")
+
+(str-split-line "abc\n\ndef")
+;=>'("abc" "" "def")
+
+(str-split-line "\nabc\n\ndef")
+;=>'("" "abc
+" "" "def")
+
+(str-split-line "\nabc\n\ndef\n")
+;=>'("" "abc
+" "" "def
+" "")
+

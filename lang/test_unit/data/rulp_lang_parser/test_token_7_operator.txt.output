@@ -1,0 +1,6 @@
+INP: <
+OUT: {TK(type=S, value=<, line=-1, pos=1)}
+INP: ++
+OUT: {TK(type=S, value=+, line=-1, pos=1),TK(type=S, value=+, line=-1, pos=2)}
+INP: --
+OUT: {TK(type=S, value=-, line=-1, pos=1),TK(type=S, value=-, line=-1, pos=2)}

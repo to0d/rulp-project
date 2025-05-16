@@ -1,0 +1,15 @@
+(load "tool")
+;=>nil
+
+(sort '())
+;=>'()
+
+(sort '(a))
+;=>'(a)
+
+(sort '(a b c))
+;=>'(a b c)
+
+(sort '(c b a))
+;=>'(a b c)
+

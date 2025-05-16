@@ -1,0 +1,12 @@
+(load "tool")
+;=>nil
+
+(print-list '(a b c))
+;=>nil
+;out:
+a
+b
+c
+
+;eof
+

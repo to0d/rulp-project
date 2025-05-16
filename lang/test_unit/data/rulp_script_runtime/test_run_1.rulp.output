@@ -1,0 +1,18 @@
+(run "data/rulp_script_runtime/run_1.rulp")
+;=>nil
+;out:
+run
+;eof
+
+(list-of)
+;=>'(main::?path main::?script-path main::main main::root main::system)
+
+(run "data/rulp_script_runtime/run_1.rulp") ; run twice
+;=>nil
+;out:
+run
+;eof
+
+(list-of)
+;=>'(main::?path main::?script-path main::main main::root main::system)
+

@@ -1,0 +1,27 @@
+(defvar v1 10)
+;=>
+
+(foreach (?x (list-of main)) (value-of ?x))
+;=>
+
+(foreach (?x (list-of main)) (type-of $(value-of ?x)))
+;=>
+
+(foreach (?x (list-of main)) (value-of (value-of ?x)))
+;=>
+
+(foreach (?x (list-of main)) (type-of $(value-of (value-of ?x))))
+;=>
+
+(foreach (?x (list-of main)) (value-of (value-of (value-of ?x))))
+;=>
+
+(foreach (?x (list-of main)) (type-of $(value-of (value-of (value-of ?x)))))
+;=>
+
+(foreach (?x (list-of main)) (value-of (value-of (value-of (value-of ?x)))))
+;=>
+
+(foreach (?x (list-of main)) (type-of $(value-of (value-of (value-of (value-of ?x))))))
+;=>
+

@@ -1,0 +1,17 @@
+BGN: (a b)
+(x y)
+EOF
+
+BGN: (a b);a comment line
+(x y)
+EOF
+
+BGN: (a b ;a comment line
+(x y);
+)
+EOF
+
+BGN: (a b 
+
+   )
+EOF

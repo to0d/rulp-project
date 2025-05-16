@@ -1,0 +1,61 @@
+(defun fun1 (?x ?y)
+    (if (<= ?x 0)
+        (return 0))
+    (if (<= ?x 10)
+        (return ?y))
+    (return (* ?y ?y))
+)[opt-lco]
+;=>fun1
+
+(defun fun2 ()
+    (return (+ 1 2))
+)
+;=>fun2
+
+(fun1 0 (fun2))
+;=>0
+
+(runtime-call-count fun2) ; The fun2 should not be called at all
+;=>0
+
+(fun1 1 (fun2))
+;=>3
+
+(runtime-call-count fun2) ; The fun2 will called only once
+;=>1
+
+(fun1 11 (fun2))
+;=>9
+
+(runtime-call-count fun2) ; The fun2 will called only once
+;=>2
+
+(attribute-of fun1)
+;=>'(opt-lco)
+
+(print-impl fun1)
+;=>nil
+;out:
+(defun fun1 (?x[opt-lco] ?y[opt-lco])
+    (if (<= ?x 0)
+        (return 0)
+    )
+    (if (<= ?x 10)
+        (return ?y)
+    )
+    (return (* ?y ?y))
+)[opt-lco]
+
+;eof
+
+(opt-status)
+;=>nil
+;out:
+==========================================================================================================================
+      Name: Status
+--------------------------------------------------------------------------------------------------------------------------
+       LCO: rebuild=1, arg=2, pass=3, hit=2
+==========================================================================================================================
+
+;eof
+

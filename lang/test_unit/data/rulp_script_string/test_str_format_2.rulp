@@ -1,0 +1,2 @@
+(str-format "%-20s" "xyz")
+;=>"xyz                 "

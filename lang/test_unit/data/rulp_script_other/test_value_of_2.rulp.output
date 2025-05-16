@@ -1,0 +1,27 @@
+(defvar v1 10)
+;=>&v1
+
+(foreach (?x (list-of main)) (value-of ?x))
+;=>'(main::?path main::?script-path main::?x main::main main::root main::system main::v1)
+
+(foreach (?x (list-of main)) (type-of $(value-of ?x)))
+;=>'(member member member member member member member)
+
+(foreach (?x (list-of main)) (value-of (value-of ?x)))
+;=>'(&?path &?script-path &?x main root system &v1)
+
+(foreach (?x (list-of main)) (type-of $(value-of (value-of ?x))))
+;=>'(var var var frame frame frame var)
+
+(foreach (?x (list-of main)) (value-of (value-of (value-of ?x))))
+;=>'('("load") "data/rulp_script_other/test_value_of_2.rulp" main::?x main root system 10)
+
+(foreach (?x (list-of main)) (type-of $(value-of (value-of (value-of ?x)))))
+;=>'(list string member frame frame frame int)
+
+(foreach (?x (list-of main)) (value-of (value-of (value-of (value-of ?x)))))
+;=>'('("load") "data/rulp_script_other/test_value_of_2.rulp" &?x main root system 10)
+
+(foreach (?x (list-of main)) (type-of $(value-of (value-of (value-of (value-of ?x))))))
+;=>'(list string var frame frame frame int)
+

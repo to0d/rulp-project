@@ -1,0 +1,11 @@
+(defun fun2 ((?x Expr)) (print ?x))
+;err:
+Undefined para type: Expr
+at (defun fun2 ((?x Expr)) (print ?x)) ; main-2
+;eof
+
+(defun main::fun2 ((?x Expr)) (print ?x))
+;err:
+Undefined para type: Expr
+at (defun main::fun2 ((?x Expr)) (print ?x)) ; main-2
+;eof

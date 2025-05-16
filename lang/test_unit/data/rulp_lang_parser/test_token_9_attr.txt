@@ -1,0 +1,5 @@
+INP: a[1]
+INP: '(a b c)[k]
+INP: (a b) [m]
+INP: {a,b,c}[n]
+INP: a[1 2]

@@ -1,0 +1,45 @@
+(new namespace ns1)
+;=>namespace@ns1
+
+(new namespace ns2)
+;=>namespace@ns2
+
+(defvar ns1::var1 1)
+;=>&var1
+
+(defun ns1::f1 () (return 1))
+;=>namespace@ns1::f1
+
+(defvar ns2::var1 2)
+;=>&var1
+
+(defun ns2::f1 () (return 2))
+;=>namespace@ns2::f1
+
+(use namespace ns1)
+;=>nil
+
+(value-of var1)
+;=>1
+
+(f1)
+;=>1
+
+(use namespace ns2)
+;=>nil
+
+(value-of var1)
+;=>2
+
+(f1)
+;=>2
+
+(use namespace ns1)
+;=>nil
+
+(value-of var1)
+;=>1
+
+(f1)
+;=>1
+

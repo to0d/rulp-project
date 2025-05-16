@@ -1,0 +1,42 @@
+(defclass map
+    
+  (defvar ?impl nil)[private]
+    
+  (defun init ()
+    (setq ?impl (map::_map_init))
+  )[final]
+
+  (defun put (?k ?v)
+    (map::_map_put ?impl ?k ?v))[final]
+  
+  (defun get (?k)
+    (return (map::_map_get ?impl ?k)))[final]
+  
+  (defun size-of ()
+    (return (map::_map_size_of ?impl)))[final]
+      
+  (defun is-empty ()
+    (return (map::_map_is_empty ?impl)))[final]
+        
+  (defun key-list ()
+    (return (map::_map_key_list ?impl)))[final]
+        
+  (defun has-key (?k)
+    (return (map::_map_has_key ?impl ?k)))[final]
+        
+  (defun value-list ()
+    (return (map::_map_value_list ?impl)))[final]
+        
+  (defun clear ()
+      (map::_map_clear ?impl))[final]
+
+)[final]
+
+(defun size-of  ((?map map))    (return (?map::size-of)))
+
+(defun is-empty ((?map map))    (return (?map::is-empty)))
+
+(defun clear    ((?map map))    (return (?map::clear)))
+
+(init-loader "_$xr_map_loader$_")
+

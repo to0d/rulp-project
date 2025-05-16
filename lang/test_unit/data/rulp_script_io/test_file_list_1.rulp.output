@@ -1,0 +1,18 @@
+(file-list)
+;err:
+Too few parameters: (file-list), min arg count: 2
+at (file-list) ; main-2
+;eof
+
+(file-list "abc")
+;=>'()
+
+(file-list "data/test_fs")
+;=>'("data/test_fs/test_folder" "data/test_fs/test.txt")
+
+(file-list "data/test_fs/test.txt")
+;=>'()
+
+(file-list "data/test_fs/test_folder")
+;=>'("data/test_fs/test_folder/test3.txt" "data/test_fs/test_folder/test2.txt")
+

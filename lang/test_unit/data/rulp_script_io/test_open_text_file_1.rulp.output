@@ -1,0 +1,3 @@
+(open-txt-file "data/rulp_script_io/open-text-file-1.txt")
+;=>'("123" "abc" "XYZ")
+

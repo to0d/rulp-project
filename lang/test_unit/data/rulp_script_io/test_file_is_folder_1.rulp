@@ -1,0 +1,8 @@
+(file-is-folder "abc")
+;=>
+
+(file-is-folder "data/rulp_factor_fs")
+;=>
+
+(file-is-folder "data/rulp_factor_fs/test_file_is_folder_1.rulp")
+;=>

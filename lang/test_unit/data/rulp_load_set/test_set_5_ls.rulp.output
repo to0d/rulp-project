@@ -1,0 +1,81 @@
+(load "set")
+(load "tool")
+;=>nil nil
+
+(print-list (list-of set))
+;=>nil
+;out:
+set::?impl
+set::_set_add
+set::_set_clear
+set::_set_has
+set::_set_init
+set::_set_is_empty
+set::_set_size_of
+set::_set_to_list
+set::add
+set::clear
+set::has
+set::init
+set::is-empty
+set::size-of
+set::to-list
+
+;eof
+
+(print-list set)
+;=>nil
+;out:
+mbr=?impl, access deny
+mbr=_set_add, access deny
+mbr=_set_clear, access deny
+mbr=_set_has, access deny
+mbr=_set_init, access deny
+mbr=_set_is_empty, access deny
+mbr=_set_size_of, access deny
+mbr=_set_to_list, access deny
+mbr=add, mbr-property='(default final), mbr-attribute='(final), obj=(add nil), obj-type=func, obj-attribute='()
+mbr=clear, mbr-property='(default final), mbr-attribute='(final), obj=(clear), obj-type=func, obj-attribute='()
+mbr=has, mbr-property='(default final), mbr-attribute='(final), obj=(has nil), obj-type=func, obj-attribute='()
+mbr=init, mbr-property='(default final), mbr-attribute='(final), obj=(init), obj-type=func, obj-attribute='()
+mbr=is-empty, mbr-property='(default final), mbr-attribute='(final), obj=(is-empty), obj-type=func, obj-attribute='()
+mbr=size-of, mbr-property='(default final), mbr-attribute='(final), obj=(size-of), obj-type=func, obj-attribute='()
+mbr=to-list, mbr-property='(default final), mbr-attribute='(final), obj=(to-list), obj-type=func, obj-attribute='()
+
+;eof
+
+(new set set1)
+;=>set@set1
+
+(print-list (list-of set1))
+;=>nil
+;out:
+set@set1::?impl
+set@set1::init
+set@set1::this
+
+;eof
+
+(set1::add 1)
+;=>nil
+
+(print-list (list-of set1))
+;=>nil
+;out:
+set@set1::?impl
+set@set1::add
+set@set1::init
+set@set1::this
+
+;eof
+
+(print-list set1)
+;=>nil
+;out:
+mbr=?impl, access deny
+mbr=add, mbr-property='(default final), mbr-attribute='(), obj=(add nil), obj-type=func, obj-attribute='()
+mbr=init, mbr-property='(default final), mbr-attribute='(), obj=(init), obj-type=func, obj-attribute='()
+mbr=this, mbr-property='(default), mbr-attribute='(), obj=set1, obj-type=instance, obj-attribute='(), instance-class=set
+
+;eof
+

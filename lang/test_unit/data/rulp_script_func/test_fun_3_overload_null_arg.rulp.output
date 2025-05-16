@@ -1,0 +1,33 @@
+(load "itest")
+;=>nil
+
+(defun fun1 (?v1 ?v2)  (return ?v2))
+;=>fun1
+
+(name-of fun1)
+;=>"(fun1 nil nil)"
+
+(defun fun1 ((?v1 int) (?v2 int)) (return (+ 1 ?v2)))
+;=>fun1
+
+(name-of fun1)
+;=>"{(fun1 int int),(fun1 nil nil)}"
+
+(defun fun1 ((?v1 int) ?v2) (return (- 1 ?v2)))
+;=>fun1
+
+(name-of fun1)
+;=>"{(fun1 int int),(fun1 int nil),(fun1 nil nil)}"
+
+(fun1 a b)
+;=>b
+
+(fun1 1 3)
+;=>4
+
+(fun1 (get-null) 3)
+;=>4
+
+(script_out (print-subject) ".txt")
+;=>nil
+

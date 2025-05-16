@@ -1,0 +1,76 @@
+(defun list-of-return-type-of (?subject) 
+    (if (equal ?subject local)
+    
+        (list-of-return-type-of (value-of (:: (value-of local::parent) parent)))
+
+        (loop for ?mbr in (list-of ?subject) do
+
+            (defvar ?type (return-type-of $(value-of (value-of ?mbr))))
+            
+            (if (!= ?type nil)
+                (print (str-format "obj=%-20s, type=%-8s, return=%s\n" 
+                            (name-of $(value-of ?mbr))
+                            (to-string (type-of $(value-of (value-of ?mbr))))
+                            (to-string ?type)))
+            )
+        )
+    )
+)
+;=>list-of-return-type-of
+
+(list-of-return-type-of root)
+;=>nil
+;out:
+obj=and                 , type=factor  , return=bool
+obj=false               , type=bool    , return=bool
+obj=not                 , type=factor  , return=bool
+obj=or                  , type=factor  , return=bool
+obj=str-char-at         , type=factor  , return=int
+obj=str-end-with        , type=factor  , return=bool
+obj=str-equal           , type=factor  , return=bool
+obj=str-equal-nocase    , type=factor  , return=bool
+obj=str-format          , type=factor  , return=string
+obj=str-index-of        , type=factor  , return=int
+obj=str-last-index-of   , type=factor  , return=int
+obj=str-length          , type=factor  , return=int
+obj=str-match           , type=factor  , return=bool
+obj=str-replace         , type=factor  , return=string
+obj=str-split           , type=factor  , return=list
+obj=str-start-with      , type=factor  , return=bool
+obj=str-substr          , type=factor  , return=string
+obj=str-trim            , type=factor  , return=string
+obj=str-trim-head       , type=factor  , return=string
+obj=str-trim-tail       , type=factor  , return=string
+obj=str-upper           , type=factor  , return=string
+obj=true                , type=bool    , return=bool
+
+;eof
+
+(list-of-return-type-of system)
+;=>nil
+;out:
+obj=?file.separator     , type=var     , return=string
+obj=?load-class         , type=var     , return=list
+obj=?load-jar           , type=var     , return=list
+obj=?load-script        , type=var     , return=list
+obj=?load-system        , type=var     , return=list
+obj=?loader-list        , type=var     , return=list
+obj=?os.name            , type=var     , return=string
+obj=?os.version         , type=var     , return=string
+obj=?path               , type=var     , return=list
+obj=?path.separator     , type=var     , return=string
+obj=?trace              , type=var     , return=bool
+obj=?user.dir           , type=var     , return=string
+obj=?user.home          , type=var     , return=string
+obj=?user.name          , type=var     , return=string
+
+;eof
+
+(list-of-return-type-of main)
+;=>nil
+;out:
+obj=?path               , type=var     , return=list
+obj=?script-path        , type=var     , return=string
+
+;eof
+
