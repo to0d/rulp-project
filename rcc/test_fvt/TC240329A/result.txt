@@ -1,0 +1,9 @@
+************* test *************
+input : -o main.o -O 0 -I ../../../include/simd 
+output: --codegen -o main.o -I ../../../include/simd -O 0
+
+************* test *************
+input : -funlist hpl_func_list.txt 
+output: --codegen -funlist hpl_func_list.txt
+
+output: done!

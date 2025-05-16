@@ -1,0 +1,12 @@
+#/bin/sh
+
+script_abs=$(readlink -f $0)
+script_dir=$(dirname $script_abs)
+project_dir=$(dirname $script_dir)
+/bin/bash -c "$project_dir/shell/rsh_main.sh $*"
+RC=$?
+exit $RC
+
+
+
+

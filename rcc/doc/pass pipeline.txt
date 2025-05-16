@@ -1,0 +1,10 @@
+
+rulp file
+    -> rulp object list
+        -> rulp passes (优化, 如果需要自动增加main函数)
+            -> 函数拆分(提取可编译部分为新函数)
+                -> RcModel(RcFunction, RcExpr, RcGlobalVar)
+                    -> RcPasses (优化, add metadata)
+                        -> 解释型函数 封装
+                        -> 编译型函数
+         
