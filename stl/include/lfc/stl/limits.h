@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2023 Todd <to0d@outlook.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef __LFC_STL_LIMITS_H__
 #define __LFC_STL_LIMITS_H__
 #include <climits>

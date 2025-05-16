@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2023 Todd <to0d@outlook.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef __GTEST_HELPER_H__
 #define __GTEST_HELPER_H__
 

@@ -90,6 +90,25 @@ Lisp的独特设计使其成为规则推理和符号计算的理想选择：
 - 推进JIT编译器开发
 - 确定模糊推理器架构
 
+## 📜 开源协议
+
+本项目采用 **GNU通用公共许可证第三版（GPL-3.0）** 授权。  
+使用、修改或分发本软件即表示您同意遵守该许可证条款。
+
+### 核心要求：
+- 🛠️ **修改衍生作品**必须采用相同许可证开源
+- 📦 **分发软件**时必须提供完整源代码
+- ©️ 必须保留原始**版权声明**
+
+### 完整协议文本：
+查看项目根目录的 [LICENSE](LICENSE) 文件或在线阅读：  
+[https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
+### 📧 联系方式：
+如需特殊授权或许可证相关问题，请联系：  
+**Todd**  
+[to0d@outlook.com](mailto:to0d@outlook.com)
+
 ## Project Introduction: A Lisp-based Rule Inference System with Modern Compilation Techniques
 
 This project aims to design and implement a new **Lisp dialect**, leveraging Lisp's core features—**homoiconicity**, **powerful macro systems**, and **dynamic metaprogramming capabilities**—to build an efficient and flexible **rule inference system**.
@@ -154,3 +173,22 @@ This project is not just an implementation of a Lisp dialect but an interdiscipl
 - Finalize Rete engine C++ migration
 - Advance JIT compiler development
 - Finalize fuzzy inference engine architecture
+
+## 📜 License
+
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
+By using, distributing, or modifying this software, you agree to the terms and conditions of this license.
+
+### Key Requirements:
+- 🛠️ **Modifications** must be disclosed under the same license
+- 📦 **Distributions** must include full source code
+- ©️ **Copyright notice** must be preserved
+
+### Full License Text:
+See [LICENSE](LICENSE) file in the root directory or read online:  
+[https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
+### 📧 Contact:
+For licensing inquiries or special use cases, please contact:  
+**Todd**  
+[to0d@outlook.com](mailto:to0d@outlook.com)
