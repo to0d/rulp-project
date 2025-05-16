@@ -1,0 +1,5 @@
+nodes:
+DN(index=0, name=start, label=start, shape=ellipse, color=red, style=, fill=, empty=0, graph=0, input={}, output={0})
+DN(index=1, name=end, label=end, shape=ellipse, color=red, style=, fill=, empty=0, graph=0, input={2}, output={})
+DN(index=2, name=n1, label=n1, shape=record, color=, style=, fill=, empty=0, graph=0, input={0}, output={1})
+DN(index=3, name=n2, label=n2, shape=record, color=, style=, fill=, empty=0, graph=0, input={1}, output={2})

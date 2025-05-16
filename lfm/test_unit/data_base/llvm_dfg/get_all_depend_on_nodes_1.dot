@@ -1,0 +1,120 @@
+digraph "foo" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0002[shape=ellipse, label="%2: arg"]
+	node_0112[shape=record, label="store(%2,%105)"]
+	node_0116[shape=record, label="%111: call simd_gemm_executor_create()", color=red]
+	node_0117[shape=record, label="store(%111,%109)"]
+	node_0341[shape=record, label="%273: load(%109)"]
+	node_0342[shape=record, label="%274: load(%105)"]
+	node_0343[shape=record, label="%275: load(%105)"]
+	node_0344[shape=record, label="%276: load(%105)"]
+	node_0348[shape=record, label="store(%273,%55)"]
+	node_0349[shape=record, label="store(%274,%56)"]
+	node_0350[shape=record, label="store(%275,%57)"]
+	node_0351[shape=record, label="store(%276,%58)"]
+	node_0360[shape=record, label="%280: load(%56)"]
+	node_0361[shape=record, label="%281: bitcast(%280)"]
+	node_0362[shape=record, label="%282: ptrtoint(%281)"]
+	node_0363[shape=record, label="%283: call simd_convert_to_relative_addr(%282)", color=red]
+	node_0364[shape=record, label="store(%283,%67)"]
+	node_0365[shape=record, label="%284: load(%57)"]
+	node_0366[shape=record, label="%285: bitcast(%284)"]
+	node_0367[shape=record, label="%286: ptrtoint(%285)"]
+	node_0368[shape=record, label="%287: call simd_convert_to_relative_addr(%286)", color=red]
+	node_0369[shape=record, label="store(%287,%68)"]
+	node_0370[shape=record, label="store(0,%69)"]
+	node_0371[shape=record, label="%288: load(%58)"]
+	node_0372[shape=record, label="%289: bitcast(%288)"]
+	node_0373[shape=record, label="%290: ptrtoint(%289)"]
+	node_0374[shape=record, label="%291: call simd_convert_to_relative_addr(%290)", color=red]
+	node_0375[shape=record, label="store(%291,%70)"]
+	node_0376[shape=record, label="store(0,%71)"]
+	node_0377[shape=record, label="store(0,%72)"]
+	node_0378[shape=record, label="store(0,%73)"]
+	node_0379[shape=record, label="store(0,%74)"]
+	node_0382[shape=record, label="store(1,%77)"]
+	node_0383[shape=record, label="store(2,%78)"]
+	node_0384[shape=record, label="store(0,%79)"]
+	node_0385[shape=record, label="store(3,%80)"]
+	node_0386[shape=record, label="store(4,%81)"]
+	node_0387[shape=record, label="store(0,%82)"]
+	node_0535[shape=record, label="%410: load(%55)"]
+	node_0536[shape=record, label="%411: load(%67)"]
+	node_0537[shape=record, label="%412: load(%68)"]
+	node_0538[shape=record, label="%413: load(%69)"]
+	node_0539[shape=record, label="%414: load(%70)"]
+	node_0540[shape=record, label="%415: load(%71)"]
+	node_0541[shape=record, label="%416: load(%72)"]
+	node_0542[shape=record, label="%417: load(%73)"]
+	node_0543[shape=record, label="%418: load(%74)"]
+	node_0544[shape=record, label="%419: load(%77)"]
+	node_0545[shape=record, label="%420: load(%78)"]
+	node_0546[shape=record, label="%421: load(%79)"]
+	node_0547[shape=record, label="%422: load(%80)"]
+	node_0548[shape=record, label="%423: load(%81)"]
+	node_0549[shape=record, label="%424: load(%82)"]
+	node_0550[shape=record, label="%425: call Gemm(%410,%411,%412,%413,%414,%415,%416,%417,%418,%419,%420,%421,%422,%423,%424,4)", color=red]
+	node_0112 -> node_0002 
+	node_0117 -> node_0116 
+	node_0341 -> node_0117 
+	node_0342 -> node_0112 
+	node_0343 -> node_0112 
+	node_0344 -> node_0112 
+	node_0348 -> node_0341 
+	node_0349 -> node_0342 
+	node_0350 -> node_0343 
+	node_0351 -> node_0344 
+	node_0360 -> node_0349 
+	node_0361 -> node_0360 
+	node_0362 -> node_0361 
+	node_0363 -> node_0362 
+	node_0364 -> node_0363 
+	node_0365 -> node_0350 
+	node_0366 -> node_0365 
+	node_0367 -> node_0366 
+	node_0368 -> node_0367 
+	node_0369 -> node_0368 
+	node_0371 -> node_0351 
+	node_0372 -> node_0371 
+	node_0373 -> node_0372 
+	node_0374 -> node_0373 
+	node_0375 -> node_0374 
+	node_0535 -> node_0348 
+	node_0536 -> node_0364 
+	node_0537 -> node_0369 
+	node_0538 -> node_0370 
+	node_0539 -> node_0375 
+	node_0540 -> node_0376 
+	node_0541 -> node_0377 
+	node_0542 -> node_0378 
+	node_0543 -> node_0379 
+	node_0544 -> node_0382 
+	node_0545 -> node_0383 
+	node_0546 -> node_0384 
+	node_0547 -> node_0385 
+	node_0548 -> node_0386 
+	node_0549 -> node_0387 
+	node_0550 -> node_0535 
+	node_0550 -> node_0536 
+	node_0550 -> node_0537 
+	node_0550 -> node_0538 
+	node_0550 -> node_0539 
+	node_0550 -> node_0540 
+	node_0550 -> node_0541 
+	node_0550 -> node_0542 
+	node_0550 -> node_0543 
+	node_0550 -> node_0544 
+	node_0550 -> node_0545 
+	node_0550 -> node_0546 
+	node_0550 -> node_0547 
+	node_0550 -> node_0548 
+	node_0550 -> node_0549 
+	node_0002 -> start [color=red, weight=100]
+	node_0116 -> start [color=red, weight=100]
+	node_0363 -> node_0116 [color=red, weight=100]
+	node_0368 -> node_0363 [color=red, weight=100]
+	node_0374 -> node_0368 [color=red, weight=100]
+	node_0550 -> node_0374 [color=red, weight=100]
+	end -> node_0550 [color=red, weight=100]
+}

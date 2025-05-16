@@ -1,0 +1,6 @@
+CN(index=0, type=B3, block=%1, end=sw:{0:%5,1:%6,2:%7,d:%8}, from={}, to={1:%5,2:%6,3:%7,4:%8}, switch={0,1,2})
+CN(index=1, type=B1, block=%5, end=br[%9], from={0:%1}, to={5:%9}, switch={})
+CN(index=2, type=B1, block=%6, end=br[%9], from={0:%1}, to={5:%9}, switch={})
+CN(index=3, type=B1, block=%7, end=br[%9], from={0:%1}, to={5:%9}, switch={})
+CN(index=4, type=B1, block=%8, end=br[%9], from={0:%1}, to={5:%9}, switch={})
+CN(index=5, type=B0, block=%9, end=ret, from={1:%5,2:%6,3:%7,4:%8}, to={}, switch={})

@@ -1,0 +1,13 @@
+digraph "foo" {
+	node_0000[shape=record, label="{%1:\l %2 = alloca i32, align 4\l %3 = alloca i32, align 4\l %4 = alloca i32, align 4\l ...\l %10 = icmp sgt i32 %9, 0\l br i1 %10, label %11, label %20\l|{<s0>T|<s1>F}}"]
+	node_0001[shape=record, label="{%11:\l %12 = load i32, i32* %3, align 4\l %13 = add nsw i32 %12, 1\l store i32 %13, i32* %3, align 4\l %14 = load i32, i32* %3, align 4\l %15 = icmp sgt i32 %14, 0\l br i1 %15, label %16, label %19\l|{<s0>T|<s1>F}}"]
+	node_0002[shape=record, label="{%16:\l %17 = load i32, i32* %4, align 4\l %18 = add nsw i32 %17, 1\l store i32 %18, i32* %4, align 4\l br label %19\l}"]
+	node_0003[shape=record, label="{%19:\l br label %20\l}"]
+	node_0004[shape=record, label="{%20:\l %21 = load i32, i32* %3, align 4\l %22 = call printf\l %23 = load i32, i32* %4, align 4\l %24 = call printf\l ret void\l}"]
+	node_0000:s0 -> node_0001 
+	node_0000:s1 -> node_0004 
+	node_0001:s0 -> node_0002 
+	node_0001:s1 -> node_0003 
+	node_0002 -> node_0003 
+	node_0003 -> node_0004 
+}

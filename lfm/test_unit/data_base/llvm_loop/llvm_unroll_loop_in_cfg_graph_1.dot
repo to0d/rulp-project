@@ -1,0 +1,16 @@
+digraph "foo" {
+	node_0000[shape=record, label="%3:\l"]
+	node_0001[shape=record, label="{%12:\l|{<s0>T|<s1>F}}"]
+	node_0002[shape=record, label="%18:\l"]
+	node_0003[shape=record, label="%40:\l"]
+	node_0004[shape=record, label="%43:\l"]
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0000 -> node_0001 
+	node_0001:s0 -> node_0002 
+	node_0001:s1 -> node_0004 
+	node_0002 -> node_0003 
+	node_0003 -> node_0001 
+	start -> node_0000 
+	node_0004 -> end 
+}

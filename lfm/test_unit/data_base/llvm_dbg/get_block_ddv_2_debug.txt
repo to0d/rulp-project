@@ -1,0 +1,3 @@
+DDV(var_name=%3, type_name=struct.XX, type_ptr_lvl=2, declare_name=x1, declare_loc=8)
+DDV(var_name=%4, type_name=struct.XX, type_ptr_lvl=2, declare_name=x2, declare_loc=8)
+DDV(var_name=%5, type_name=struct.XX, type_ptr_lvl=1, declare_name=x3, declare_loc=9)

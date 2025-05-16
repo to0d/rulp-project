@@ -1,0 +1,1 @@
+FC(name=fun1, para={null}, ret=%1, src_loc=-1)

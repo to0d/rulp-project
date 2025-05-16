@@ -1,0 +1,44 @@
+digraph "foo" {
+	node_0000[shape=record, style=filled, fillcolor="#f3c7b170", label="{%0:\l %200 = call printf\l %201 = call simd_gemm_executor_create\l %202 = call simd_dre_executor_create\l}"]
+	node_0001[shape=record, style=filled, fillcolor="#f3c7b170", label="{%203:\l call simd_gemm_executor_initialize\l call simd_dre_executor_initialize\l call reg2sch_start_set\l %215 = call convertToRelativeAddr\l %218 = call convertToRelativeAddr\l %221 = call convertToRelativeAddr\l call llvm.memcpy.p0i8.p0i8.i64\l %234 = call setUpdateData\l call llvm.memcpy.p0i8.p0i8.i64\l %248 = call setUpdateData\l call llvm.memcpy.p0i8.p0i8.i64\l %262 = call setUpdateData\l call llvm.memcpy.p0i8.p0i8.i64\l %282 = call setUpdateData\l call simd_gemm_init\l call simd_gemm_init\l call simd_gemm_init\l call simd_gemm_init\l %355 = call Gemm\l %361 = call convertToRelativeAddr\l %364 = call convertToRelativeAddr\l|{<s0>T|<s1>F}}"]
+	node_0002[shape=record, label="%367:\l"]
+	node_0003[shape=record, label="{%368:\l|{<s0>T|<s1>F}}"]
+	node_0004[shape=record, label="%371:\l"]
+	node_0005[shape=record, label="%372:\l"]
+	node_0006[shape=record, label="%377:\l"]
+	node_0007[shape=record, style=filled, fillcolor="#f3c7b170", label="{%379:\l call llvm.memcpy.p0i8.p0i8.i64\l %402 = call setUpdateData\l call llvm.memcpy.p0i8.p0i8.i64\l %429 = call setUpdateData\l call simd_dre_init\l call simd_dre_init\l %472 = call Dre\l %478 = call convertToRelativeAddr\l %481 = call convertToRelativeAddr\l|{<s0>T|<s1>F}}"]
+	node_0008[shape=record, label="%484:\l"]
+	node_0009[shape=record, label="{%485:\l|{<s0>T|<s1>F}}"]
+	node_0010[shape=record, label="%488:\l"]
+	node_0011[shape=record, label="%489:\l"]
+	node_0012[shape=record, label="%494:\l"]
+	node_0013[shape=record, style=filled, fillcolor="#f3c7b170", label="{%496:\l call llvm.memcpy.p0i8.p0i8.i64\l %519 = call setUpdateData\l call llvm.memcpy.p0i8.p0i8.i64\l %546 = call setUpdateData\l call simd_dre_init\l call simd_dre_init\l %589 = call Dre\l %599 = call convertToRelativeAddr\l %602 = call convertToRelativeAddr\l %605 = call convertToRelativeAddr\l call llvm.memcpy.p0i8.p0i8.i64\l %618 = call setUpdateData\l call llvm.memcpy.p0i8.p0i8.i64\l %632 = call setUpdateData\l call llvm.memcpy.p0i8.p0i8.i64\l %646 = call setUpdateData\l call llvm.memcpy.p0i8.p0i8.i64\l %666 = call setUpdateData\l call simd_gemm_init\l call simd_gemm_init\l call simd_gemm_init\l call simd_gemm_init\l %739 = call Gemm\l|{<s0>T|<s1>F}}"]
+	node_0014[shape=record, style=filled, fillcolor="#f3c7b170", label="{%742:\l call simd_major_finish\l}"]
+	node_0015[shape=record, style=filled, fillcolor="#f3c7b170", label="{%743:\l call simd_gemm_executor_release\l call simd_dre_executor_release\l}"]
+	node_0016[shape=record, label="%746:\l"]
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0000 -> node_0001 
+	node_0001:s0 -> node_0002 
+	node_0001:s1 -> node_0003 
+	node_0002 -> node_0007 
+	node_0003:s0 -> node_0004 
+	node_0003:s1 -> node_0005 
+	node_0004 -> node_0006 
+	node_0005 -> node_0006 
+	node_0006 -> node_0007 
+	node_0007:s0 -> node_0008 
+	node_0007:s1 -> node_0009 
+	node_0008 -> node_0013 
+	node_0009:s0 -> node_0010 
+	node_0009:s1 -> node_0011 
+	node_0010 -> node_0012 
+	node_0011 -> node_0012 
+	node_0012 -> node_0013 
+	node_0013:s0 -> node_0014 
+	node_0013:s1 -> node_0015 
+	node_0014 -> node_0015 
+	node_0015 -> node_0016 
+	start -> node_0000 
+	node_0016 -> end 
+}

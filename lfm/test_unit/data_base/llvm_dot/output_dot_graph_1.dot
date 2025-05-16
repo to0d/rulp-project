@@ -1,0 +1,9 @@
+digraph "foo" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	n1[shape=record, label="n1"]
+	n2[shape=record, label="n2"]
+	n1 -> start 
+	n2 -> n1 [label="xxx"]
+	end -> n2 
+}

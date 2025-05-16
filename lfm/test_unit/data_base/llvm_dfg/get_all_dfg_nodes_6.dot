@@ -1,0 +1,44 @@
+digraph "foo" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0000[shape=ellipse, label="%0: arg"]
+	node_0002[shape=record, label="%3: alloca"]
+	node_0003[shape=record, label="%4: alloca"]
+	node_0004[shape=record, label="%5: alloca"]
+	node_0005[shape=record, label="store(%0,%2)"]
+	node_0006[shape=record, label="%6: load(%2)"]
+	node_0007[shape=record, label="call f1(%6,%3)", color=red]
+	node_0008[shape=record, label="%7: load(%2)"]
+	node_0009[shape=record, label="%8: load(%3)"]
+	node_0010[shape=record, label="call f2(%7,%8,%4)", color=red]
+	node_0011[shape=record, label="%9: load(%2)"]
+	node_0012[shape=record, label="%10: load(%3)"]
+	node_0013[shape=record, label="%11: load(%4)"]
+	node_0014[shape=record, label="call f3(%9,%10,%11,%5)", color=red]
+	node_0015[shape=record, label="%12: load(%5)"]
+	node_0016[shape=ellipse, label="ret(%12)"]
+	node_0005 -> node_0000 
+	node_0006 -> node_0005 
+	node_0007 -> node_0006 
+	node_0007 -> node_0002 
+	node_0008 -> node_0005 
+	node_0009 -> node_0002 
+	node_0010 -> node_0008 
+	node_0010 -> node_0009 
+	node_0010 -> node_0003 
+	node_0011 -> node_0005 
+	node_0012 -> node_0002 
+	node_0013 -> node_0003 
+	node_0014 -> node_0011 
+	node_0014 -> node_0012 
+	node_0014 -> node_0013 
+	node_0014 -> node_0004 
+	node_0015 -> node_0004 
+	node_0016 -> node_0015 
+	node_0000 -> start [color=red, weight=100]
+	node_0007 -> start [color=red, weight=100]
+	node_0010 -> node_0007 [color=red, weight=100]
+	node_0014 -> node_0010 [color=red, weight=100]
+	end -> node_0014 [color=red, weight=100]
+	end -> node_0016 [color=red, weight=100]
+}

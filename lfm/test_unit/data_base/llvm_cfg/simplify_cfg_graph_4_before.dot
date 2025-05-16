@@ -1,0 +1,12 @@
+digraph "foo" {
+	node_0000[shape=record, style=filled, fillcolor="#f3c7b170", label="{%1:\l call fun1\l|{<s0>T|<s1>F}}"]
+	node_0001[shape=record, style=filled, fillcolor="#f3c7b170", label="{%5:\l call fun1\l}"]
+	node_0002[shape=record, label="%6:\l"]
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0000:s0 -> node_0001 
+	node_0000:s1 -> node_0002 
+	node_0001 -> node_0002 
+	start -> node_0000 
+	node_0002 -> end 
+}

@@ -1,0 +1,7 @@
+digraph "foo" {
+	node_0001[shape=record, style=filled, fillcolor="#f3c7b170", label="{%0:\l %9 = call simd_gemm_executor_create\l %10 = call simd_dre_executor_create\l %18 = call simd_gemm_executor_AB\l %22 = call simd_dre_executor_reshape\l %30 = call simd_gemm_executor_AB\l call simd_gemm_executor_destroy\l call simd_dre_executor_destroy\l}"]
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	start -> node_0001 
+	node_0001 -> end 
+}

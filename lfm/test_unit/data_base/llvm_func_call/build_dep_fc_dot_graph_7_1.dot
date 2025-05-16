@@ -1,0 +1,262 @@
+digraph "HPL_pdmxswp" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0000[shape=ellipse, label="%0: arg"]
+	node_0001[shape=ellipse, label="%1: arg"]
+	node_0002[shape=ellipse, label="%2: arg"]
+	node_0003[shape=ellipse, label="%3: arg"]
+	node_0004[shape=ellipse, label="%4: arg"]
+	node_0038[shape=record, label="store(%0,%6)"]
+	node_0039[shape=record, label="store(%1,%7)"]
+	node_0040[shape=record, label="store(%2,%8)"]
+	node_0041[shape=record, label="store(%3,%9)"]
+	node_0042[shape=record, label="store(%4,%10)"]
+	node_0043[shape=record, label="%39: load(%6)"]
+	node_0044[shape=record, label="%40: getelementptr(%39,0,0)"]
+	node_0045[shape=record, label="%41: load(%40)"]
+	node_0046[shape=record, label="store(%41,%16)"]
+	node_0047[shape=record, label="%42: load(%16)"]
+	node_0048[shape=record, label="%43: getelementptr(%42,0,2)"]
+	node_0049[shape=record, label="%44: load(%43)"]
+	node_0050[shape=record, label="store(%44,%31)"]
+	node_0051[shape=record, label="%45: load(%16)"]
+	node_0052[shape=record, label="%46: getelementptr(%45,0,4)"]
+	node_0053[shape=record, label="%47: load(%46)"]
+	node_0054[shape=record, label="store(%47,%33)"]
+	node_0055[shape=record, label="%48: load(%16)"]
+	node_0056[shape=record, label="%49: getelementptr(%48,0,7)"]
+	node_0057[shape=record, label="%50: load(%49)"]
+	node_0058[shape=record, label="store(%50,%18)"]
+	node_0059[shape=record, label="%51: load(%16)"]
+	node_0060[shape=record, label="%52: getelementptr(%51,0,8)"]
+	node_0061[shape=record, label="%53: load(%52)"]
+	node_0062[shape=record, label="store(%53,%17)"]
+	node_0063[shape=record, label="%54: load(%6)"]
+	node_0064[shape=record, label="%55: getelementptr(%54,0,14)"]
+	node_0065[shape=record, label="%56: load(%55)"]
+	node_0066[shape=record, label="store(%56,%32)"]
+	node_0067[shape=record, label="%57: load(%6)"]
+	node_0068[shape=record, label="%58: getelementptr(%57,0,24)"]
+	node_0069[shape=record, label="%59: load(%58)"]
+	node_0070[shape=record, label="store(%59,%27)"]
+	node_0071[shape=record, label="%60: load(%33)"]
+	node_0072[shape=record, label="%61: load(%18)"]
+	node_0073[shape=record, label="%62 = sub i32 %60, %61"]
+	node_0074[shape=record, label="store(%62,%38)"]
+	node_0076[shape=record, label="%64 = zext i1 %63 to i32"]
+	node_0077[shape=record, label="store(%64,%23)"]
+	node_0078[shape=record, label="%65: load(%31)"]
+	node_0079[shape=record, label="%66: load(%27)"]
+	node_0081[shape=record, label="%69: load(%33)"]
+	node_0082[shape=record, label="%70: load(%31)"]
+	node_0083[shape=record, label="%71: add(%69,%70)"]
+	node_0084[shape=record, label="%72: load(%27)"]
+	node_0086[shape=record, label="%75: load(%31)"]
+	node_0087[shape=record, label="%76: load(%27)"]
+	node_0089[shape=record, label="%79 = phi i32 [ %73, %68 ], [ %77, %74 ]"]
+	node_0090[shape=record, label="store(%79,%29)"]
+	node_0091[shape=record, label="%80: load(%32)"]
+	node_0092[shape=record, label="%81: add(%80,4)"]
+	node_0093[shape=record, label="store(%81,%24)"]
+	node_0094[shape=record, label="%82: load(%32)"]
+	node_0095[shape=record, label="%83: add(%81,%82)"]
+	node_0096[shape=record, label="store(%83,%25)"]
+	node_0097[shape=record, label="%84: load(%10)"]
+	node_0098[shape=record, label="%85: getelementptr(%84,4)"]
+	node_0099[shape=record, label="store(%85,%14)"]
+	node_0100[shape=record, label="%86: load(%32)"]
+	node_0101[shape=record, label="%87: sext(%86)"]
+	node_0102[shape=record, label="%88: getelementptr(%85,%87)"]
+	node_0103[shape=record, label="store(%88,%13)"]
+	node_0104[shape=record, label="%89: load(%10)"]
+	node_0105[shape=record, label="%90: load(%25)"]
+	node_0106[shape=record, label="%91: sext(%90)"]
+	node_0107[shape=record, label="%92: getelementptr(%89,%91)"]
+	node_0108[shape=record, label="store(%92,%15)"]
+	node_0109[shape=record, label="%93: load(%7)"]
+	node_0111[shape=record, label="%96: load(%6)"]
+	node_0112[shape=record, label="%97: getelementptr(%96,0,23)"]
+	node_0113[shape=record, label="%98: load(%97)"]
+	node_0114[shape=record, label="store(%98,%28)"]
+	node_0115[shape=record, label="%99: load(%32)"]
+	node_0116[shape=record, label="%100: load(%6)"]
+	node_0117[shape=record, label="%101: getelementptr(%100,0,3)"]
+	node_0118[shape=record, label="%102: load(%101)"]
+	node_0119[shape=record, label="%103: load(%8)"]
+	node_0120[shape=record, label="%104: load(%10)"]
+	node_0121[shape=record, label="%105: getelementptr(%104,1)"]
+	node_0122[shape=record, label="%106: load(%105)"]
+	node_0123[shape=record, label="%107 = fptosi double %106 to i32"]
+	node_0124[shape=record, label="%108: add(%103,%107)"]
+	node_0125[shape=record, label="%109: sext(%108)"]
+	node_0126[shape=record, label="%110: getelementptr(%102,%109)"]
+	node_0127[shape=record, label="%111: load(%28)"]
+	node_0128[shape=record, label="%112: sext(%111)"]
+	node_0129[shape=record, label="%113: mul(0,%112)"]
+	node_0130[shape=record, label="%114: getelementptr(%110,%113)"]
+	node_0131[shape=record, label="%115: load(%28)"]
+	node_0132[shape=record, label="%116: load(%14)"]
+	node_0133[shape=record, label="call HPL_dcopy(%99,%114,%115,%116,1)", color=red]
+	node_0134[shape=record, label="%117: load(%31)"]
+	node_0135[shape=record, label="%118: load(%27)"]
+	node_0137[shape=record, label="%121: load(%32)"]
+	node_0138[shape=record, label="%122: load(%6)"]
+	node_0139[shape=record, label="%123: getelementptr(%122,0,3)"]
+	node_0140[shape=record, label="%124: load(%123)"]
+	node_0141[shape=record, label="%125: load(%8)"]
+	node_0142[shape=record, label="%126: sext(%125)"]
+	node_0143[shape=record, label="%127: getelementptr(%124,%126)"]
+	node_0144[shape=record, label="%128: load(%28)"]
+	node_0145[shape=record, label="%129: sext(%128)"]
+	node_0146[shape=record, label="%130: mul(0,%129)"]
+	node_0147[shape=record, label="%131: getelementptr(%127,%130)"]
+	node_0148[shape=record, label="%132: load(%28)"]
+	node_0149[shape=record, label="%133: load(%13)"]
+	node_0150[shape=record, label="call HPL_dcopy(%121,%131,%132,%133,1)", color=red]
+	node_0151[shape=record, label="store(0,%26)"]
+	node_0152[shape=record, label="%137: load(%26)"]
+	node_0153[shape=record, label="%138: load(%32)"]
+	node_0155[shape=record, label="%141: load(%14)"]
+	node_0156[shape=record, label="%142: load(%26)"]
+	node_0157[shape=record, label="%143: sext(%142)"]
+	node_0158[shape=record, label="%144: getelementptr(%141,%143)"]
+	node_0160[shape=record, label="%146: load(%26)"]
+	node_0161[shape=record, label="%147: add(%146,1)"]
+	node_0162[shape=record, label="store(%147,%26)"]
+	node_0038 -> node_0000 
+	node_0039 -> node_0001 
+	node_0040 -> node_0002 
+	node_0041 -> node_0003 
+	node_0042 -> node_0004 
+	node_0043 -> node_0038 
+	node_0044 -> node_0043 
+	node_0045 -> node_0044 
+	node_0046 -> node_0045 
+	node_0047 -> node_0046 
+	node_0048 -> node_0047 
+	node_0049 -> node_0048 
+	node_0050 -> node_0049 
+	node_0051 -> node_0046 
+	node_0052 -> node_0051 
+	node_0053 -> node_0052 
+	node_0054 -> node_0053 
+	node_0055 -> node_0046 
+	node_0056 -> node_0055 
+	node_0057 -> node_0056 
+	node_0058 -> node_0057 
+	node_0059 -> node_0046 
+	node_0060 -> node_0059 
+	node_0061 -> node_0060 
+	node_0062 -> node_0061 
+	node_0063 -> node_0038 
+	node_0064 -> node_0063 
+	node_0065 -> node_0064 
+	node_0066 -> node_0065 
+	node_0067 -> node_0038 
+	node_0068 -> node_0067 
+	node_0069 -> node_0068 
+	node_0070 -> node_0069 
+	node_0071 -> node_0054 
+	node_0072 -> node_0058 
+	node_0074 -> node_0073 
+	node_0077 -> node_0076 
+	node_0078 -> node_0050 
+	node_0079 -> node_0070 
+	node_0081 -> node_0054 
+	node_0082 -> node_0050 
+	node_0083 -> node_0081 
+	node_0083 -> node_0082 
+	node_0084 -> node_0070 
+	node_0086 -> node_0050 
+	node_0087 -> node_0070 
+	node_0090 -> node_0089 
+	node_0091 -> node_0066 
+	node_0092 -> node_0091 
+	node_0093 -> node_0092 
+	node_0094 -> node_0066 
+	node_0095 -> node_0092 
+	node_0095 -> node_0094 
+	node_0096 -> node_0095 
+	node_0097 -> node_0042 
+	node_0098 -> node_0097 
+	node_0099 -> node_0098 
+	node_0100 -> node_0066 
+	node_0101 -> node_0100 
+	node_0102 -> node_0098 
+	node_0102 -> node_0101 
+	node_0103 -> node_0102 
+	node_0104 -> node_0042 
+	node_0105 -> node_0096 
+	node_0106 -> node_0105 
+	node_0107 -> node_0104 
+	node_0107 -> node_0106 
+	node_0108 -> node_0107 
+	node_0109 -> node_0039 
+	node_0111 -> node_0038 
+	node_0112 -> node_0111 
+	node_0113 -> node_0112 
+	node_0114 -> node_0113 
+	node_0115 -> node_0066 
+	node_0116 -> node_0038 
+	node_0117 -> node_0116 
+	node_0118 -> node_0117 
+	node_0119 -> node_0040 
+	node_0120 -> node_0042 
+	node_0121 -> node_0120 
+	node_0122 -> node_0121 
+	node_0124 -> node_0119 
+	node_0124 -> node_0123 
+	node_0125 -> node_0124 
+	node_0126 -> node_0118 
+	node_0126 -> node_0125 
+	node_0127 -> node_0114 
+	node_0128 -> node_0127 
+	node_0129 -> node_0128 
+	node_0130 -> node_0126 
+	node_0130 -> node_0129 
+	node_0131 -> node_0114 
+	node_0132 -> node_0099 
+	node_0133 -> node_0115 
+	node_0133 -> node_0130 
+	node_0133 -> node_0131 
+	node_0133 -> node_0132 
+	node_0134 -> node_0050 
+	node_0135 -> node_0070 
+	node_0137 -> node_0066 
+	node_0138 -> node_0038 
+	node_0139 -> node_0138 
+	node_0140 -> node_0139 
+	node_0141 -> node_0040 
+	node_0142 -> node_0141 
+	node_0143 -> node_0140 
+	node_0143 -> node_0142 
+	node_0144 -> node_0114 
+	node_0145 -> node_0144 
+	node_0146 -> node_0145 
+	node_0147 -> node_0143 
+	node_0147 -> node_0146 
+	node_0148 -> node_0114 
+	node_0149 -> node_0103 
+	node_0150 -> node_0137 
+	node_0150 -> node_0147 
+	node_0150 -> node_0148 
+	node_0150 -> node_0149 
+	node_0152 -> node_0151 
+	node_0153 -> node_0066 
+	node_0155 -> node_0099 
+	node_0156 -> node_0151 
+	node_0157 -> node_0156 
+	node_0158 -> node_0155 
+	node_0158 -> node_0157 
+	node_0160 -> node_0151 
+	node_0161 -> node_0160 
+	node_0162 -> node_0161 
+	node_0000 -> start [color=red, weight=100]
+	node_0001 -> start [color=red, weight=100]
+	node_0002 -> start [color=red, weight=100]
+	node_0003 -> start [color=red, weight=100]
+	node_0004 -> start [color=red, weight=100]
+	node_0133 -> start [color=red, weight=100]
+	node_0150 -> node_0133 [color=red, weight=100]
+	end -> node_0150 [color=red, weight=100]
+}

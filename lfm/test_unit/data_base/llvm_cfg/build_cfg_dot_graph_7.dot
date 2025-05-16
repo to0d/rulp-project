@@ -1,0 +1,6 @@
+digraph "foo" {
+	node_0000[shape=record, label="{%1:\l %2 = alloca i32, align 4\l store i32 %0, i32* %2, align 4\l %3 = load i32, i32* %2, align 4\l %4 = call printf\l br label %5\l}"]
+	node_0001[shape=record, label="{%5:\l br label %5\l}"]
+	node_0000 -> node_0001 
+	node_0001 -> node_0001 
+}

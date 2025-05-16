@@ -1,0 +1,16 @@
+digraph "foo" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0000[shape=record, label="%1: add(1,2)"]
+	node_0001[shape=record, label="%2: add(3,4)"]
+	node_0003[shape=record, label="store(%1,%3)"]
+	node_0004[shape=record, label="store(%2,%3)"]
+	node_0005[shape=record, label="%4: load(%3)"]
+	node_0006[shape=ellipse, label="ret(%4)"]
+	node_0003 -> node_0000 
+	node_0004 -> node_0001 
+	node_0005 -> node_0004 
+	node_0006 -> node_0005 
+	end -> start [color=red, weight=100]
+	end -> node_0006 [color=red, weight=100]
+}

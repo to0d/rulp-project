@@ -1,0 +1,18 @@
+digraph "SSG" {
+	N0[shape=ellipse, label="a"]
+	N1[shape=ellipse, label="b"]
+	N2[shape=ellipse, label="c"]
+	N3[shape=ellipse, label="d"]
+	N4[shape=ellipse, label="e"]
+	N5[shape=ellipse, label="f"]
+	N0 -> N2 [dir=none]
+	N0 -> N5 [dir=none]
+	N1 -> N2 [dir=none]
+	N1 -> N5 [dir=none]
+	N2 -> N3 [dir=none]
+	N2 -> N4 [dir=none]
+	N2 -> N5 [dir=none]
+	N3 -> N4 [dir=none]
+	N3 -> N5 [dir=none]
+	N4 -> N5 [dir=none]
+}

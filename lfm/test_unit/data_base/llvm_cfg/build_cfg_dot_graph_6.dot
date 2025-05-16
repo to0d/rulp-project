@@ -1,0 +1,14 @@
+digraph "foo" {
+	node_0000[shape=record, label="{%1:\l|{<s0>0|<s1>1|<s2>2|<def>DEF}}"]
+	node_0001[shape=record, label="%6:\l"]
+	node_0002[shape=record, label="%7:\l"]
+	node_0003[shape=record, label="%8:\l"]
+	node_0004[shape=record, label="%9:\l"]
+	node_0000:s0 -> node_0001 
+	node_0000:s1 -> node_0001 
+	node_0000:s2 -> node_0002 
+	node_0000:def -> node_0003 
+	node_0001 -> node_0004 
+	node_0002 -> node_0004 
+	node_0003 -> node_0004 
+}

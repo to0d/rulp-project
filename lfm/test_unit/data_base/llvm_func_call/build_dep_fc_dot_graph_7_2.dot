@@ -1,0 +1,10 @@
+digraph "foo" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	n0[shape=ellipse, label="HPL_dcopy\n"]
+	n1[shape=ellipse, label="HPL_dcopy\n"]
+	n1:e -> n0:e [color=red]
+	start -> n0 [weight=100]
+	n0 -> n1 [weight=100]
+	n1 -> end [weight=100]
+}

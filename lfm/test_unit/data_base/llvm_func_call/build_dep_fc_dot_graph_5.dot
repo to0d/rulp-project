@@ -1,0 +1,13 @@
+digraph "foo" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	n0[shape=ellipse, label="f1(%1)\n(%2)\n"]
+	n1[shape=ellipse, label="f2()\n(%3)\n"]
+	n2[shape=ellipse, label="f3(%1)\n"]
+	n2:e -> n0:e [color=red]
+	n2:e -> n1:e [color=red]
+	start -> n0 [weight=100]
+	n0 -> n1 [weight=100]
+	n1 -> n2 [weight=100]
+	n2 -> end [weight=100]
+}

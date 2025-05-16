@@ -1,0 +1,3 @@
+I(br i1 %4, label %5, label %6)
+I(br label %7)
+I(br label %7)

@@ -1,0 +1,32 @@
+digraph "foo" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0000[shape=ellipse, label="%0: arg"]
+	node_0004[shape=record, label="store(%0,%4)"]
+	node_0005[shape=record, label="%5: load(%4)"]
+	node_0006[shape=record, label="store(%5,%2)"]
+	node_0007[shape=record, label="%6: load(%2)"]
+	node_0008[shape=record, label="%7: bitcast(%6)"]
+	node_0009[shape=record, label="%8: ptrtoint(%7)"]
+	node_0010[shape=record, label="%9: call simd_convert_to_relative_addr(%8)", color=red]
+	node_0011[shape=record, label="store(%9,%3)"]
+	node_0012[shape=record, label="%10: load(%3)"]
+	node_0013[shape=record, label="%11: call Gemm(%10)", color=red]
+	node_0014[shape=ellipse, label="ret(%11)"]
+	node_0004 -> node_0000 
+	node_0005 -> node_0004 
+	node_0006 -> node_0005 
+	node_0007 -> node_0006 
+	node_0008 -> node_0007 
+	node_0009 -> node_0008 
+	node_0010 -> node_0009 
+	node_0011 -> node_0010 
+	node_0012 -> node_0011 
+	node_0013 -> node_0012 
+	node_0014 -> node_0013 
+	node_0000 -> start [color=red, weight=100]
+	node_0010 -> start [color=red, weight=100]
+	node_0013 -> node_0010 [color=red, weight=100]
+	end -> node_0013 [color=red, weight=100]
+	end -> node_0014 [color=red, weight=100]
+}

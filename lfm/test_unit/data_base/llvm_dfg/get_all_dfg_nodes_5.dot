@@ -1,0 +1,28 @@
+digraph "foo" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0001[shape=record, label="store(0,%1)"]
+	node_0002[shape=record, label="%2: call f1(%1)", color=red]
+	node_0003[shape=record, label="%3: call f2()", color=red]
+	node_0004[shape=record, label="%4: load(%1)"]
+	node_0005[shape=record, label="%5: add(%4,%3)"]
+	node_0006[shape=record, label="store(%5,%1)"]
+	node_0007[shape=record, label="%6: load(%1)"]
+	node_0008[shape=record, label="call f3(%6)", color=red]
+	node_0009[shape=record, label="%7: load(%1)"]
+	node_0010[shape=ellipse, label="ret(%7)"]
+	node_0002 -> node_0001 
+	node_0004 -> node_0001 
+	node_0005 -> node_0004 
+	node_0005 -> node_0003 
+	node_0006 -> node_0005 
+	node_0007 -> node_0006 
+	node_0008 -> node_0007 
+	node_0009 -> node_0006 
+	node_0010 -> node_0009 
+	node_0002 -> start [color=red, weight=100]
+	node_0003 -> node_0002 [color=red, weight=100]
+	node_0008 -> node_0003 [color=red, weight=100]
+	end -> node_0008 [color=red, weight=100]
+	end -> node_0010 [color=red, weight=100]
+}

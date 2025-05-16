@@ -1,0 +1,13 @@
+digraph "foo" {
+	node_0000[shape=record, label="{%1:\l %2 = icmp sgt i32 %0, 0\l br i1 %2, label %6, label %3\l|{<s0>T|<s1>F}}"]
+	node_0001[shape=record, label="{%3:\l %4 = icmp ne i32 %0, 0\l %5 = sext i1 %4 to i32\l ret i32 %5\l}"]
+	node_0002[shape=record, label="{%6:\l ret i32 1\l}"]
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0000:s0 -> node_0002 
+	node_0000:s1 -> node_0001 
+	start -> node_0000 
+	node_0001 -> end 
+	node_0002 -> end 
+}

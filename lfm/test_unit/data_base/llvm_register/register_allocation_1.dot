@@ -1,0 +1,3 @@
+digraph "foo" {
+	node_0000[shape=record, label="%0:\l"]
+}

@@ -1,0 +1,47 @@
+digraph "foo" {
+	start[shape=ellipse, label="start", color=red]
+	end[shape=ellipse, label="end", color=red]
+	node_0000[shape=ellipse, label="%0: arg"]
+	node_0004[shape=record, label="store(%0,%2)"]
+	node_0005[shape=record, label="%5: load(%2)"]
+	node_0006[shape=record, label="%6: add(%5,1)"]
+	node_0007[shape=record, label="store(%6,%3)"]
+	node_0008[shape=record, label="store(0,%4)"]
+	node_0009[shape=record, label="%7: load(%2)"]
+	node_0010[shape=record, label="%8: call printf(getelementptr inbounds ([6 x i8], [6 x i8]* @.str, i64 0, i64 0),%7)", color=red]
+	node_0011[shape=record, label="%9: load(%2)"]
+	node_0013[shape=record, label="%12: load(%3)"]
+	node_0014[shape=record, label="%13: add(%12,1)"]
+	node_0015[shape=record, label="store(%13,%3)"]
+	node_0016[shape=record, label="%14: load(%3)"]
+	node_0018[shape=record, label="%17: load(%4)"]
+	node_0019[shape=record, label="%18: add(%17,1)"]
+	node_0020[shape=record, label="store(%18,%4)"]
+	node_0021[shape=record, label="%21: load(%3)"]
+	node_0022[shape=record, label="%22: call printf(getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0),%21)", color=red]
+	node_0023[shape=record, label="%23: load(%4)"]
+	node_0024[shape=record, label="%24: call printf(getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0),%23)", color=red]
+	node_0004 -> node_0000 
+	node_0005 -> node_0004 
+	node_0006 -> node_0005 
+	node_0007 -> node_0006 
+	node_0009 -> node_0004 
+	node_0010 -> node_0009 
+	node_0011 -> node_0004 
+	node_0013 -> node_0007 
+	node_0014 -> node_0013 
+	node_0015 -> node_0014 
+	node_0016 -> node_0015 
+	node_0018 -> node_0008 
+	node_0019 -> node_0018 
+	node_0020 -> node_0019 
+	node_0021 -> node_0015 
+	node_0022 -> node_0021 
+	node_0023 -> node_0020 
+	node_0024 -> node_0023 
+	node_0000 -> start [color=red, weight=100]
+	node_0010 -> start [color=red, weight=100]
+	node_0022 -> node_0010 [color=red, weight=100]
+	node_0024 -> node_0022 [color=red, weight=100]
+	end -> node_0024 [color=red, weight=100]
+}
